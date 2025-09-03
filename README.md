@@ -2,14 +2,14 @@
 
 `doc_lama_metagen.py` is a command-line utility for automatically generating and inserting meta descriptions into AsciiDoc (`.adoc`) and DocBook (`.xml`) files. It uses a local Ollama instance with a large language model (LLM) to create concise, well-written descriptions based on the document's content.
 
-The script is designed to follow specific technical writing style guides, ensuring the output is professional, active, and consistent. It also generates a detailed HTML report of its operations.
+The script is designed to follow the SUSE technical writing style guide, ensuring the output is professional, active, and consistent. It also generates a detailed HTML report of its operations.
 
 ## Features ✨
 
   * **Dual Format Support**: Processes both **AsciiDoc** and **DocBook XML** files.
   * **Local LLM Integration**: Leverages **Ollama** to keep content processing private and local.
   * **Intelligent Content Extraction**: Smartly extracts relevant text from documents, ignoring boilerplate, headers, and navigation elements.
-  * **Style Guide Compliant**: Uses a carefully crafted prompt to generate descriptions that start with a verb, use the active voice, and adhere to character limits (120-160 characters).
+  * **SUSE Style Guide Compliant**: Uses a carefully crafted prompt to generate descriptions that start with a verb, use the active voice, and adhere to character limits (120-160 characters).
   * **Automated Retry**: If the first generated description is too short, the script automatically re-prompts the model for a longer, more detailed version.
   * **Comprehensive HTML Reporting**: Generates an interactive HTML log with statistics, system information, and a filterable list of all actions performed.
   * **Safety First**: Includes a **`--dry-run`** mode to preview all potential changes without modifying any files.

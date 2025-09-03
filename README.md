@@ -1,6 +1,6 @@
-# AI Meta Description Generator
+# doc-lama-metagen
 
-`gen_descriptions.py` is a command-line utility for automatically generating and inserting meta descriptions into AsciiDoc (`.adoc`) and DocBook (`.xml`) files. It uses a local Ollama instance with a large language model (LLM) to create concise, well-written descriptions based on the document's content.
+`doc_lama_metagen.py` is a command-line utility for automatically generating and inserting meta descriptions into AsciiDoc (`.adoc`) and DocBook (`.xml`) files. It uses a local Ollama instance with a large language model (LLM) to create concise, well-written descriptions based on the document's content.
 
 The script is designed to follow specific technical writing style guides, ensuring the output is professional, active, and consistent. It also generates a detailed HTML report of its operations.
 
@@ -69,7 +69,7 @@ Run the script from the command line, pointing it to the root directory of your 
 This command will scan all `.adoc` and `.xml` files in the `/path/to/your/docs` directory, generate descriptions, and create an HTML report.
 
 ```bash
-python3 ./gen_descriptions.py /path/to/your/docs --entities-file /path/to/your/entities.ent --html-log report.html
+python3 ./doc_lama_metagen.py /path/to/your/docs --entities-file /path/to/your/entities.ent --html-log report.html
 ```
 
 ### Dry Run Example
@@ -77,7 +77,7 @@ python3 ./gen_descriptions.py /path/to/your/docs --entities-file /path/to/your/e
 To see what the script *would do* without actually changing any files, use the `--dry-run` flag. This is the safest way to test your configuration.
 
 ```bash
-python3 ./gen_descriptions.py /path/to/your/docs --entities-file /path/to/your/entities.ent --html-log dry_run_report.html --dry-run
+python3 ./doc_lama_metagen.py /path/to/your/docs --entities-file /path/to/your/entities.ent --html-log dry_run_report.html --dry-run
 ```
 
 -----

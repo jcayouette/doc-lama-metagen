@@ -1,4 +1,4 @@
-# AI-Powered Documentation Meta Description Generator
+# Doc Lama Meta Generator (AI meta description generator)
 
 This repository contains `doc-lama-metagen.py`, a Python script that uses a local AI model (via Ollama) to automatically generate and update SEO-friendly meta descriptions for technical documentation written in AsciiDoc and DocBook format.
 

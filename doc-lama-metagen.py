@@ -98,6 +98,24 @@ Page content:
 ---
 Output ONLY the final, longer sentence:
 """
+
+    PROMPT_TMPL_VALIDATE: str = """You are an expert copy editor. Your task is to correct any grammatical errors, awkward phrasing, or structural issues in the following sentence.
+
+Follow these rules strictly:
+- The sentence must be a single, complete thought that is grammatically correct and easy to read.
+- Do NOT change the original meaning or key technical terms.
+- Remove any redundant or nonsensical phrases (e.g., "on your or", "and system").
+- Ensure the sentence ends with a period.
+- If the sentence is already perfect, return it unchanged.
+- Output ONLY the corrected sentence. Do not add any preamble or explanation.
+
+Original sentence:
+---
+{sentence}
+---
+Corrected sentence:
+"""
+
     FORBIDDEN_CHARS_RE: re.Pattern = re.compile(r'[>:|“”"‘’]')
     DOC_META_PATTERNS: List[re.Pattern] = field(init=False)
     TRAILING_STOPWORDS: Set[str] = field(default_factory=lambda: set("and or to for with in of on at by from into via as that which including such as than then while when where".split()))
@@ -269,7 +287,10 @@ def generate_html_report(output_path, directory, model, duration, files_processe
 def load_brand_config_from_entities(filepath: str) -> List[Dict[str, Any]]:
     """Dynamically builds brand configuration from an entities file."""
     if not filepath or not os.path.exists(filepath):
-        logging.error(f"Entities file not found at {filepath}. Cannot build brand configuration.")
+        if not filepath:
+            logging.info("Entities file not provided. Skipping brand configuration.")
+        else:
+            logging.warning(f"Entities file not found at {filepath}. Cannot build brand configuration.")
         return []
     
     brands = []
@@ -378,6 +399,24 @@ def call_ollama(model: str, prompt: str, base_url: str, timeout=120) -> str:
         logging.error(f"Ollama API call failed: {e}")
         return ""
 
+def validate_and_correct_grammar(sentence: str, model: str, base_url: str, config: ScriptConfig) -> str:
+    """Uses a second LLM call to act as a grammar and structure validator."""
+    if not sentence:
+        return ""
+    
+    logging.info(f"Validating grammar for draft: '{sentence}'")
+    prompt = config.PROMPT_TMPL_VALIDATE.format(sentence=sentence)
+    
+    # Use the existing call_ollama function for the correction
+    corrected_sentence = call_ollama(model, prompt, base_url)
+    
+    if corrected_sentence and corrected_sentence != sentence:
+        logging.info(f"Grammar corrected to: '{corrected_sentence}'")
+        return corrected_sentence
+    
+    logging.info("Grammar check passed without changes.")
+    return sentence
+
 def sanitize_and_finalize(draft: str, config: ScriptConfig) -> str:
     """Runs the full cleaning and finalization pipeline."""
     desc = html.unescape(draft)
@@ -421,18 +460,116 @@ def should_skip(path: Path, config: ScriptConfig) -> bool:
     return False
 
 def load_adoc_attributes(file_path: Path) -> dict:
+    """A simple parser for standard, non-conditional AsciiDoc attribute files."""
     attributes = {}
     try:
         with file_path.open('r', encoding='utf-8') as f:
             for line in f:
-                match = re.match(r'^:([a-zA-Z0-9_-]+):\s+(.*)', line)
-                if match: attributes[match.group(1)] = match.group(2).strip()
-    except IOError as e: logging.error(f"Could not read attributes file {file_path}: {e}")
+                # This regex handles :attr: value and :attr:
+                match = re.match(r'^:([a-zA-Z0-9_-]+):(?:\s+(.*))?$', line)
+                if match:
+                    key, value = match.groups()
+                    attributes[key] = value.strip() if value is not None else ""
+    except IOError as e:
+        logging.error(f"Could not read attributes file {file_path}: {e}")
     return attributes
+
+def load_and_process_adoc_attributes(file_path: Path, initial_context: Dict[str, str]) -> dict:
+    """
+    Loads and processes an AsciiDoc attributes file, handling ifndef, ifeval,
+    and iterative attribute expansion.
+    """
+    if not file_path or not file_path.exists():
+        logging.error(f"Attributes file not found at {file_path}")
+        return {}
+
+    attributes = initial_context.copy()
+    lines = file_path.read_text(encoding='utf-8').splitlines()
+    
+    # Pre-compile regex patterns for efficiency
+    attr_re = re.compile(r'^:([\w-]+):(?:\s+(.*))?$')
+    ifndef_re = re.compile(r'^ifndef::([\w-]+)\[\]$')
+    ifeval_re = re.compile(r'^ifeval::\["\{([\w-]+)\}" == "([^"]+)"\]$')
+    endif_re = re.compile(r'^endif::\[\]$')
+    
+    # --- First Pass: Parse file and handle conditionals ---
+    in_active_block = True
+    active_block_stack = []
+
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith('//'):
+            continue
+
+        # Handle endif
+        if endif_re.match(line):
+            if active_block_stack:
+                in_active_block = active_block_stack.pop()
+            continue
+
+        # Handle ifndef
+        match = ifndef_re.match(line)
+        if match:
+            key = match.group(1)
+            active_block_stack.append(in_active_block)
+            in_active_block = in_active_block and (key not in attributes)
+            continue
+            
+        # Handle ifeval
+        match = ifeval_re.match(line)
+        if match:
+            key, value = match.groups()
+            active_block_stack.append(in_active_block)
+            is_match = attributes.get(key) == value
+            in_active_block = in_active_block and is_match
+            continue
+
+        if not in_active_block:
+            continue
+
+        # Handle normal attribute definitions
+        match = attr_re.match(line)
+        if match:
+            key, value = match.groups()
+            # Handle attributes with no value (e.g., :showtitle:)
+            attributes[key] = value.strip() if value is not None else ""
+
+    # --- Second Pass: Iteratively resolve attribute values ---
+    unresolved = True
+    # Limit iterations to prevent infinite loops from bad definitions
+    for _ in range(10): 
+        if not unresolved:
+            break
+        unresolved = False
+        for key, value in attributes.items():
+            if isinstance(value, str) and '{' in value:
+                # Find all {placeholder} occurrences
+                placeholders = re.findall(r'\{([\w-]+)\}', value)
+                if not placeholders:
+                    continue
+                
+                unresolved = True
+                new_value = value
+                for placeholder in placeholders:
+                    if placeholder in attributes:
+                        new_value = new_value.replace(f'{{{placeholder}}}', str(attributes[placeholder]))
+                attributes[key] = new_value
+    
+    logging.info(f"Successfully processed and expanded attributes from {file_path}")
+    return attributes
+
 
 def resolve_attributes(text: str, attributes: dict) -> str:
     if not attributes: return re.sub(r"\{([A-Za-z0-9_-]+)\}", "", text)
-    return re.sub(r"\{([A-Za-z0-9_-]+)\}", lambda m: str(attributes.get(m.group(1), "")), text)
+    # Iteratively replace attributes until no placeholders are left
+    for _ in range(10): # Safety break for circular references
+        if '{' not in text:
+            break
+        for key, value in attributes.items():
+            text = text.replace(f'{{{key}}}', str(value))
+    # Remove any remaining (unresolved) attributes
+    text = re.sub(r"\{([A-Za-z0-9_-]+)\}", "", text)
+    return text
 
 def extract_adoc_payload(content: str, max_len: int = 4000) -> str:
     """Converts the entire AsciiDoc content to plain text for analysis."""
@@ -481,20 +618,28 @@ def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace
 
         prompt = config.PROMPT_TMPL.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload)
         draft = call_ollama(args.model, prompt, args.ollama_url)
-        desc = sanitize_and_finalize(draft, config)
+
+        # CORRECTED ORDER: Enforce rules, then correct grammar, then finalize.
+        draft_after_branding, update_status = post_process_description(draft, str(path), brands)
+        corrected_draft = validate_and_correct_grammar(draft_after_branding, args.model, args.ollama_url, config)
+        desc = sanitize_and_finalize(corrected_draft, config)
 
         if not desc or len(desc) < 100:
             logging.warning(f"First pass description too short ({len(desc)} chars). Retrying for {path}")
             retry_prompt = config.PROMPT_TMPL_RETRY.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload)
             draft = call_ollama(args.model, retry_prompt, args.ollama_url)
-            desc = sanitize_and_finalize(draft, config)
+            
+            # Apply corrected order to retry as well
+            draft_after_branding_retry, update_status = post_process_description(draft, str(path), brands)
+            corrected_draft_retry = validate_and_correct_grammar(draft_after_branding_retry, args.model, args.ollama_url, config)
+            desc = sanitize_and_finalize(corrected_draft_retry, config)
+
             if not desc or len(desc) < 100:
                 msg = f"Generated description still too short after retry ({len(desc)} chars)."
                 logging.error(f"SKIPPED: {msg} ({path})")
                 add_html_log_entry(html_log_entries, path, file_type, "ERROR", msg)
                 return
 
-        desc, update_status = post_process_description(desc, str(path), brands)
         desc = resolve_entities_in_string(desc, brands)
 
         if args.dry_run:
@@ -525,11 +670,17 @@ def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace
         add_html_log_entry(html_log_entries, path, file_type, "ERROR", str(e))
 
 
+# ==============================================================================
+# process_xml_file (MODIFIED)
+# This function uses a pure string/regex approach to perform the precise
+# namespace modifications requested.
+# ==============================================================================
 def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace, html_log_entries: list = None, acronyms_text="", brands=[]):
     ITS_NS = "http://www.w3.org/2005/11/its"
     ns = {'db': 'http://docbook.org/ns/docbook', 'xi': 'http://www.w3.org/2001/XInclude'}
 
     try:
+        # --- Payload Extraction (same as before) ---
         base_url = path.resolve().parent.as_uri() + "/"
         parser_payload = ET.XMLParser(resolve_entities=True, load_dtd=True)
         payload_tree = ET.parse(str(path), parser=parser_payload, base_url=base_url)
@@ -543,10 +694,6 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
         except Exception: pass
         
         logging.info(f"Processing {file_type}: {path}")
-
-        for meta_tag in root.findall('.//db:meta[@name="description"]', namespaces=ns):
-            meta_tag.getparent().remove(meta_tag)
-            logging.info("Removed existing meta description before processing.")
 
         if root.tag == f"{{{ns['db']}}}set":
             logging.info(f"Detected a DocBook <set> file. Building a table of contents for the payload.")
@@ -577,9 +724,7 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
                 payload = "\n".join(text.strip() for text in payload_tree.getroot().itertext() if text.strip())
 
         raw_text = path.read_text(encoding="utf-8")
-        meta_tag_exists = re.search(r'<meta\s+name="description"[^>]*>', raw_text, re.IGNORECASE)
-
-        if meta_tag_exists and not args.force_overwrite:
+        if re.search(r'<meta\s+name="description"[^>]*>', raw_text, re.IGNORECASE) and not args.force_overwrite:
             msg = "File already has a <meta name='description'> tag."
             logging.info(f"SKIPPED: {msg} ({path})")
             add_html_log_entry(html_log_entries, path, file_type, "SKIPPED", msg)
@@ -591,61 +736,105 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
             add_html_log_entry(html_log_entries, path, file_type, "WARNING", msg)
             return
 
+        # --- AI Generation and Processing ---
         prompt = config.PROMPT_TMPL.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload[:4000])
         draft = call_ollama(args.model, prompt, args.ollama_url)
-        desc = sanitize_and_finalize(draft, config)
+        
+        draft_after_branding, update_status = post_process_description(draft, str(path), brands)
+        corrected_draft = validate_and_correct_grammar(draft_after_branding, args.model, args.ollama_url, config)
+        desc = sanitize_and_finalize(corrected_draft, config)
 
         if not desc or len(desc) < 100:
             logging.warning(f"First pass description too short ({len(desc)} chars). Retrying for {path}")
             retry_prompt = config.PROMPT_TMPL_RETRY.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload[:4000])
             draft = call_ollama(args.model, retry_prompt, args.ollama_url)
-            desc = sanitize_and_finalize(draft, config)
+            
+            draft_after_branding_retry, update_status = post_process_description(draft, str(path), brands)
+            corrected_draft_retry = validate_and_correct_grammar(draft_after_branding_retry, args.model, args.ollama_url, config)
+            desc = sanitize_and_finalize(corrected_draft_retry, config)
+
             if not desc or len(desc) < 100:
                 msg = f"Generated description still too short after retry ({len(desc)} chars)."
                 logging.error(f"SKIPPED: {msg} ({path})")
                 add_html_log_entry(html_log_entries, path, file_type, "ERROR", msg)
                 return
         
-        desc, update_status = post_process_description(desc, str(path), brands)
         desc = resolve_entities_in_string(desc, brands)
         
         if args.dry_run:
             logging.info(f"[DRY RUN] Would update {path}")
             add_html_log_entry(html_log_entries, path, file_type, "DRY_RUN", desc)
             return desc
-        
-        new_meta_tag = f'<meta name="description" its:translate="yes" content="{html.escape(desc, quote=True)}"/>'
-        
-        info_tag_match = re.search(r"<info[^>]*>", raw_text, re.IGNORECASE)
-        if not info_tag_match:
-            msg = "No <info> block found."
+
+        # --- Direct String/Regex Modification ---
+        file_content = path.read_text(encoding='utf-8')
+
+        # 1. Ensure 'its' namespace is on the root element.
+        try:
+            parser_tag_find = ET.XMLParser(resolve_entities=False)
+            tree_tag_find = ET.parse(str(path), parser_tag_find)
+            root_tag_local_name = ET.QName(tree_tag_find.getroot().tag).localname
+            
+            root_tag_pattern = re.compile(fr"<{root_tag_local_name}[^>]*>", re.DOTALL)
+            root_tag_match = root_tag_pattern.search(file_content)
+            
+            if root_tag_match:
+                original_root_tag = root_tag_match.group(0)
+                if 'xmlns:its' not in original_root_tag:
+                    replacement_marker = f"<{root_tag_local_name}"
+                    new_root_tag = original_root_tag.replace(
+                        replacement_marker,
+                        f'{replacement_marker} xmlns:its="{ITS_NS}"',
+                        1
+                    )
+                    file_content = file_content.replace(original_root_tag, new_root_tag, 1)
+            else:
+                 logging.warning(f"Could not find root tag regex match for '{root_tag_local_name}' in {path}.")
+        except ET.XMLSyntaxError as e:
+            logging.warning(f"LXML parse failed for {path} while finding root tag: {e}. Skipping 'its' namespace injection.")
+
+        # 2. Actively remove all xmlns attributes from the <info> tag.
+        info_tag_pattern = re.compile(r"<info[^>]*>", re.IGNORECASE)
+        info_tag_match = info_tag_pattern.search(file_content)
+        if info_tag_match:
+            original_info_tag = info_tag_match.group(0)
+            xmlns_pattern = re.compile(r'\s+xmlns(?::\w+)?="[^"]+"')
+            cleaned_info_tag = xmlns_pattern.sub('', original_info_tag)
+            
+            if original_info_tag != cleaned_info_tag:
+                file_content = file_content.replace(original_info_tag, cleaned_info_tag, 1)
+                info_tag_to_modify = cleaned_info_tag
+            else:
+                info_tag_to_modify = original_info_tag
+        else:
+            msg = "No <info> block found. Cannot process file."
             logging.warning(f"SKIPPED: {msg} ({path})")
             add_html_log_entry(html_log_entries, path, file_type, "WARNING", msg)
             return
-            
-        original_info_tag = info_tag_match.group(0)
-        status = ""
-        new_text = ""
 
-        if meta_tag_exists:
+        # 3. Add or Replace the meta tag.
+        existing_meta_pattern = re.compile(r'<meta\s+name="description".*?/>|<meta\s+name="description".*?>.*?</meta>', re.IGNORECASE | re.DOTALL)
+        new_meta_string = f'<meta name="description" its:translate="yes">{html.escape(desc)}</meta>'
+
+        status = ""
+        final_text = ""
+
+        if existing_meta_pattern.search(file_content):
             status = "REPLACED"
-            new_text = re.sub(r'<meta\s+name="description"[^>]*>', new_meta_tag, raw_text, count=1, flags=re.IGNORECASE)
+            final_text = existing_meta_pattern.sub(new_meta_string, file_content, 1)
         else:
             status = "ADDED"
-            if 'xmlns:its' not in original_info_tag:
-                updated_info_tag = original_info_tag.rstrip(' >') + f' xmlns:its="{ITS_NS}">'
-            else:
-                updated_info_tag = original_info_tag
-            insertion_text = f"{updated_info_tag}\n    {new_meta_tag}"
-            new_text = raw_text.replace(original_info_tag, insertion_text, 1)
-
+            insertion_text = f"{info_tag_to_modify}\n    {new_meta_string}"
+            final_text = file_content.replace(info_tag_to_modify, insertion_text, 1)
+        
         if update_status:
             status = update_status
-
-        path.write_text(new_text, encoding="utf-8")
+            
+        path.write_text(final_text, encoding="utf-8")
         logging.info(f"{status}: Description for {path} ({len(desc)} chars)")
         add_html_log_entry(html_log_entries, path, file_type, status, desc)
         return desc
+
     except (ET.XMLSyntaxError, IOError) as e:
         logging.error(f"Failed to process XML file {path}: {e}", exc_info=args.verbose)
         add_html_log_entry(html_log_entries, path, "DocBook XML", "ERROR", str(e))
@@ -668,7 +857,10 @@ def main():
     ap.add_argument("-v", "--verbose", action="store_true", help="Enable verbose DEBUG level logging.")
     ap.add_argument("--attributes-file", help="Path to an .adoc file with AsciiDoc attributes.")
     ap.add_argument("--banned-terms", help="Comma-separated list of case-insensitive terms to ban from the description.")
-    ap.add_argument("--entities-file", required=True, help="Path to an entities file (.adoc or .ent) to extract acronyms from.")
+    ap.add_argument("--entities-file", required=False, help="Optional path to an entities file (.adoc or .ent) to extract acronyms/brands.")
+    # NEW: Flag for conditional builds
+    ap.add_argument("-a", "--build-attributes", action="append", help="Set an AsciiDoc attribute for conditional processing, e.g., 'build-type=product'. Can be used multiple times.")
+
     args = ap.parse_args()
     args.report_title = args.report_title.replace('_', ' ')
 
@@ -683,7 +875,25 @@ def main():
         config.BANNED_LITERALS.update(x.strip() for x in args.banned_terms.split(","))
 
     system_info = get_system_info()
-    attributes = load_adoc_attributes(Path(args.attributes_file)) if args.attributes_file else {}
+    
+    # --- MODIFIED: Conditional attribute loading ---
+    attributes = {}
+    if args.attributes_file:
+        attributes_path = Path(args.attributes_file)
+        if args.build_attributes:
+            # For complex, conditional files, use the advanced parser
+            logging.info(f"Using advanced attribute parser with context: {args.build_attributes}")
+            build_context = {}
+            for attr in args.build_attributes:
+                if '=' in attr:
+                    key, value = attr.split('=', 1)
+                    build_context[key] = value
+            attributes = load_and_process_adoc_attributes(attributes_path, build_context)
+        else:
+            # For simple files, use the standard key-value parser
+            logging.info("Using standard attribute parser.")
+            attributes = load_adoc_attributes(attributes_path)
+
     acronyms_text = load_terms_from_file(args.entities_file)
     brands = load_brand_config_from_entities(args.entities_file)
     html_log_entries = [] if args.html_log else None

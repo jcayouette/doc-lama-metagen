@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-#
+# Author: Joseph Cayouette
+# Code Partner: Gemini AI 2.5 Pro
 # gen_descriptions.py — A generic script to generate meta descriptions for AsciiDoc and DocBook files.
 #
 # --- Setup Guide (e.g., openSUSE Leap 15.6) ---

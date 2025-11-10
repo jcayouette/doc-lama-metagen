@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-# Author: Joseph Cayouette
-# Code Partner: Gemini AI 2.5 Pro
+#
 # gen_descriptions.py — A generic script to generate meta descriptions for AsciiDoc and DocBook files.
 #
 # --- Setup Guide (e.g., openSUSE Leap 15.6) ---
@@ -56,25 +55,23 @@ Follow these rules strictly:
 - Write ONE complete sentence between 120 and 160 characters.
 - Use the active voice. Focus on what the user can DO or LEARN.
 - Start the sentence with a verb (e.g., "Learn how to...", "Configure...", "Deploy...").
+- Do NOT include specific version numbers unless they are critical to the content.
 - Do NOT use self-referential phrases like "This chapter describes", "In this document", or "This section explains".
 - NEVER mention that you are writing a "meta description", "summary", or any similar term. The output must not refer to itself.
 - Your output must NOT contain any conversational filler, preamble, or explanations. Start the response directly with the first word of the description sentence.
-- The sentence MUST be grammatically complete and end with a period.
+- The sentence MUST be grammatically complete and MUST NOT end with a period.
 - Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary (for example, instead of "YaST's tools", write "the YaST tools").
 - If the content is primarily a list of topics, describe the page's purpose as a central point for accessing that information.
 - If specified, do NOT use the following product or brand names: {blacklist}.
-- Where applicable, use the provided acronyms/terms to ensure conciseness and accuracy.
 - Maintain a neutral, professional, and direct tone. Avoid jargon, marketing language, and emojis.
-
---- ACRONYMS/TERMS TO USE ---
-{acronyms}
---- END ACRONYMS/TERMS ---
+- CRITICAL: Do NOT include any part of these instructions in your output. Output ONLY the meta description itself.
 
 Page content:
 ---
 {content}
 ---
-Output ONLY the final sentence:
+
+Your response must contain ONLY the meta description sentence, nothing else:
 """
 
     PROMPT_TMPL_RETRY: str = """You are an expert technical writer. Your previous attempt to write a meta description was too short.
@@ -86,18 +83,19 @@ Follow these rules strictly:
 - Expand on the key concepts. Explain what the user can achieve or understand from the content.
 - Start the sentence with a verb (e.g., "Learn how to...", "Configure...", "Deploy...").
 - Do NOT use self-referential phrases like "This chapter describes" or "This document explains".
-- The sentence MUST be grammatically complete and end with a period.
+- The sentence MUST be grammatically complete and MUST NOT end with a period.
 - Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary (for example, instead of "YaST's tools", write "the YaST tools").
 - Your output must NOT contain any preamble or explanation. Start directly with the description.
 - If specified, do NOT use the following product or brand names: {blacklist}.
-- Use the provided acronyms/terms: {acronyms}.
+- CRITICAL: Do NOT include any part of these instructions in your output. Output ONLY the meta description itself.
 
 ---
 Page content:
 ---
 {content}
 ---
-Output ONLY the final, longer sentence:
+
+Your response must contain ONLY the meta description sentence, nothing else:
 """
 
     PROMPT_TMPL_VALIDATE: str = """You are an expert copy editor. Your task is to correct any grammatical errors, awkward phrasing, or structural issues in the following sentence.
@@ -106,7 +104,7 @@ Follow these rules strictly:
 - The sentence must be a single, complete thought that is grammatically correct and easy to read.
 - Do NOT change the original meaning or key technical terms.
 - Remove any redundant or nonsensical phrases (e.g., "on your or", "and system").
-- Ensure the sentence ends with a period.
+- Ensure the sentence does NOT end with a period.
 - If the sentence is already perfect, return it unchanged.
 - Output ONLY the corrected sentence. Do not add any preamble or explanation.
 
@@ -367,29 +365,6 @@ def resolve_entities_in_string(text: str, brands: List[Dict[str, Any]]):
             text = text.replace(entity_ref, brand['name'])
     return text
 
-def load_terms_from_file(filepath: str) -> str:
-    """Intelligently parses .adoc or .ent files to extract terms/acronyms for the AI prompt."""
-    if not filepath or not os.path.exists(filepath):
-        if filepath: logging.warning(f"Entities file not found at {filepath}, continuing without terms.")
-        return "None provided."
-    
-    terms = []
-    content = Path(filepath).read_text(encoding='utf-8')
-    
-    if filepath.endswith('.adoc'):
-        regex = re.compile(r'^:[\w-]+:\s+(.*)', re.MULTILINE)
-        matches = regex.findall(content)
-        terms.extend(m.strip() for m in matches if '(' in m and ')' in m)
-    elif filepath.endswith('.ent'):
-        regex = re.compile(r'<!ENTITY\s+[\w-]+\s+"([^"]+)">')
-        matches = regex.findall(content)
-        terms.extend(m.strip() for m in matches if '(' in m and ')' in m)
-    else:
-        logging.warning(f"Unknown entities file format for {filepath}. Only .adoc and .ent are supported.")
-        return "None provided."
-
-    return "\n".join(terms) if terms else "None found in file."
-
 def call_ollama(model: str, prompt: str, base_url: str, timeout=120) -> str:
     """Calls the Ollama API."""
     try:
@@ -422,6 +397,29 @@ def sanitize_and_finalize(draft: str, config: ScriptConfig) -> str:
     """Runs the full cleaning and finalization pipeline."""
     desc = html.unescape(draft)
     
+    # CRITICAL: Remove any leaked prompt instructions - must be done FIRST before other processing
+    # Using simple case-insensitive string replacement for more reliable matching
+    leakage_phrases = [
+        "Follow these rules strictly",
+        "Your task is to",
+        "You must now",
+        "Output only",
+        "Critical:",
+        "Important:",
+        "Note:",
+        "Remember:",
+        "Your response must contain only",
+    ]
+    
+    # Remove leaked phrases (case-insensitive)
+    for phrase in leakage_phrases:
+        # Create a regex that matches the phrase with flexible whitespace
+        pattern = re.compile(re.escape(phrase), re.IGNORECASE)
+        desc = pattern.sub('', desc)
+    
+    # Clean up any resulting multiple spaces after leakage removal
+    desc = re.sub(r'\s+', ' ', desc).strip()
+    
     # Intelligently handle possessives before removing other characters
     desc = re.sub(r"(\w+)'s\b", r"\1s", desc)
     desc = desc.replace("'", "")
@@ -438,10 +436,12 @@ def sanitize_and_finalize(draft: str, config: ScriptConfig) -> str:
         desc = desc[:161]
         last_space = desc.rfind(" ")
         if last_space != -1: desc = desc[:last_space]
-    words = desc.rstrip(" ,;:-").split()
+    words = desc.rstrip(" ,;:-.").split()
     while words and words[-1].lower().strip(",.;") in config.TRAILING_STOPWORDS: words.pop()
     desc = " ".join(words)
-    if desc and not desc.endswith('.'): desc += '.'
+    # MODIFIED: Remove trailing period instead of adding one.
+    if desc.endswith('.'):
+        desc = desc[:-1]
     if desc: desc = desc[0].upper() + desc[1:]
     return desc
 
@@ -453,10 +453,15 @@ def should_skip(path: Path, config: ScriptConfig) -> bool:
     """Determines if a file should be skipped based on Antora conventions."""
     name = path.name
     if name.startswith('_'):
+        logging.debug(f"Skipping {path}: starts with underscore")
         return True
     if config.NAV_GENERIC_RE.match(name) or config.NAV_GUIDE_RE.match(name):
+        logging.debug(f"Skipping {path}: navigation file")
         return True
-    if any(p in ("nav", "navigation") for p in (part.lower() for part in path.parts)):
+    # Skip files in nav, navigation, or partials directories
+    path_parts_lower = [part.lower() for part in path.parts]
+    if any(p in ("nav", "navigation", "partials") for p in path_parts_lower):
+        logging.debug(f"Skipping {path}: in nav/navigation/partials directory")
         return True
     return False
 
@@ -561,13 +566,21 @@ def load_and_process_adoc_attributes(file_path: Path, initial_context: Dict[str,
 
 
 def resolve_attributes(text: str, attributes: dict) -> str:
+    """Iteratively replaces AsciiDoc attributes in a string."""
     if not attributes: return re.sub(r"\{([A-Za-z0-9_-]+)\}", "", text)
     # Iteratively replace attributes until no placeholders are left
     for _ in range(10): # Safety break for circular references
         if '{' not in text:
             break
+        # Create a temporary copy for this iteration's replacements
+        temp_text = text
         for key, value in attributes.items():
-            text = text.replace(f'{{{key}}}', str(value))
+            temp_text = temp_text.replace(f'{{{key}}}', str(value))
+        # If no changes were made in a full pass, we're done
+        if temp_text == text:
+            break
+        text = temp_text
+
     # Remove any remaining (unresolved) attributes
     text = re.sub(r"\{([A-Za-z0-9_-]+)\}", "", text)
     return text
@@ -598,7 +611,7 @@ def extract_adoc_payload(content: str, max_len: int = 4000) -> str:
     text = re.sub(r'\n{2,}', '\n', text)
     return text.strip()[:max_len]
 
-def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace, attributes: dict, html_log_entries: list = None, acronyms_text="", brands=[]):
+def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace, attributes: dict, html_log_entries: list = None, brands=[]):
     file_type = "AsciiDoc"
     logging.info(f"Processing {file_type}: {path}")
     try:
@@ -609,6 +622,7 @@ def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace
             add_html_log_entry(html_log_entries, path, file_type, "SKIPPED", msg)
             return
         
+        # Attributes are resolved first for AsciiDoc
         resolved_text = resolve_attributes(raw_text, attributes)
         payload = extract_adoc_payload(resolved_text)
         if not payload.strip():
@@ -617,20 +631,18 @@ def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace
             add_html_log_entry(html_log_entries, path, file_type, "WARNING", msg)
             return
 
-        prompt = config.PROMPT_TMPL.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload)
+        prompt = config.PROMPT_TMPL.format(blacklist=", ".join(config.BANNED_LITERALS), content=payload)
         draft = call_ollama(args.model, prompt, args.ollama_url)
 
-        # CORRECTED ORDER: Enforce rules, then correct grammar, then finalize.
         draft_after_branding, update_status = post_process_description(draft, str(path), brands)
         corrected_draft = validate_and_correct_grammar(draft_after_branding, args.model, args.ollama_url, config)
         desc = sanitize_and_finalize(corrected_draft, config)
 
         if not desc or len(desc) < 100:
             logging.warning(f"First pass description too short ({len(desc)} chars). Retrying for {path}")
-            retry_prompt = config.PROMPT_TMPL_RETRY.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload)
+            retry_prompt = config.PROMPT_TMPL_RETRY.format(blacklist=", ".join(config.BANNED_LITERALS), content=payload)
             draft = call_ollama(args.model, retry_prompt, args.ollama_url)
             
-            # Apply corrected order to retry as well
             draft_after_branding_retry, update_status = post_process_description(draft, str(path), brands)
             corrected_draft_retry = validate_and_correct_grammar(draft_after_branding_retry, args.model, args.ollama_url, config)
             desc = sanitize_and_finalize(corrected_draft_retry, config)
@@ -640,9 +652,7 @@ def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace
                 logging.error(f"SKIPPED: {msg} ({path})")
                 add_html_log_entry(html_log_entries, path, file_type, "ERROR", msg)
                 return
-
-        desc = resolve_entities_in_string(desc, brands)
-
+        
         if args.dry_run:
             logging.info(f"[DRY RUN] Would update {path}")
             add_html_log_entry(html_log_entries, path, file_type, "DRY_RUN", desc)
@@ -676,14 +686,14 @@ def process_adoc_file(path: Path, config: ScriptConfig, args: argparse.Namespace
 # This function uses a pure string/regex approach to perform the precise
 # namespace modifications requested.
 # ==============================================================================
-def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace, html_log_entries: list = None, acronyms_text="", brands=[]):
+def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace, html_log_entries: list = None, brands=[]):
     ITS_NS = "http://www.w3.org/2005/11/its"
     ns = {'db': 'http://docbook.org/ns/docbook', 'xi': 'http://www.w3.org/2001/XInclude'}
 
     try:
-        # --- Payload Extraction (same as before) ---
+        # MODIFIED: Payload parser now set to resolve_entities=False to prevent AI hyper-focus
         base_url = path.resolve().parent.as_uri() + "/"
-        parser_payload = ET.XMLParser(resolve_entities=True, load_dtd=True)
+        parser_payload = ET.XMLParser(resolve_entities=False, load_dtd=True)
         payload_tree = ET.parse(str(path), parser=parser_payload, base_url=base_url)
         
         root = payload_tree.getroot()
@@ -708,7 +718,8 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
                 if not included_path.is_file(): continue
                 
                 try:
-                    included_tree = ET.parse(str(included_path))
+                    # Use a non-resolving parser here too for consistency
+                    included_tree = ET.parse(str(included_path), ET.XMLParser(resolve_entities=False))
                     title_element = included_tree.find('.//db:info/db:title', namespaces=ns)
                     if title_element is not None:
                         titles.append(''.join(title_element.itertext()).strip())
@@ -721,7 +732,7 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
                 logging.info("Found <abstract> tag. Using it as the primary payload.")
                 payload = "\n".join(text.strip() for text in abstract_element.itertext() if text.strip())
             else:
-                payload_tree.xinclude()
+                payload_tree.xinclude() # xinclude might still be useful for structure
                 payload = "\n".join(text.strip() for text in payload_tree.getroot().itertext() if text.strip())
 
         raw_text = path.read_text(encoding="utf-8")
@@ -738,7 +749,7 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
             return
 
         # --- AI Generation and Processing ---
-        prompt = config.PROMPT_TMPL.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload[:4000])
+        prompt = config.PROMPT_TMPL.format(blacklist=", ".join(config.BANNED_LITERALS), content=payload[:4000])
         draft = call_ollama(args.model, prompt, args.ollama_url)
         
         draft_after_branding, update_status = post_process_description(draft, str(path), brands)
@@ -747,7 +758,7 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
 
         if not desc or len(desc) < 100:
             logging.warning(f"First pass description too short ({len(desc)} chars). Retrying for {path}")
-            retry_prompt = config.PROMPT_TMPL_RETRY.format(blacklist=", ".join(config.BANNED_LITERALS), acronyms=acronyms_text, content=payload[:4000])
+            retry_prompt = config.PROMPT_TMPL_RETRY.format(blacklist=", ".join(config.BANNED_LITERALS), content=payload[:4000])
             draft = call_ollama(args.model, retry_prompt, args.ollama_url)
             
             draft_after_branding_retry, update_status = post_process_description(draft, str(path), brands)
@@ -760,6 +771,7 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
                 add_html_log_entry(html_log_entries, path, file_type, "ERROR", msg)
                 return
         
+        # MODIFIED: Entities are resolved at the end for DocBook files.
         desc = resolve_entities_in_string(desc, brands)
         
         if args.dry_run:
@@ -795,8 +807,22 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
             logging.warning(f"LXML parse failed for {path} while finding root tag: {e}. Skipping 'its' namespace injection.")
 
         # 2. Actively remove all xmlns attributes from the <info> tag.
-        info_tag_pattern = re.compile(r"<info[^>]*>", re.IGNORECASE)
+        # Use word boundary to avoid matching <informaltable>
+        info_tag_pattern = re.compile(r"<\binfo\b[^>]*>", re.IGNORECASE)
         info_tag_match = info_tag_pattern.search(file_content)
+        
+        # If no <info> tag exists, create one.
+        if not info_tag_match:
+            root_tag_pattern = re.compile(fr"<{root_tag_local_name}[^>]*>", re.DOTALL)
+            root_tag_match = root_tag_pattern.search(file_content)
+            if root_tag_match:
+                original_root_tag = root_tag_match.group(0)
+                # Add an info block right after the root tag's opening
+                insertion_point = f"{original_root_tag}\n  <info></info>"
+                file_content = file_content.replace(original_root_tag, insertion_point, 1)
+                # Find the newly created info tag
+                info_tag_match = info_tag_pattern.search(file_content)
+
         if info_tag_match:
             original_info_tag = info_tag_match.group(0)
             xmlns_pattern = re.compile(r'\s+xmlns(?::\w+)?="[^"]+"')
@@ -808,7 +834,7 @@ def process_xml_file(path: Path, config: ScriptConfig, args: argparse.Namespace,
             else:
                 info_tag_to_modify = original_info_tag
         else:
-            msg = "No <info> block found. Cannot process file."
+            msg = "No <info> block found and could not create one. Cannot process file."
             logging.warning(f"SKIPPED: {msg} ({path})")
             add_html_log_entry(html_log_entries, path, file_type, "WARNING", msg)
             return
@@ -895,7 +921,7 @@ def main():
             logging.info("Using standard attribute parser.")
             attributes = load_adoc_attributes(attributes_path)
 
-    acronyms_text = load_terms_from_file(args.entities_file)
+    # MODIFIED: Removed acronyms_text loading
     brands = load_brand_config_from_entities(args.entities_file)
     html_log_entries = [] if args.html_log else None
     
@@ -919,9 +945,11 @@ def main():
     for path in sorted(final_file_list):
         result = None
         if path.suffix.lower() == '.adoc':
-            result = process_adoc_file(path, config, args, attributes, html_log_entries, acronyms_text, brands)
+            # MODIFIED: Removed acronyms_text from call
+            result = process_adoc_file(path, config, args, attributes, html_log_entries, brands)
         elif path.suffix.lower() == '.xml':
-            result = process_xml_file(path, config, args, html_log_entries, acronyms_text, brands)
+            # MODIFIED: Removed acronyms_text from call
+            result = process_xml_file(path, config, args, html_log_entries, brands)
         
         if result and not args.dry_run:
             changed_files_count += 1

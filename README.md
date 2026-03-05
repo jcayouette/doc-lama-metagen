@@ -1,10 +1,50 @@
-# Doc Lama Meta Generator (AI meta description generator)
+# Documentation Meta Description Generator
 
-This repository contains `doc-lama-metagen.py`, a Python script that uses a local AI model (via Ollama) to automatically generate and update SEO-friendly meta descriptions for technical documentation written in AsciiDoc and DocBook format.
+AI-powered meta description generator for technical documentation using local LLMs via Ollama.
 
-The script is designed to adhere to technical writing best practices, ensuring descriptions are active, concise, and grammatically correct. It also includes features for handling project-specific branding, acronyms, and conditional attributes.
+## 🎯 Overview
 
-## Features ✨
+This repository contains **two implementations** of an AI-powered meta description generator:
+
+1. **🐹 Go Implementation** ([`doc-meta-gen/`](doc-meta-gen/)) - Modern, modular, production-ready
+2. **🐍 Python Implementation** ([`doc-lama-metagen.py`](doc-lama-metagen.py)) - Original reference implementation
+
+Both use local AI models via Ollama to automatically generate SEO-friendly meta descriptions for technical documentation (AsciiDoc and DocBook formats), following the SUSE Technical Writing Style Guide.
+
+## 🐹 Go Implementation (Recommended)
+
+**Location**: [`doc-meta-gen/`](doc-meta-gen/)
+
+Modern, modular implementation with clean architecture:
+
+### Advantages
+- ✅ **Modular design**: Provider-based architecture for easy extensibility
+- ✅ **Type safety**: Compile-time error checking
+- ✅ **Single binary**: No dependencies, easy deployment
+- ✅ **Better performance**: Lower memory usage (~50-80 MB)
+- ✅ **Production-ready**: Interface-driven, testable code
+
+### Quick Start
+```bash
+cd doc-meta-gen
+go build -o doc-meta-gen ./cmd/doc-meta-gen
+./doc-meta-gen --root ./testdata --dry-run
+```
+
+📖 **Documentation**: 
+- [README.md](doc-meta-gen/README.md) - Complete guide
+- [USAGE.md](doc-meta-gen/USAGE.md) - Getting started
+- [PROJECT.md](PROJECT.md) - Architecture details
+
+---
+
+## 🐍 Python Implementation (Reference)
+
+**Location**: [`doc-lama-metagen.py`](doc-lama-metagen.py)
+
+Original proof-of-concept with full feature set:
+
+### Features
 
   * **AI-Powered Content**: Leverages local large language models (like Llama 3.1) to generate high-quality, context-aware descriptions.
   * **AsciiDoc & DocBook Support**: Processes `.adoc` and `.xml` files, correctly inserting descriptions as AsciiDoc attributes or XML tags.

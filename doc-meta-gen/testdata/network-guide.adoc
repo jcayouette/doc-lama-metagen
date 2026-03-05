@@ -1,0 +1,51 @@
+= Configuring Network Services
+
+This guide explains how to configure network services on {productname}. You will learn about setting up DHCP, DNS, and managing firewall rules using YaST and command-line tools.
+
+== Prerequisites
+
+Before configuring network services, ensure that:
+
+* Your system has network connectivity
+* You have administrator privileges
+* The required packages are installed
+
+== Configuring DHCP
+
+Dynamic Host Configuration Protocol (DHCP) automatically assigns IP addresses to devices on your network. To configure a DHCP server:
+
+. Install the DHCP server package
+. Edit the `/etc/dhcpd.conf` configuration file
+. Define your network ranges and options
+. Start and enable the DHCP service
+
+== Managing DNS
+
+Domain Name System (DNS) translates domain names to IP addresses. You can configure DNS using:
+
+* YaST network configuration module
+* Direct editing of `/etc/resolv.conf`
+* NetworkManager for desktop systems
+
+== Firewall Configuration
+
+The built-in firewall protects your system from unauthorized access. Key concepts include:
+
+* Zones (trusted, public, dmz)
+* Services and ports
+* Rich rules for advanced filtering
+
+Use `firewalld` or YaST to manage firewall settings.
+
+== Troubleshooting
+
+Common issues and solutions:
+
+* Check service status with `systemctl`
+* Review logs in `/var/log/messages`
+* Verify network interface configuration
+* Test connectivity with `ping` and `traceroute`
+
+== Additional Resources
+
+For more information, consult the {productname} documentation and community forums.

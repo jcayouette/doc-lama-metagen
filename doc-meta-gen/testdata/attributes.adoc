@@ -1,0 +1,3 @@
+:productname: SUSE Linux Enterprise Server
+:productnumber: 15
+:version: 15 SP6

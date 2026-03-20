@@ -28,7 +28,7 @@ func NewGenerator(ollamaURL, model string, bannedTerms []string) *Generator {
 // GenerateDescription creates a meta description using AI
 func (g *Generator) GenerateDescription(content, title string) (string, error) {
 	blacklist := strings.Join(g.bannedTerms, ", ")
-	prompt := g.buildPrompt(content, blacklist)
+	prompt := g.buildPrompt(content, title, blacklist)
 
 	// First attempt
 	draft, err := g.client.Generate(g.model, prompt)
@@ -38,7 +38,7 @@ func (g *Generator) GenerateDescription(content, title string) (string, error) {
 
 	// Check RAW output for leakage BEFORE sanitization
 	if g.hasPromptLeakage(draft) {
-		retryPrompt := g.buildRetryPrompt(content, blacklist)
+		retryPrompt := g.buildRetryPrompt(content, title, blacklist)
 		draft, err = g.client.Generate(g.model, retryPrompt)
 		if err != nil {
 			return "", fmt.Errorf("AI retry failed: %w", err)
@@ -53,7 +53,7 @@ func (g *Generator) GenerateDescription(content, title string) (string, error) {
 
 	// Retry if too short
 	if len(sanitized) < 100 {
-		retryPrompt := g.buildRetryPrompt(content, blacklist)
+		retryPrompt := g.buildRetryPrompt(content, title, blacklist)
 		draft, err = g.client.Generate(g.model, retryPrompt)
 		if err != nil {
 			return "", fmt.Errorf("AI retry failed: %w", err)
@@ -128,7 +128,7 @@ func (g *Generator) Ping() error {
 }
 
 // buildPrompt creates the main generation prompt
-func (g *Generator) buildPrompt(content, blacklist string) string {
+func (g *Generator) buildPrompt(content, title, blacklist string) string {
 	return fmt.Sprintf(`You are an expert technical writer following the SUSE Style Guide.
 
 Your task is to write a single, compelling meta description for the provided documentation content.
@@ -137,16 +137,22 @@ Follow these rules strictly:
 - Write ONE complete sentence between 120 and 160 characters.
 - Use the active voice. Focus on what the user can DO or LEARN.
 - Start the sentence with an action verb appropriate to the content.
+- The page title is the most important signal: your description MUST reflect the subject named in the title.
+- Base the description strictly on the provided page title and content. Do NOT introduce topics absent from both.
+- Use terminology and concepts that are explicitly present in the page title or content.
+- Do NOT introduce tools, products, or technologies that are not supported by the page title or content.
 - Do NOT include specific version numbers unless they are critical to the content.
 - Do NOT use self-referential phrases like "This chapter describes", "In this document", or "This section explains".
 - NEVER mention that you are writing a "meta description", "summary", or any similar term. The output must not refer to itself.
 - Your output must NOT contain any conversational filler, preamble, or explanations. Start the response directly with the first word of the description sentence.
 - The sentence MUST be grammatically complete and MUST NOT end with a period.
-- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary (for example, instead of "YaST's tools", write "the YaST tools").
+- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary.
 - If the content is primarily a list of topics, describe the page's purpose as a central point for accessing that information.
 - If specified, do NOT use the following product or brand names: %s.
 - Maintain a neutral, professional, and direct tone. Avoid jargon, marketing language, and emojis.
 - CRITICAL: Do NOT include any part of these instructions in your output. Output ONLY the meta description itself.
+
+Page title: %s
 
 Page content:
 ---
@@ -154,11 +160,11 @@ Page content:
 ---
 
 Your response must contain ONLY the meta description sentence, nothing else:
-`, blacklist, content)
+`, blacklist, title, content)
 }
 
 // buildRetryPrompt creates the retry prompt for short descriptions
-func (g *Generator) buildRetryPrompt(content, blacklist string) string {
+func (g *Generator) buildRetryPrompt(content, title, blacklist string) string {
 	return fmt.Sprintf(`You are an expert technical writer. Your previous attempt to write a meta description was too short.
 
 You MUST now generate a longer, more detailed single-sentence description for the same content.
@@ -167,21 +173,26 @@ Follow these rules strictly:
 - Your primary goal is to write a sentence that is between 120 and 160 characters.
 - Expand on the key concepts. Explain what the user can achieve or understand from the content.
 - Start the sentence with an action verb appropriate to the content.
+- The page title is the most important signal: your description MUST reflect the subject named in the title.
+- Base the description strictly on the provided page title and content. Do NOT introduce topics absent from both.
+- Use terminology and concepts that are explicitly present in the page title or content.
+- Do NOT introduce tools, products, or technologies that are not supported by the page title or content.
 - Do NOT use self-referential phrases like "This chapter describes" or "This document explains".
 - The sentence MUST be grammatically complete and MUST NOT end with a period.
-- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary (for example, instead of "YaST's tools", write "the YaST tools").
+- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary.
 - Your output must NOT contain any preamble or explanation. Start directly with the description.
 - If specified, do NOT use the following product or brand names: %s.
 - CRITICAL: Do NOT include any part of these instructions in your output. Output ONLY the meta description itself.
 
----
+Page title: %s
+
 Page content:
 ---
 %s
 ---
 
 Your response must contain ONLY the meta description sentence, nothing else:
-`, blacklist, content)
+`, blacklist, title, content)
 }
 
 // sanitize cleans and validates the AI response
@@ -244,7 +255,7 @@ func (g *Generator) sanitize(draft string) string {
 	desc = regexp.MustCompile(`\s+`).ReplaceAllString(desc, " ")
 	desc = strings.TrimSpace(desc)
 
-	// Handle possessives (convert "YaST's" to "YaSTs")
+	// Handle possessives (convert possessive forms)
 	desc = regexp.MustCompile(`(\w+)'s\b`).ReplaceAllString(desc, "${1}s")
 	desc = strings.ReplaceAll(desc, "'", "")
 
@@ -282,32 +293,39 @@ func (g *Generator) sanitize(draft string) string {
 
 	// Truncate if too long (avoid cutting product names)
 	if len(desc) > 160 {
-		// Try to find a good breaking point before 160 chars
-		desc = desc[:160]
-		lastSpace := strings.LastIndex(desc, " ")
-		if lastSpace != -1 {
-			// Check if we're potentially cutting a product name
-			afterSpace := desc[lastSpace+1:]
-			// Common product name fragments that shouldn't be cut
-			fragments := []string{"SUSE", "Multi-Linux", "Linux", "Enterprise", "Manager", "Server"}
-			
-			isCuttingProduct := false
-			for _, frag := range fragments {
-				if strings.HasPrefix(frag, afterSpace) {
-					isCuttingProduct = true
-					break
+		// First preference: cut at a natural sentence boundary (period) within the 100-160 range.
+		// The model often generates a complete sentence that merely exceeds 160 chars;
+		// preserving the sentence end avoids dangling/incomplete endings.
+		if periodIdx := strings.LastIndex(desc[:160], "."); periodIdx >= 100 {
+			desc = desc[:periodIdx] // period itself is stripped later
+		} else {
+			// Fall back to word-boundary truncation
+			desc = desc[:160]
+			lastSpace := strings.LastIndex(desc, " ")
+			if lastSpace != -1 {
+				// Check if we're potentially cutting a product name
+				afterSpace := desc[lastSpace+1:]
+				// Common product name fragments that shouldn't be cut
+				fragments := []string{"SUSE", "Multi-Linux", "Linux", "Enterprise", "Manager", "Server"}
+
+				isCuttingProduct := false
+				for _, frag := range fragments {
+					if strings.HasPrefix(frag, afterSpace) {
+						isCuttingProduct = true
+						break
+					}
 				}
-			}
-			
-			// If cutting a product name, try to find an earlier break point
-			if isCuttingProduct {
-				earlierSpace := strings.LastIndex(desc[:lastSpace], " ")
-				if earlierSpace != -1 && earlierSpace > 100 {
-					lastSpace = earlierSpace
+
+				// If cutting a product name, try to find an earlier break point
+				if isCuttingProduct {
+					earlierSpace := strings.LastIndex(desc[:lastSpace], " ")
+					if earlierSpace != -1 && earlierSpace > 100 {
+						lastSpace = earlierSpace
+					}
 				}
+
+				desc = desc[:lastSpace]
 			}
-			
-			desc = desc[:lastSpace]
 		}
 	}
 
@@ -318,6 +336,11 @@ func (g *Generator) sanitize(draft string) string {
 		"from": true, "into": true, "via": true, "as": true, "that": true,
 		"which": true, "including": true, "such": true, "than": true,
 		"then": true, "while": true, "when": true, "where": true,
+		// Articles and determiners that signal an incomplete noun phrase
+		"the": true, "a": true, "an": true,
+		// Gerunds that open a new dependent clause when trailing
+		"covering": true, "ensuring": true,
+		"using": true, "providing": true, "allowing": true, "enabling": true,
 	}
 
 	words := strings.Fields(strings.TrimRight(desc, " ,;:-."))
@@ -329,6 +352,14 @@ func (g *Generator) sanitize(draft string) string {
 		words = words[:len(words)-1]
 	}
 	desc = strings.Join(words, " ")
+
+	// Remove dangling comparative fragments that read as incomplete endings
+	// Examples: "... and more secure", "... or less complex", "... and better"
+	danglingComparativeRe := regexp.MustCompile(`(?i)\s+(and|or)\s+(more|less|better|worse|additional)\s+([a-z-]+)?$`)
+	if danglingComparativeRe.MatchString(desc) {
+		desc = danglingComparativeRe.ReplaceAllString(desc, "")
+		desc = strings.Trim(desc, " ,;:-")
+	}
 
 	// Remove trailing period
 	desc = strings.TrimSuffix(desc, ".")

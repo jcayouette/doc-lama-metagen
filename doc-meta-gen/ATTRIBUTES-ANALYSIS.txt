@@ -1,0 +1,150 @@
+IMPORTANT: Attribute File Configuration for Kubewarden v1.32
+============================================================
+
+Issue Discovered
+----------------
+The initial dry-run used the WRONG attributes file, which is why the AI generated 
+descriptions with incorrect terminology (like "YaST tools" and "SUSE Linux" instead 
+of Kubewarden-specific terms).
+
+Correct Attributes File Structure
+----------------------------------
+Version 1.32 uses a multi-level include structure:
+
+1. Each page includes:
+   include::partial$variables.adoc[]
+
+2. version-1.32/modules/en/partials/variables.adoc contains:
+   include::latest@shared:en:partial$kubewarden-variables-1.24-next.adoc[]
+
+3. The actual attributes are in:
+   shared/modules/en/partials/kubewarden-variables-1.24-next.adoc
+
+Key Attributes Defined
+----------------------
+From kubewarden-variables-1.24-next.adoc:
+
+Product Names:
+- {kw-product-name} = "SUSE Security Admission Controller"
+- {kw-product-short-name} = "Admission Controller"  
+- {kw-product-abbrev} = "SSAC"
+- {kw-community-name} = "Kubewarden"
+- {project-name} = varies based on build-type (community vs product)
+- {product-name} = varies based on build-type
+- {short-product-name} = varies based on build-type
+
+Glossary Terms (as xrefs):
+- {admission-policy} = xref:glossary.adoc#_admissionpolicy[AdmissionPolicy]
+- {cluster-admission-policy} = xref:glossary.adoc#_clusteradmissionpolicy[ClusterAdmissionPolicy]
+- {policy-server} = xref:glossary.adoc#_policyserver[PolicyServer]
+- {kwctl} = xref:glossary.adoc#_kwctl[kwctl]
+- {Wasm} = xref:glossary.adoc#_wasm[Wasm]
+- {WASI} = xref:glossary.adoc#_wasi[WASI]
+- {waPC} = xref:glossary.adoc#_wapc[waPC]
+
+How doc-meta-gen Handles Attributes
+------------------------------------
+The tool DOES expand attributes correctly:
+
+1. Loads attributes from specified file: attributes.Store.LoadFromFile()
+2. Resolves nested attributes: resolveNestedAttributes()
+3. Expands attributes in content: attrs.Resolve(bodyText)
+4. Sends expanded text to AI
+
+From internal/providers/asciidoc/asciidoc.go line 151:
+    if attrs != nil {
+        bodyText = attrs.Resolve(bodyText)
+    }
+
+The Problem with Our Initial Run
+---------------------------------
+❌ We used: --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables.adoc
+
+✅ Should use: --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables-1.24-next.adoc
+
+Why This Matters
+----------------
+kubewarden-variables.adoc has:
+- Simpler product name structure
+- Fewer attributes (58 lines)
+- Different product naming conventions
+
+kubewarden-variables-1.24-next.adoc has:
+- More detailed product naming
+- Additional glossary terms (Wasm, WASI, Wasmtime)
+- Build-type conditionals
+- More complete attribute set (79 lines)
+
+Impact on AI Generated Descriptions
+------------------------------------
+When the AI generates descriptions, it sees:
+- BEFORE expansion: "Learn about {project-name} and {policy-server}"
+- AFTER expansion: "Learn about SUSE Security Admission Controller and PolicyServer"
+
+If attributes aren't expanded correctly, the AI might:
+1. Generate generic descriptions
+2. Hallucinate terminology
+3. Use wrong product names
+4. Miss context-specific technical terms
+
+Recommended Action
+------------------
+Re-run the generation with the CORRECT attributes file:
+
+./doc-meta-gen \
+  --root ../../kubewarden-docs/docs/version-1.32 \
+  --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables-1.24-next.adoc \
+  --type asciidoc \
+  --dry-run
+
+This should produce much better descriptions that:
+✓ Use correct Kubewarden terminology
+✓ Reference proper product names
+✓ Include appropriate technical terms
+✓ Maintain consistency with existing content
+
+Build Context Considerations
+-----------------------------
+The attributes file uses build-type conditionals:
+
+ifeval::["{build-type}" == "community"]
+  :product-name: {kw-community-name}
+  ...
+endif::[]
+
+ifeval::["{build-type}" == "product"]
+  :product-name: {kw-product-name}
+  ...
+endif::[]
+
+You may want to specify build context with the -a flag:
+
+For community build:
+  -a build-type=community
+  OR
+  -a kw-build-community=true
+
+For product build:
+  -a build-type=product
+  OR
+  (default, no flag needed)
+
+This will ensure attributes expand with the correct product naming convention.
+
+Example Full Command
+--------------------
+For PRODUCT build (SUSE branded):
+./doc-meta-gen \
+  --root ../../kubewarden-docs/docs/version-1.32 \
+  --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables-1.24-next.adoc \
+  -a build-type=product \
+  --type asciidoc \
+  --dry-run
+
+For COMMUNITY build (Kubewarden branded):
+./doc-meta-gen \
+  --root ../../kubewarden-docs/docs/version-1.32 \
+  --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables-1.24-next.adoc \
+  -a build-type=community \
+  --type asciidoc \
+  --dry-run

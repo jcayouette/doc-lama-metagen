@@ -3,6 +3,8 @@ package processor
 import (
 	"fmt"
 	"log"
+	"regexp"
+	"strings"
 
 	"github.com/scribe/doc-meta-gen/internal/ai"
 	"github.com/scribe/doc-meta-gen/internal/models"
@@ -79,9 +81,14 @@ func (p *Processor) ProcessFile(path string) (*models.ProcessingResult, error) {
 		return result, err
 	}
 
-	if content.RawContent == "" {
+	const minContentLength = 150
+	if len(content.RawContent) < minContentLength {
 		result.Status = models.StatusWarning
-		result.Details = "Empty content after extraction"
+		if content.RawContent == "" {
+			result.Details = "Empty content after extraction"
+		} else {
+			result.Details = fmt.Sprintf("Insufficient content for generation (%d chars, minimum %d)", len(content.RawContent), minContentLength)
+		}
 		log.Printf("WARNING: %s - %s", path, result.Details)
 		return result, nil
 	}
@@ -98,6 +105,18 @@ func (p *Processor) ProcessFile(path string) (*models.ProcessingResult, error) {
 	correctedDesc, err := p.generator.ValidateGrammar(description)
 	if err == nil && correctedDesc != "" {
 		description = correctedDesc
+	}
+
+	// Resolve any attribute references the model echoed from the source content
+	// (e.g. {project-name} → "SUSE Security Admission Controller").
+	// Resolve() also strips any references that couldn't be resolved.
+	if p.attributes != nil {
+		description = p.attributes.Resolve(description)
+		// Some attribute values contain AsciiDoc markup (xref, link). Strip it,
+		// keeping only the display text so the description stays plain text.
+		description = regexp.MustCompile(`(?:xref|link):[^\[]+\[([^\]]*)\]`).ReplaceAllString(description, "$1")
+		description = regexp.MustCompile(`\s+`).ReplaceAllString(description, " ")
+		description = strings.TrimSpace(description)
 	}
 
 	result.Description = description

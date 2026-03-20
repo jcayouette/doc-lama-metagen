@@ -38,7 +38,7 @@ func NewProvider() *Provider {
 		navGuideRe:   regexp.MustCompile(`^nav-.+-guide\.adoc$`),
 		headingRe:    regexp.MustCompile(`^==+\s+(.+)$`),
 		listItemRe:   regexp.MustCompile(`^[\*\.\-]+\s+(.+)$`),
-		blockDelimRe: regexp.MustCompile(`^(----|\.\.\.\.|====|\*\*\*\*|____|\+\+\+\+)$`),
+		blockDelimRe: regexp.MustCompile(`^(\|===|----|\.\.\.\.|====|\*\*\*\*|____|\+\+\+\+)$`),
 		inlineCodeRe: regexp.MustCompile("`([^`]+)`"),
 		boldRe:       regexp.MustCompile(`\*([^*]+)\*`),
 		italicRe:     regexp.MustCompile(`_([^_]+)_`),
@@ -104,15 +104,23 @@ func (p *Provider) Extract(path string, attrs *attributes.Store) (*models.PageCo
 	headerEnd := 0
 
 	scanner := bufio.NewScanner(file)
+	// Use a larger buffer for long lines (YAML frontmatter, long attribute lines, etc.)
+	scanner.Buffer(make([]byte, 1024*1024), 1024*1024)
 	lineNum := 0
+	inHeader := true // track whether we are still in the AsciiDoc header
 
-	// First pass: extract title, description, and identify header end
+	// Single pass: read ALL lines, extract header metadata while scanning
 	for scanner.Scan() {
 		line := scanner.Text()
 		lineNum++
 		rawLines = append(rawLines, line)
 
-		// Extract title (first line matching pattern)
+		if !inHeader {
+			// Body lines — nothing to inspect for header metadata
+			continue
+		}
+
+		// Extract title (first line matching the pattern)
 		if title == "" && p.titleRe.MatchString(line) {
 			matches := p.titleRe.FindStringSubmatch(line)
 			if len(matches) > 1 {
@@ -131,10 +139,10 @@ func (p *Provider) Extract(path string, attrs *attributes.Store) (*models.PageCo
 			continue
 		}
 
-		// Detect end of header (first non-attribute line after title)
+		// Detect end of header: first non-empty, non-attribute line after the title
 		if title != "" && line != "" && !strings.HasPrefix(line, ":") {
 			headerEnd = lineNum - 1
-			break
+			inHeader = false
 		}
 	}
 
@@ -142,7 +150,7 @@ func (p *Provider) Extract(path string, attrs *attributes.Store) (*models.PageCo
 		return nil, fmt.Errorf("error reading file: %w", err)
 	}
 
-	// Extract body content (after header)
+	// Extract body content (everything after the header)
 	bodyLines := rawLines[headerEnd:]
 	bodyText := strings.Join(bodyLines, "\n")
 
@@ -195,8 +203,13 @@ func (p *Provider) extractPlainText(text string) string {
 			continue
 		}
 
-		// Remove section headings
+		// Include section headings as plain text — they are the most information-dense
+		// signal on the page and must reach the model.
 		if p.headingRe.MatchString(trimmed) {
+			matches := p.headingRe.FindStringSubmatch(trimmed)
+			if len(matches) > 1 {
+				cleanLines = append(cleanLines, matches[1])
+			}
 			continue
 		}
 
@@ -284,24 +297,15 @@ func (p *Provider) WriteDescription(path string, description string, dryRun bool
 		return fmt.Errorf("error reading file: %w", err)
 	}
 
-	// Find title line and collect existing descriptions
+	// Find title line
 	titleIdx := -1
-	var oldDescription string
-	foundDescription := false
 
 	prevDescRe := regexp.MustCompile(`^:\s*prev-description\s*:\s*(.*)$`)
 
-	// First pass: find title and first valid description
+	// First pass: find title
 	for i, line := range lines {
 		if titleIdx == -1 && p.titleRe.MatchString(line) {
 			titleIdx = i
-		}
-		if !foundDescription && p.descRe.MatchString(line) {
-			matches := p.descRe.FindStringSubmatch(line)
-			if len(matches) > 1 {
-				oldDescription = strings.TrimSpace(matches[1])
-			}
-			foundDescription = true
 		}
 	}
 
@@ -347,37 +351,22 @@ func (p *Provider) WriteDescription(path string, description string, dryRun bool
 		}
 	}
 
-	// Now add new description and prev-description
+	// Now add new description
 	descLine := fmt.Sprintf(":description: %s", description)
-	
+
 	if titleIdx != -1 {
 		// Insert after title
 		insertIdx := titleIdx + 1
-		
+
 		// Build new slice from scratch to avoid aliasing issues
 		var newLines []string
 		newLines = append(newLines, lines[:insertIdx]...)
-		
-		if oldDescription != "" {
-			// Add prev-description
-			prevDescLine := fmt.Sprintf(":prev-description: %s", oldDescription)
-			newLines = append(newLines, prevDescLine)
-		}
-		
-		// Add new description
 		newLines = append(newLines, descLine)
-		
-		// Add remaining lines
 		newLines = append(newLines, lines[insertIdx:]...)
 		lines = newLines
 	} else {
 		// No title found, insert at beginning
-		if oldDescription != "" {
-			prevDescLine := fmt.Sprintf(":prev-description: %s", oldDescription)
-			lines = append([]string{prevDescLine, descLine}, lines...)
-		} else {
-			lines = append([]string{descLine}, lines...)
-		}
+		lines = append([]string{descLine}, lines...)
 	}
 
 	// Write back to file

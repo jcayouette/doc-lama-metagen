@@ -1,0 +1,209 @@
+IMPROVEMENT PLAN: Fix AI Description Quality Issues
+====================================================
+
+Problem Analysis
+----------------
+1. ❌ Prompt contains "YaST tools" as an example (lines 145, 172)
+   - This teaches the AI to USE YaST, not avoid it!
+   
+2. ❌ Prompt is too generic - no Kubernetes/Kubewarden context
+   - AI doesn't know this is policy/Kubernetes documentation
+   
+3. ❌ No explicit bans on irrelevant terms
+   - "YaST", "installation process", "SUSE Linux installation" not banned
+   
+4. ❌ Content extraction may include irrelevant examples
+   - Navigation, includes, and boilerplate can confuse the AI
+
+Solutions
+---------
+
+SOLUTION 1: Fix the Prompt (HIGH PRIORITY)
+-------------------------------------------
+Remove the YaST example and add Kubernetes/policy context:
+
+CHANGES TO: internal/ai/generator.go
+
+OLD (lines 145, 172):
+```
+- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary (for example, instead of "YaST's tools", write "the YaST tools").
+```
+
+NEW:
+```
+- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary (for example, instead of "system's configuration", write "system configuration").
+```
+
+ADD after line 138: "Follow these rules strictly:"
+```
+- This documentation is about Kubernetes, policies, admission control, and WebAssembly.
+- Focus on policy management, cluster security, admission controllers, and Kubernetes resources.
+- Use terminology like: policies, admission, validation, mutation, Kubernetes, clusters, resources, WebAssembly, Wasm.
+- Avoid generic operating system or installation terminology unless directly relevant.
+```
+
+ADD to blacklist section (line 149):
+```
+- NEVER use the following irrelevant terms: "YaST", "YaST tools", "installation process", "SUSE Linux installation", "package management", unless they are genuinely central to the content.
+```
+
+SOLUTION 2: Add Default Banned Terms (MEDIUM PRIORITY)
+-------------------------------------------------------
+CHANGES TO: cmd/doc-meta-gen/main.go
+
+Around line 45 where generator is initialized:
+
+OLD:
+```go
+generator := ai.NewGenerator(config.OllamaURL, config.ModelName, config.BannedTerms)
+```
+
+NEW:
+```go
+// Add default banned terms for Kubewarden docs
+defaultBannedTerms := []string{
+    "YaST",
+    "YaST tools",
+    "installation process",
+    "SUSE Linux installation",
+    "package management",
+}
+allBannedTerms := append(defaultBannedTerms, config.BannedTerms...)
+generator := ai.NewGenerator(config.OllamaURL, config.ModelName, allBannedTerms)
+```
+
+SOLUTION 3: Enhance Content Extraction (MEDIUM PRIORITY)
+---------------------------------------------------------
+CHANGES TO: internal/providers/asciidoc/asciidoc.go
+
+Add better filtering to extractPlainText() function:
+
+Around line 160, add more skip patterns:
+```go
+// Skip navigation and boilerplate lines
+skipPatterns := []string{
+    "include::",
+    "xref:",
+    "see xref:",
+    "for more information",
+    "back to xref:",
+}
+
+for _, pattern := range skipPatterns {
+    if strings.Contains(strings.ToLower(trimmed), pattern) {
+        continue
+    }
+}
+```
+
+SOLUTION 4: Add Context Hints (LOW PRIORITY)
+---------------------------------------------
+CHANGES TO: internal/ai/generator.go
+
+Modify buildPrompt to detect and emphasize key terms:
+
+After line 154 (before Page content:), add:
+```go
+// Detect content type hints
+contentHints := ""
+if strings.Contains(strings.ToLower(content), "policy") || 
+   strings.Contains(strings.ToLower(content), "kubewarden") ||
+   strings.Contains(strings.ToLower(content), "admission") {
+    contentHints = `
+IMPORTANT CONTEXT: This is Kubernetes policy documentation. Focus on admission control, policy management, and cluster security concepts.
+`
+}
+```
+
+Then modify the template:
+```
+%s
+
+Page content:
+---
+%s
+---
+```
+
+Where first %s is contentHints.
+
+SOLUTION 5: Post-Processing Filter (QUICK WIN)
+-----------------------------------------------
+CHANGES TO: internal/ai/generator.go
+
+In sanitize() function, after line 248, add:
+
+```go
+// Remove YaST and other irrelevant terms that slipped through
+irrelevantPatterns := map[string]string{
+    `\bYaST\s+tools?\b`:                  "system tools",
+    `\binstallation process\b`:           "setup process",
+    `\bSUSE Linux installation\b`:        "system configuration",
+    `\bpackage management tools?\b`:      "management tools",
+}
+
+for pattern, replacement := range irrelevantPatterns {
+    re := regexp.MustCompile(`(?i)` + pattern)
+    desc = re.ReplaceAllString(desc, replacement)
+}
+```
+
+Implementation Priority
+-----------------------
+1. ✅ IMMEDIATE: Fix YaST example in prompt (Solution 1 - partial)
+2. ✅ IMMEDIATE: Add post-processing filter (Solution 5)
+3. ✅ HIGH: Add Kubernetes/policy context to prompt (Solution 1 - full)
+4. ✅ MEDIUM: Add default banned terms (Solution 2)
+5. ⏰ MEDIUM: Enhance content extraction (Solution 3)
+6. ⏰ LOW: Add context hints (Solution 4)
+
+Testing Plan
+------------
+After implementing fixes:
+
+1. Test on single file:
+   ```bash
+   ./doc-meta-gen \
+     --root ../../kubewarden-docs/docs/version-1.32/modules/en/pages/howtos/gatekeeper-migration.adoc \
+     --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables-1.24-next.adoc \
+     -a build-type=product \
+     --banned-terms "YaST,installation" \
+     --dry-run
+   ```
+
+2. Test on problem files (that generated YaST mentions):
+   - explanations/audit-scanner/audit-scanner.adoc
+   - explanations/comparisons/opa-comparison.adoc
+   - tutorials/writing-policies/go/04-validation.adoc
+
+3. Full dry-run:
+   ```bash
+   ./doc-meta-gen \
+     --root ../../kubewarden-docs/docs/version-1.32 \
+     --attributes-file ../../kubewarden-docs/shared/modules/en/partials/kubewarden-variables-1.24-next.adoc \
+     -a build-type=product \
+     --force-overwrite \
+     --dry-run
+   ```
+
+4. Verify:
+   - ✅ No "YaST" mentions
+   - ✅ Descriptions match page purpose
+   - ✅ Kubernetes/policy terminology used
+   - ✅ Appropriate technical depth
+
+Expected Improvements
+---------------------
+BEFORE (with current prompt):
+- "Explore the comprehensive YaST tools and master system configuration..."
+- "Learn about configuring and managing network settings for a smooth SUSE Linux installation..."
+- "Examine how the YaST tools use the code in the validate.go file..."
+
+AFTER (with fixes):
+- "Explore comprehensive policy validation techniques for Kubernetes admission control..."
+- "Learn about configuring admission policies for secure cluster resource management..."
+- "Examine how the validation code evaluates Kubernetes resources against policy rules..."
+
+Code Changes File
+-----------------
+I'll create a separate file with the exact code changes to implement.

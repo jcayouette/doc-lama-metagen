@@ -31,7 +31,7 @@ A modular Go application that generates AI-powered meta descriptions for technic
    ollama pull llama3.1:8b
    ```
 
-3. **Go 1.21+** - Install from https://go.dev/dl/
+3. **Go 1.25.6 or later** - Install from https://go.dev/dl/
 
 ### Build
 

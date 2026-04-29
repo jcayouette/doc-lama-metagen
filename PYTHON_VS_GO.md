@@ -33,16 +33,16 @@ Total: ~1,000 lines (better organized)
 | Feature | Python ✓ | Go ✓ | Notes |
 |---------|----------|------|-------|
 | AsciiDoc support | ✓ | ✓ | Full parity |
-| DocBook support | ✓ | ⏳ | Coming in Phase 2 |
+| DocBook support | ✓ | ✓ | Full parity |
 | Ollama integration | ✓ | ✓ | Same API |
 | Attribute resolution | ✓ | ✓ | Improved in Go |
 | Conditional processing | ✓ | ✓ | Better parsing in Go |
 | Grammar validation | ✓ | ✓ | Same approach |
 | Dry-run mode | ✓ | ✓ | Identical |
 | Force overwrite | ✓ | ✓ | Identical |
-| HTML reporting | ✓ | ⏳ | Planned |
-| Brand consistency | ✓ | ⏳ | Planned |
-| Parallel processing | ✗ | ⏳ | Easier in Go |
+| HTML reporting | ✓ | ✓ | Full parity |
+| Brand consistency | ✓ | ✓ | Full parity |
+| Parallel processing | ✗ | ✓ | Easier in Go |
 
 ## Performance
 

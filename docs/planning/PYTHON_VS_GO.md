@@ -1,6 +1,6 @@
 # Python vs Go Implementation Comparison
 
-This document compares the original Python implementation ([doc-lama-metagen.py](../doc-lama-metagen.py)) with the new Go implementation.
+This document compares the original Python implementation ([doc-lama-metagen.py](../../python-prototype/doc-lama-metagen.py)) with the new Go implementation.
 
 ## Architecture Comparison
 

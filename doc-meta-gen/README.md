@@ -6,7 +6,7 @@ A modular Go application that generates AI-powered meta descriptions for technic
 
 - **Modular Architecture**: Clean separation between content providers, AI generation, and output writing
 - **AsciiDoc/Antora Support**: Extracts content from `.adoc` files with full attribute resolution
-- **DocBook Support**: (Coming soon) XML parsing with entity resolution
+- **DocBook Support**: XML parsing with entity resolution and `<!DOCTYPE>` filtering
 - **Local AI**: Uses Ollama for privacy-focused, local LLM inference
 - **SUSE Style Guide**: Enforces technical writing best practices
 - **Attribute Resolution**: Handles complex AsciiDoc conditionals and nested attributes
@@ -24,6 +24,10 @@ A modular Go application that generates AI-powered meta descriptions for technic
 
 2. **Pull an LLM model**:
    ```bash
+   # Default (recommended — reasoning model)
+   ollama pull qwen3:14b
+
+   # Lighter alternative
    ollama pull llama3.1:8b
    ```
 
@@ -61,9 +65,9 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 | Flag | Description | Default |
 |------|-------------|---------|
 | `--root` | Root directory of documentation files (required) | - |
-| `--model` | Ollama model name | `llama3.1:8b` |
+| `--model` | Ollama model name | `qwen3:14b` |
 | `--ollama-url` | Ollama API endpoint | `http://127.0.0.1:11434` |
-| `--attributes-file` | Path to AsciiDoc attributes file | - |
+| `--attributes-file` | Path to `.adoc` or `.ent` attributes/entity file (repeatable) | - |
 | `--type` | File type: `asciidoc`, `docbook`, `all` | `all` |
 | `--force-overwrite` | Overwrite existing descriptions | `false` |
 | `--dry-run` | Preview without writing files | `false` |
@@ -99,6 +103,21 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
   -a platform=linux
 ```
 
+**DocBook XML with multiple entity files and HTML report:**
+```bash
+cd /path/to/doc-sleha && /path/to/doc-meta-gen/doc-meta-gen \
+  --root xml \
+  --type docbook \
+  --attributes-file xml/phrases-decl.ent \
+  --attributes-file xml/product-entities.ent \
+  --attributes-file xml/network-entities.ent \
+  --attributes-file xml/generic-entities.ent \
+  --html-log report-meta-descriptions.html \
+  --report-title "SLES HA Meta Descriptions"
+```
+
+> `--attributes-file` is repeatable — pass it once per file to load entity definitions from `.ent` files or AsciiDoc attribute files.
+
 ## Architecture
 
 ### Module Structure
@@ -111,7 +130,7 @@ doc-meta-gen/
 │   ├── providers/             # Content extractors
 │   │   ├── provider.go        # Interface definition
 │   │   ├── asciidoc/          # AsciiDoc implementation
-│   │   └── docbook/           # DocBook (future)
+│   │   └── docbook/           # DocBook XML implementation
 │   ├── ai/                    # AI orchestration
 │   │   ├── generator.go       # Description generation
 │   │   └── ollama/            # Ollama client

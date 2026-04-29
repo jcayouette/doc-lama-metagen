@@ -7,7 +7,7 @@ AI-powered meta description generator for technical documentation using local LL
 This repository contains **two implementations** of an AI-powered meta description generator:
 
 1. **🐹 Go Implementation** ([`doc-meta-gen/`](doc-meta-gen/)) - Modern, modular, production-ready
-2. **🐍 Python Implementation** ([`doc-lama-metagen.py`](doc-lama-metagen.py)) - Original reference implementation
+2. **🐍 Python Implementation** ([`python-prototype/`](python-prototype/)) - Original legacy prototype
 
 Both use local AI models via Ollama to automatically generate SEO-friendly meta descriptions for technical documentation (AsciiDoc and DocBook formats), following the SUSE Technical Writing Style Guide.
 
@@ -31,18 +31,33 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 ./doc-meta-gen --root ./testdata --dry-run
 ```
 
+### DocBook XML Example (multiple entity files)
+```bash
+cd /path/to/doc-sleha && /path/to/doc-meta-gen/doc-meta-gen \
+  --root xml \
+  --type docbook \
+  --attributes-file xml/phrases-decl.ent \
+  --attributes-file xml/product-entities.ent \
+  --attributes-file xml/network-entities.ent \
+  --attributes-file xml/generic-entities.ent \
+  --html-log report-meta-descriptions.html \
+  --report-title "SLES HA Meta Descriptions"
+```
+
+> **Note**: `--attributes-file` can be specified multiple times to load entity files (`.ent`) or AsciiDoc attribute files (`.adoc`). Supports both single- and double-quoted entity values.
+
 📖 **Documentation**: 
 - [README.md](doc-meta-gen/README.md) - Complete guide
 - [USAGE.md](doc-meta-gen/USAGE.md) - Getting started
-- [PROJECT.md](PROJECT.md) - Architecture details
+- [docs/planning/](docs/planning/) - Architecture and planning documents
 
 ---
 
-## 🐍 Python Implementation (Reference)
+## 🐍 Python Implementation (Legacy Prototype)
 
-**Location**: [`doc-lama-metagen.py`](doc-lama-metagen.py)
+**Location**: [`python-prototype/`](python-prototype/)
 
-Original proof-of-concept with full feature set:
+Original proof-of-concept, retained for reference. The Go implementation supersedes it.
 
 ### Features
 
@@ -74,9 +89,13 @@ sudo systemctl enable --now ollama
 
 ### 2\. Pull the AI Model
 
-This script is optimized for `llama3.1:8b`. Pull it using the following command:
+Pull a model via Ollama. The Go implementation defaults to `qwen3:14b`; the Python script defaults to `llama3.1:8b`.
 
 ```bash
+# Recommended (Go implementation default)
+ollama pull qwen3:14b
+
+# Lighter alternative
 ollama pull llama3.1:8b
 ```
 
@@ -113,7 +132,7 @@ Here is a complete list of all available options and flags:
 | Argument | Shorthand | Description | Required |
 | --- | --- | --- | --- |
 | `root` | | Path to the root directory of your documentation files. | **Yes** |
-| `--model` | | Ollama model to use. Defaults to `llama3.1:8b`. | No |
+| `--model` | | Ollama model to use. Defaults to `llama3.1:8b` (Python) / `qwen3:14b` (Go). | No |
 | `--ollama-url` | | Base URL for the Ollama API. Defaults to `http://127.0.0.1:11434`. | No |
 | `--type` | | Choose which file types to process: `adoc`, `xml`, or `all`. Defaults to `all`. | No |
 | `--force-overwrite` | | Overwrite existing meta descriptions if found. | No |
@@ -133,7 +152,7 @@ Here is a complete list of all available options and flags:
 Process all `.adoc` and `.xml` files in a directory, showing what would change without modifying files.
 
 ```bash
-python3 doc-lama-metagen.py /path/to/my-docs --dry-run
+python3 python-prototype/doc-lama-metagen.py /path/to/my-docs --dry-run
 ```
 
 #### Generating Descriptions with an HTML Report
@@ -141,7 +160,7 @@ python3 doc-lama-metagen.py /path/to/my-docs --dry-run
 Process only AsciiDoc files and generate an interactive report of all actions.
 
 ```bash
-python3 doc-lama-metagen.py /path/to/my-docs --type adoc --html-log generation_report.html
+python3 python-prototype/doc-lama-metagen.py /path/to/my-docs --type adoc --html-log generation_report.html
 ```
 
 #### Advanced Run for a Conditional AsciiDoc Project
@@ -149,7 +168,7 @@ python3 doc-lama-metagen.py /path/to/my-docs --type adoc --html-log generation_r
 Process a project that uses a complex attributes file (like Kubewarden), setting the build context to `product`. This example also uses an entities file for brand consistency.
 
 ```bash
-python3 doc-lama-metagen.py /path/to/kubewarden/docs \
+python3 python-prototype/doc-lama-metagen.py /path/to/kubewarden/docs \
   --attributes-file /path/to/kubewarden/attributes.adoc \
   --entities-file /path/to/kubewarden/entities.adoc \
   -a build-type=product \
@@ -161,5 +180,5 @@ python3 doc-lama-metagen.py /path/to/kubewarden/docs \
 Overwrite all existing meta descriptions in a DocBook XML project. **Use with caution\!**
 
 ```bash
-python3 doc-lama-metagen.py /path/to/xml-docs --type xml --force-overwrite
+python3 python-prototype/doc-lama-metagen.py /path/to/xml-docs --type xml --force-overwrite
 ```

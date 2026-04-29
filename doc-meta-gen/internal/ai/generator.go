@@ -36,6 +36,11 @@ func (g *Generator) GenerateDescription(content, title string) (string, error) {
 		return "", fmt.Errorf("AI generation failed: %w", err)
 	}
 
+	// Strip <think>…</think> blocks produced by reasoning models (e.g. Qwen3)
+	// before any further processing — the thinking text routinely contains
+	// phrases that would otherwise trigger leakage detection.
+	draft = g.stripThinkingBlocks(draft)
+
 	// Check RAW output for leakage BEFORE sanitization
 	if g.hasPromptLeakage(draft) {
 		retryPrompt := g.buildRetryPrompt(content, title, blacklist)
@@ -43,6 +48,7 @@ func (g *Generator) GenerateDescription(content, title string) (string, error) {
 		if err != nil {
 			return "", fmt.Errorf("AI retry failed: %w", err)
 		}
+		draft = g.stripThinkingBlocks(draft)
 		// Check retry result for leakage too
 		if g.hasPromptLeakage(draft) {
 			return "", fmt.Errorf("generated description contains prompt leakage after retry")
@@ -58,6 +64,7 @@ func (g *Generator) GenerateDescription(content, title string) (string, error) {
 		if err != nil {
 			return "", fmt.Errorf("AI retry failed: %w", err)
 		}
+		draft = g.stripThinkingBlocks(draft)
 		// Check raw output again
 		if g.hasPromptLeakage(draft) {
 			return "", fmt.Errorf("generated description contains prompt leakage after retry")
@@ -107,8 +114,8 @@ Corrected sentence:
 		return sentence, nil
 	}
 
-	correctedClean := strings.TrimSpace(corrected)
-	
+	correctedClean := strings.TrimSpace(g.stripThinkingBlocks(corrected))
+
 	// Check for prompt leakage in grammar validation output
 	if g.hasPromptLeakage(correctedClean) {
 		// If leakage detected, return original instead
@@ -370,6 +377,16 @@ func (g *Generator) sanitize(draft string) string {
 	}
 
 	return desc
+}
+
+// stripThinkingBlocks removes <think>…</think> sections produced by reasoning
+// models such as Qwen3 before any further processing. The thinking text
+// routinely contains phrases ("you must", "your task is", etc.) that would
+// otherwise be misidentified as prompt leakage.
+func (g *Generator) stripThinkingBlocks(text string) string {
+	re := regexp.MustCompile(`(?is)<think>.*?</think>`)
+	text = re.ReplaceAllString(text, "")
+	return strings.TrimSpace(text)
 }
 
 // hasPromptLeakage checks if the description contains instruction fragments

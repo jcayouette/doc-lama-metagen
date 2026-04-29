@@ -29,8 +29,70 @@ func NewStore() *Store {
 	}
 }
 
-// LoadFromFile reads and parses an AsciiDoc attributes file
+// LoadFromFiles loads one or more attribute/entity files into the store.
+// Each file is parsed according to its extension:
+//   - .ent  → XML entity declarations  (<!ENTITY key "value">)
+//   - .adoc / anything else → AsciiDoc attribute syntax  (:key: value)
+//
+// The buildContext is applied once before any file is read so that
+// conditional directives (ifndef/ifeval) work correctly across all files.
+func (s *Store) LoadFromFiles(paths []string, buildContext map[string]string) error {
+	// Seed with build context once
+	for k, v := range buildContext {
+		s.attributes[k] = v
+	}
+	for _, p := range paths {
+		var err error
+		if strings.HasSuffix(strings.ToLower(p), ".ent") {
+			err = s.loadEntFile(p)
+		} else {
+			err = s.loadAdocFile(p)
+		}
+		if err != nil {
+			return err
+		}
+	}
+	s.resolveNestedAttributes()
+	s.extractBrands()
+	return nil
+}
+
+// LoadFromFile reads and parses a single attribute or entity file.
+// Prefer LoadFromFiles when you have more than one file.
 func (s *Store) LoadFromFile(path string, buildContext map[string]string) error {
+	if path == "" {
+		return nil
+	}
+	return s.LoadFromFiles([]string{path}, buildContext)
+}
+
+// loadEntFile parses a .ent XML entity declarations file.
+// Handles both double-quoted and single-quoted values:
+//
+//	<!ENTITY productname   "SLES for SAP Applications">
+//	<!ENTITY product-ga    '15'>
+//
+// Parameter entities (<!ENTITY % name SYSTEM "file.ent">) are ignored.
+func (s *Store) loadEntFile(path string) error {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return fmt.Errorf("failed to open entities file %s: %w", path, err)
+	}
+	// Match named entities with either double or single quoted values.
+	// Group 1: entity name, Group 2: double-quoted value, Group 3: single-quoted value.
+	entityRe := regexp.MustCompile(`<!ENTITY\s+([\w-]+)\s+(?:"([^"]*)"|'([^']*)')`)
+	for _, m := range entityRe.FindAllSubmatch(data, -1) {
+		value := string(m[2])
+		if value == "" && m[3] != nil {
+			value = string(m[3])
+		}
+		s.attributes[string(m[1])] = value
+	}
+	return nil
+}
+
+// loadAdocFile reads and parses an AsciiDoc attributes file.
+func (s *Store) loadAdocFile(path string) error {
 	if path == "" {
 		return nil
 	}
@@ -41,11 +103,6 @@ func (s *Store) LoadFromFile(path string, buildContext map[string]string) error 
 	}
 	defer file.Close()
 
-	// Initialize with build context
-	for k, v := range buildContext {
-		s.attributes[k] = v
-	}
-
 	scanner := bufio.NewScanner(file)
 	attrRe := regexp.MustCompile(`^:([\w-]+):(?:\s+(.*))?$`)
 	ifndefRe := regexp.MustCompile(`^ifndef::([\w-]+)\[\]$`)
@@ -55,7 +112,6 @@ func (s *Store) LoadFromFile(path string, buildContext map[string]string) error 
 	inActiveBlock := true
 	blockStack := []bool{}
 
-	// First pass: parse conditionals and basic attributes
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
 
@@ -109,12 +165,6 @@ func (s *Store) LoadFromFile(path string, buildContext map[string]string) error 
 	if err := scanner.Err(); err != nil {
 		return fmt.Errorf("error reading attributes file: %w", err)
 	}
-
-	// Second pass: resolve nested attributes iteratively
-	s.resolveNestedAttributes()
-
-	// Extract brands for consistency checking
-	s.extractBrands()
 
 	return nil
 }
@@ -197,6 +247,32 @@ func (s *Store) Resolve(text string) string {
 	placeholderRe := regexp.MustCompile(`\{[\w-]+\}`)
 	result = placeholderRe.ReplaceAllString(result, "")
 
+	return result
+}
+
+// ResolveXML replaces XML entity references (&key;) in text with their stored values.
+// This is the DocBook counterpart to Resolve(), which handles {key} style references.
+func (s *Store) ResolveXML(text string) string {
+	if !strings.Contains(text, "&") {
+		return text
+	}
+
+	result := text
+	maxIterations := 10
+
+	for range maxIterations {
+		temp := result
+		for key, value := range s.attributes {
+			placeholder := fmt.Sprintf("&%s;", key)
+			temp = strings.ReplaceAll(temp, placeholder, value)
+		}
+		if temp == result {
+			break
+		}
+		result = temp
+	}
+
+	// Leave unresolved &entity; references alone — they may be structural XML.
 	return result
 }
 

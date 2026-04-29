@@ -46,8 +46,8 @@ type Config struct {
 	RootDir            string
 	ModelName          string
 	OllamaURL          string
-	AttributesFile     string
-	FileType           string // "asciidoc", "docbook", "all"
+	AttributesFiles    []string // one or more .adoc/.ent attribute/entity files
+	FileType           string   // "asciidoc", "docbook", "all"
 	ForceOverwrite     bool
 	DryRun             bool
 	RemoveDescriptions bool   // Remove description attributes instead of generating

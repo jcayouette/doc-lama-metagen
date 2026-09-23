@@ -20,6 +20,9 @@ type GenerateRequest struct {
 	Model  string `json:"model"`
 	Prompt string `json:"prompt"`
 	Stream bool   `json:"stream"`
+	// Think is sent as false so reasoning models return the sentence directly.
+	// The zero value must still be encoded, so this field is not omitempty.
+	Think bool `json:"think"`
 }
 
 // GenerateResponse represents the Ollama API response

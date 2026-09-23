@@ -165,6 +165,13 @@ func (p *Provider) Extract(path string, attrs *attributes.Store) (*models.PageCo
 	// Clean and extract plain text
 	plainText := p.extractPlainText(bodyText)
 
+	if attrs != nil {
+		title = attrs.Resolve(title)
+	}
+	title = regexp.MustCompile(`\{[^}]+\}`).ReplaceAllString(title, " ")
+	title = regexp.MustCompile(`\s+`).ReplaceAllString(title, " ")
+	title = strings.TrimSpace(title)
+
 	content.Title = title
 	content.ExistingMeta = existingDesc
 	content.RawContent = plainText

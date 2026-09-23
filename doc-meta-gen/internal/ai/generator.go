@@ -27,6 +27,8 @@ func NewGenerator(ollamaURL, model string, bannedTerms []string) *Generator {
 
 // GenerateDescription creates a meta description using AI
 func (g *Generator) GenerateDescription(content, title string) (string, error) {
+	content = g.removeBannedTerms(content)
+	title = g.removeBannedTerms(title)
 	blacklist := strings.Join(g.bannedTerms, ", ")
 	prompt := g.buildPrompt(content, title, blacklist)
 
@@ -151,6 +153,7 @@ Style:
 
 Do not:
 - Use marketing or decorative words (seamless, robust, powerful, comprehensive, easily, simply, leverage, utilize, empower, unlock, dive, explore)
+- Name this product, even when the page names it. Do not write a product or brand name from the banned list. Describe the server, proxy, client, or task instead
 - Name tools, products, or topics that are not in the title or content
 - Include version numbers unless they are essential to the page
 - Use self-reference (this chapter describes, this document explains, in this section)
@@ -185,6 +188,7 @@ Style:
 
 Do not:
 - Use marketing or decorative words (seamless, robust, powerful, comprehensive, easily, simply, leverage, utilize, empower, unlock, dive, explore)
+- Name this product, even when the page names it. Do not write a product or brand name from the banned list. Describe the server, proxy, client, or task instead
 - Name tools, products, or topics that are not in the title or content
 - Use self-reference (this chapter describes, this document explains)
 - Use apostrophe possessives
@@ -201,6 +205,20 @@ Page content:
 %s
 ---
 `, blacklist, title, content)
+}
+
+// removeBannedTerms deletes banned product and brand names and collapses the gap.
+func (g *Generator) removeBannedTerms(text string) string {
+	for _, term := range g.bannedTerms {
+		term = strings.TrimSpace(term)
+		if term == "" {
+			continue
+		}
+		re := regexp.MustCompile(`(?i)\b` + regexp.QuoteMeta(term) + `\b`)
+		text = re.ReplaceAllString(text, "")
+	}
+	text = regexp.MustCompile(`\s+`).ReplaceAllString(text, " ")
+	return strings.TrimSpace(text)
 }
 
 // sanitize cleans and validates the AI response
@@ -268,10 +286,7 @@ func (g *Generator) sanitize(draft string) string {
 	desc = strings.ReplaceAll(desc, "'", "")
 
 	// Remove banned terms
-	for _, term := range g.bannedTerms {
-		re := regexp.MustCompile(`(?i)\b` + regexp.QuoteMeta(term) + `\b`)
-		desc = re.ReplaceAllString(desc, "")
-	}
+	desc = g.removeBannedTerms(desc)
 
 	// Remove forbidden characters
 	forbiddenRe := regexp.MustCompile(`[>:|"""'']`)

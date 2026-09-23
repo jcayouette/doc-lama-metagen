@@ -291,3 +291,28 @@ func (s *Store) GetBrands() []Brand {
 func (s *Store) GetAll() map[string]string {
 	return s.attributes
 }
+
+// Clone returns a copy of the store.
+func (s *Store) Clone() *Store {
+	if s == nil {
+		return NewStore()
+	}
+	c := NewStore()
+	for k, v := range s.attributes {
+		c.attributes[k] = v
+	}
+	c.brands = append([]Brand{}, s.brands...)
+	return c
+}
+
+// LoadFromMap adds attributes from a map and re-resolves nested references.
+func (s *Store) LoadFromMap(attrs map[string]string) {
+	if s.attributes == nil {
+		s.attributes = make(map[string]string)
+	}
+	for k, v := range attrs {
+		s.attributes[k] = v
+	}
+	s.resolveNestedAttributes()
+	s.extractBrands()
+}

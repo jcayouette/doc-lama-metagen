@@ -33,6 +33,8 @@ func main() {
 	log.Printf("Root directory: %s", config.RootDir)
 	log.Printf("Model: %s", config.ModelName)
 	log.Printf("Ollama URL: %s", config.OllamaURL)
+	log.Printf("Update revdate: %v", config.UpdateRevdate)
+	log.Printf("Language: %s", config.Lang)
 
 	// Load attributes / entities
 	attrStore := attributes.NewStore()
@@ -63,17 +65,20 @@ func main() {
 	// Discover files
 	scanner := discovery.NewScanner(config.RootDir, providerList)
 	log.Printf("Scanning for files...")
-	
+
 	allFiles, err := scanner.Scan()
 	if err != nil {
 		log.Fatalf("ERROR: Failed to scan directory: %v", err)
 	}
-	
+
 	log.Printf("Found %d potential files", len(allFiles))
 
 	// Filter by type
 	files := discovery.FilterByType(allFiles, config.FileType)
-	log.Printf("Processing %d files (type filter: %s)", len(files), config.FileType)
+	log.Printf("After type filter (%s): %d files", config.FileType, len(files))
+
+	files = discovery.FilterByLang(files, config.Lang)
+	log.Printf("Processing %d files (language: %s)", len(files), config.Lang)
 
 	if len(files) == 0 {
 		log.Printf("No files to process")
@@ -86,7 +91,7 @@ func main() {
 		if config.DryRun {
 			log.Printf("*** DRY RUN - No files will be modified ***")
 		}
-		
+
 		removedCount := 0
 		for _, path := range files {
 			// Find appropriate provider
@@ -97,28 +102,28 @@ func main() {
 					break
 				}
 			}
-			
+
 			if provider == nil {
 				continue
 			}
-			
+
 			// Check if file has descriptions to remove
 			hasDesc, err := provider.HasExistingDescription(path)
 			if err != nil {
 				log.Printf("ERROR checking %s: %v", path, err)
 				continue
 			}
-			
+
 			if !hasDesc {
 				continue
 			}
-			
+
 			// Remove descriptions
 			if err := provider.RemoveDescriptions(path, config.DryRun); err != nil {
 				log.Printf("ERROR removing descriptions from %s: %v", path, err)
 				continue
 			}
-			
+
 			removedCount++
 			if config.DryRun {
 				log.Printf("[DRY RUN] Would remove descriptions from: %s", path)
@@ -126,7 +131,7 @@ func main() {
 				log.Printf("REMOVED descriptions from: %s", path)
 			}
 		}
-		
+
 		log.Printf("\n=== Removal Complete ===")
 		log.Printf("Files processed: %d", len(files))
 		if config.DryRun {
@@ -143,7 +148,7 @@ func main() {
 
 	// Process files
 	proc := processor.NewProcessor(providerList, generator, attrStore, config)
-	
+
 	startTime := time.Now()
 	results, err := proc.ProcessFiles(files)
 	if err != nil {
@@ -153,12 +158,13 @@ func main() {
 
 	// Summary statistics
 	stats := calculateStats(results)
-	
+
 	log.Printf("\n=== Processing Complete ===")
 	log.Printf("Total time: %.2f seconds", duration.Seconds())
 	log.Printf("Files processed: %d", stats.Total)
 	log.Printf("Added: %d", stats.Added)
 	log.Printf("Replaced: %d", stats.Replaced)
+	log.Printf("Copied: %d", stats.Copied)
 	log.Printf("Skipped: %d", stats.Skipped)
 	log.Printf("Errors: %d", stats.Errors)
 	log.Printf("Warnings: %d", stats.Warnings)
@@ -210,7 +216,7 @@ func generateHTMLReport(
 		switch s {
 		case models.StatusAdded, models.StatusReplaced:
 			return "bg-green-500 border-green-500"
-		case models.StatusUpdated:
+		case models.StatusUpdated, models.StatusCopied:
 			return "bg-indigo-500 border-indigo-500"
 		case models.StatusDryRun:
 			return "bg-blue-500 border-blue-500"
@@ -279,7 +285,7 @@ func generateHTMLReport(
         </thead>
         <tbody class="text-sm">
 `, htmlEscape(config.ReportTitle), htmlEscape(config.ReportTitle), now,
-		stats.Total, stats.Added+stats.Replaced+stats.DryRun,
+		stats.Total, stats.Added+stats.Replaced+stats.Copied+stats.DryRun,
 		duration.Seconds(), htmlEscape(config.ModelName))
 
 	for _, r := range results {
@@ -367,12 +373,14 @@ func parseFlags() *models.Config {
 	var attrFilesFlag arrayFlags
 	flag.Var(&attrFilesFlag, "attributes-file", "Path to an attributes or entities file (.adoc or .ent). Can be repeated.")
 	flag.StringVar(&config.FileType, "type", "all", "File type to process: asciidoc, docbook, all")
+	flag.StringVar(&config.Lang, "lang", "en", "Antora module language to process (en, or all)")
 	flag.BoolVar(&config.ForceOverwrite, "force-overwrite", false, "Overwrite existing descriptions")
 	flag.BoolVar(&config.DryRun, "dry-run", false, "Preview changes without writing files")
+	flag.BoolVar(&config.UpdateRevdate, "update-revdate", true, "Update :revdate: to today when writing descriptions (use --update-revdate=false to leave revdate unchanged)")
 	flag.BoolVar(&config.RemoveDescriptions, "remove-descriptions", false, "Remove all description attributes instead of generating new ones")
 	flag.StringVar(&config.HTMLLogPath, "html-log", "", "Path to HTML log output")
 	flag.StringVar(&config.ReportTitle, "report-title", "Description Generation Report", "Custom HTML report title")
-	
+
 	var bannedTermsStr string
 	flag.StringVar(&bannedTermsStr, "banned-terms", "", "Comma-separated list of terms to ban")
 
@@ -435,6 +443,7 @@ type Stats struct {
 	Total    int
 	Added    int
 	Replaced int
+	Copied   int
 	Skipped  int
 	Errors   int
 	Warnings int
@@ -451,6 +460,8 @@ func calculateStats(results []*models.ProcessingResult) Stats {
 			stats.Added++
 		case models.StatusReplaced:
 			stats.Replaced++
+		case models.StatusCopied:
+			stats.Copied++
 		case models.StatusSkipped:
 			stats.Skipped++
 		case models.StatusError:

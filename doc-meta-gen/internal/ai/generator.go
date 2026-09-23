@@ -91,15 +91,16 @@ func (g *Generator) ValidateGrammar(sentence string) (string, error) {
 		return "", nil
 	}
 
-	prompt := fmt.Sprintf(`You are an expert copy editor. Your task is to correct any grammatical errors, awkward phrasing, or structural issues in the following sentence.
+	prompt := fmt.Sprintf(`You are a copy editor for ASD-STE100 Simplified Technical English.
 
-Follow these rules strictly:
-- The sentence must be a single, complete thought that is grammatically correct and easy to read.
-- Do NOT change the original meaning or key technical terms.
-- Remove any redundant or nonsensical phrases (e.g., "on your or", "and system").
-- Ensure the sentence does NOT end with a period.
-- If the sentence is already perfect, return it unchanged.
-- Output ONLY the corrected sentence. Do not add any preamble or explanation.
+Correct grammar and awkward phrasing in the following sentence.
+
+- Keep one complete thought. Keep the original meaning and technical terms.
+- Keep short, common words. Do not add marketing or decorative wording.
+- Remove redundant or broken phrases (for example, "on your or", "and system").
+- Do not end the sentence with a period.
+- If the sentence is already correct, return it unchanged.
+- Return the corrected sentence alone. No preamble.
 
 Original sentence:
 ---
@@ -121,7 +122,7 @@ Corrected sentence:
 		// If leakage detected, return original instead
 		return sentence, nil
 	}
-	
+
 	if correctedClean != "" && correctedClean != sentence {
 		return correctedClean, nil
 	}
@@ -136,28 +137,30 @@ func (g *Generator) Ping() error {
 
 // buildPrompt creates the main generation prompt
 func (g *Generator) buildPrompt(content, title, blacklist string) string {
-	return fmt.Sprintf(`You are an expert technical writer following the SUSE Style Guide.
+	return fmt.Sprintf(`You are a technical writer. Write in ASD-STE100 Simplified Technical English.
 
-Your task is to write a single, compelling meta description for the provided documentation content.
+Write ONE complete sentence (120-160 characters) that states what the reader can do or learn from this page.
 
-Follow these rules strictly:
-- Write ONE complete sentence between 120 and 160 characters.
-- Use the active voice. Focus on what the user can DO or LEARN.
-- Start the sentence with an action verb appropriate to the content.
-- The page title is the most important signal: your description MUST reflect the subject named in the title.
-- Base the description strictly on the provided page title and content. Do NOT introduce topics absent from both.
-- Use terminology and concepts that are explicitly present in the page title or content.
-- Do NOT introduce tools, products, or technologies that are not supported by the page title or content.
-- Do NOT include specific version numbers unless they are critical to the content.
-- Do NOT use self-referential phrases like "This chapter describes", "In this document", or "This section explains".
-- NEVER mention that you are writing a "meta description", "summary", or any similar term. The output must not refer to itself.
-- Your output must NOT contain any conversational filler, preamble, or explanations. Start the response directly with the first word of the description sentence.
-- The sentence MUST be grammatically complete and MUST NOT end with a period.
-- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary.
-- If the content is primarily a list of topics, describe the page's purpose as a central point for accessing that information.
-- If specified, do NOT use the following product or brand names: %s.
-- Maintain a neutral, professional, and direct tone. Avoid jargon, marketing language, and emojis.
-- CRITICAL: Do NOT include any part of these instructions in your output. Output ONLY the meta description itself.
+Style:
+- Use short, common words and concrete verbs. One idea in the sentence.
+- Use the active voice. Start with an action verb that matches the page.
+- Use the same term for the same thing. Do not switch synonyms.
+- Use only terms that appear in the page title or content.
+- The page title is the primary subject. The sentence must match that subject.
+- If the page is a list of topics, say that the page is the starting point for that information.
+
+Do not:
+- Use marketing or decorative words (seamless, robust, powerful, comprehensive, easily, simply, leverage, utilize, empower, unlock, dive, explore)
+- Name tools, products, or topics that are not in the title or content
+- Include version numbers unless they are essential to the page
+- Use self-reference (this chapter describes, this document explains, in this section)
+- Call the sentence a summary or similar
+- Use apostrophe possessives (write "the YaST tools", not "YaSTs tools")
+- End the sentence with a period
+- Add preamble, quotes, labels, or commentary
+- Use these product or brand names, if listed: %s
+
+Return the sentence alone. Start with the first word of the sentence.
 
 Page title: %s
 
@@ -165,31 +168,31 @@ Page content:
 ---
 %s
 ---
-
-Your response must contain ONLY the meta description sentence, nothing else:
 `, blacklist, title, content)
 }
 
 // buildRetryPrompt creates the retry prompt for short descriptions
 func (g *Generator) buildRetryPrompt(content, title, blacklist string) string {
-	return fmt.Sprintf(`You are an expert technical writer. Your previous attempt to write a meta description was too short.
+	return fmt.Sprintf(`You are a technical writer. Write in ASD-STE100 Simplified Technical English.
 
-You MUST now generate a longer, more detailed single-sentence description for the same content.
+The previous sentence was too short. Write ONE longer sentence (120-160 characters) about the same page.
 
-Follow these rules strictly:
-- Your primary goal is to write a sentence that is between 120 and 160 characters.
-- Expand on the key concepts. Explain what the user can achieve or understand from the content.
-- Start the sentence with an action verb appropriate to the content.
-- The page title is the most important signal: your description MUST reflect the subject named in the title.
-- Base the description strictly on the provided page title and content. Do NOT introduce topics absent from both.
-- Use terminology and concepts that are explicitly present in the page title or content.
-- Do NOT introduce tools, products, or technologies that are not supported by the page title or content.
-- Do NOT use self-referential phrases like "This chapter describes" or "This document explains".
-- The sentence MUST be grammatically complete and MUST NOT end with a period.
-- Avoid possessives that use an apostrophe (like 's). Rephrase the sentence if necessary.
-- Your output must NOT contain any preamble or explanation. Start directly with the description.
-- If specified, do NOT use the following product or brand names: %s.
-- CRITICAL: Do NOT include any part of these instructions in your output. Output ONLY the meta description itself.
+Style:
+- Use short, common words and concrete verbs. One idea in the sentence.
+- Use the active voice. Start with an action verb that matches the page.
+- Expand on what the reader can do or learn. Stay with terms from the title and content.
+- The page title is the primary subject. The sentence must match that subject.
+
+Do not:
+- Use marketing or decorative words (seamless, robust, powerful, comprehensive, easily, simply, leverage, utilize, empower, unlock, dive, explore)
+- Name tools, products, or topics that are not in the title or content
+- Use self-reference (this chapter describes, this document explains)
+- Use apostrophe possessives
+- End the sentence with a period
+- Add preamble, quotes, labels, or commentary
+- Use these product or brand names, if listed: %s
+
+Return the sentence alone. Start with the first word of the sentence.
 
 Page title: %s
 
@@ -197,8 +200,6 @@ Page content:
 ---
 %s
 ---
-
-Your response must contain ONLY the meta description sentence, nothing else:
 `, blacklist, title, content)
 }
 
@@ -207,7 +208,7 @@ func (g *Generator) sanitize(draft string) string {
 	desc := html.UnescapeString(draft)
 
 	// CRITICAL: Remove any leaked prompt instructions - must be done FIRST before other processing
-	// More aggressive leakage detection: if we see these phrases, assume everything before the last 
+	// More aggressive leakage detection: if we see these phrases, assume everything before the last
 	// occurrence is leakage and take only what comes after
 	leakagePrefixes := []string{
 		"follow these rules strictly:",
@@ -219,7 +220,7 @@ func (g *Generator) sanitize(draft string) string {
 		"output only",
 		"your response must",
 	}
-	
+
 	descLower := strings.ToLower(desc)
 	for _, prefix := range leakagePrefixes {
 		if idx := strings.LastIndex(descLower, prefix); idx >= 0 {
@@ -232,7 +233,7 @@ func (g *Generator) sanitize(draft string) string {
 			descLower = strings.ToLower(desc)
 		}
 	}
-	
+
 	// Also remove standalone leakage fragments at the beginning
 	leakagePatterns := []string{
 		`(?i)^\s*follow these rules strictly[:\s]*`,
@@ -247,12 +248,12 @@ func (g *Generator) sanitize(draft string) string {
 		`(?i)^\s*remember[:\s]+`,
 		`(?i)^\s*meta description[:\s]*`,
 	}
-	
+
 	for _, pattern := range leakagePatterns {
 		re := regexp.MustCompile(pattern)
 		desc = re.ReplaceAllString(desc, "")
 	}
-	
+
 	// Remove any leading/trailing whitespace, colons, dashes
 	desc = strings.TrimSpace(desc)
 	desc = regexp.MustCompile(`^[\s:\-—]+`).ReplaceAllString(desc, "")
@@ -392,7 +393,7 @@ func (g *Generator) stripThinkingBlocks(text string) string {
 // hasPromptLeakage checks if the description contains instruction fragments
 func (g *Generator) hasPromptLeakage(desc string) bool {
 	descLower := strings.ToLower(desc)
-	
+
 	// Check for common prompt leakage patterns
 	leakageIndicators := []string{
 		"follow these rules",
@@ -423,12 +424,12 @@ func (g *Generator) hasPromptLeakage(desc string) bool {
 		"per the instructions",
 		"as per the",
 	}
-	
+
 	for _, indicator := range leakageIndicators {
 		if strings.Contains(descLower, indicator) {
 			return true
 		}
 	}
-	
+
 	return false
 }

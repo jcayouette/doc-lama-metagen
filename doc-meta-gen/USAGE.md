@@ -25,6 +25,7 @@ cd /home/scribe/doc-lama-metagen/doc-meta-gen
 ./doc-meta-gen \
   --root ./testdata \
   --attributes-file ./testdata/attributes.adoc \
+  --update-revdate=false \
   --dry-run
 ```
 
@@ -71,7 +72,8 @@ Remove `--dry-run` to write changes:
 ```bash
 ./doc-meta-gen \
   --root ./testdata \
-  --attributes-file ./testdata/attributes.adoc
+  --attributes-file ./testdata/attributes.adoc \
+  --update-revdate=false
 ```
 
 ### 5. Verify the Changes
@@ -96,7 +98,8 @@ You should see:
   --root /path/to/your/docs \
   --attributes-file /path/to/your/entities.adoc \
   --type asciidoc \
-  --model llama3.1:8b
+  --model llama3.1:8b \
+  --update-revdate=false
 ```
 
 ### Using a Different Model
@@ -105,14 +108,16 @@ For better quality (if you have more RAM/VRAM):
 ```bash
 ./doc-meta-gen \
   --root ./docs \
-  --model llama3.1:70b
+  --model llama3.1:70b \
+  --update-revdate=false
 ```
 
 Or use a faster model:
 ```bash
 ./doc-meta-gen \
   --root ./docs \
-  --model mistral:7b
+  --model mistral:7b \
+  --update-revdate=false
 ```
 
 ### Overwriting Existing Descriptions
@@ -121,7 +126,8 @@ Force regeneration of all descriptions:
 ```bash
 ./doc-meta-gen \
   --root ./docs \
-  --force-overwrite
+  --force-overwrite \
+  --update-revdate=false
 ```
 
 ### Banning Specific Terms
@@ -130,7 +136,8 @@ Exclude competitor or incorrect product names:
 ```bash
 ./doc-meta-gen \
   --root ./docs \
-  --banned-terms "Windows,macOS,RedHat"
+  --banned-terms "Windows,macOS,RedHat" \
+  --update-revdate=false
 ```
 
 ### Conditional Builds
@@ -140,6 +147,7 @@ For documentation that uses conditionals:
 ./doc-meta-gen \
   --root ./docs \
   --attributes-file attributes.adoc \
+  --update-revdate=false \
   -a build-type=product \
   -a platform=x86_64 \
   -a variant=enterprise
@@ -157,8 +165,18 @@ endif::[]
 Set Ollama URL via environment:
 ```bash
 export OLLAMA_URL=http://192.168.1.100:11434
-./doc-meta-gen --root ./docs
+./doc-meta-gen --root ./docs --update-revdate=false
 ```
+
+### Protecting `:revdate:`
+
+`:revdate:` is owned by separate update scripts. Generation updates it by default (`--update-revdate=true`). Always pass `--update-revdate=false` in project runs so those dates stay untouched.
+
+### Version trees
+
+When a path contains multiple Antora versions, descriptions are generated from the highest semantic version (or `next` / `dev` / `latest` if there is no semver). Matching relative filepaths in other versions receive the same description.
+
+Antora `asciidoc.attributes` from the nearest `antora.yml` are loaded automatically. Add `--attributes-file` for extra `.adoc` or `.ent` sources.
 
 ## Understanding File Selection
 
@@ -174,7 +192,8 @@ The tool will process:
 The tool automatically skips:
 - ❌ Files starting with `_` (e.g., `_partial.adoc`)
 - ❌ Navigation files (`nav.adoc`, `nav-admin-guide.adoc`)
-- ❌ Files in `nav/`, `navigation/`, or `partials/` directories
+- ❌ Files in `nav/`, `navigation/`, `partials/`, `archived-docs/`, or `archived_docs/` directories
+- ❌ Translated module trees (`modules/de`, `es`, `fr`, `ja`, `pt`, `zh`, `ko`)
 - ❌ Files with existing `:description:` (unless `--force-overwrite`)
 
 ### Example Directory Structure
@@ -291,7 +310,7 @@ The tool automatically retries if descriptions are < 100 chars. If still failing
 1. Try a larger model:
    ```bash
    ollama pull llama3.1:70b
-   ./doc-meta-gen --root ./docs --model llama3.1:70b
+   ./doc-meta-gen --root ./docs --model llama3.1:70b --update-revdate=false
    ```
 
 2. Check if source content is too short
@@ -313,7 +332,7 @@ Check that:
 Debug by checking loaded attributes:
 ```bash
 # The tool logs "Loaded N attributes"
-./doc-meta-gen --root ./docs --attributes-file attrs.adoc
+./doc-meta-gen --root ./docs --attributes-file attrs.adoc --update-revdate=false
 ```
 
 ## Performance Tips
@@ -324,18 +343,18 @@ For projects with 100+ files:
 
 1. **Use dry-run first** to validate:
    ```bash
-   ./doc-meta-gen --root ./docs --dry-run
+   ./doc-meta-gen --root ./docs --dry-run --update-revdate=false
    ```
 
 2. **Process in batches** by directory:
    ```bash
-   ./doc-meta-gen --root ./docs/admin
-   ./doc-meta-gen --root ./docs/user
+   ./doc-meta-gen --root ./docs/admin --update-revdate=false
+   ./doc-meta-gen --root ./docs/user --update-revdate=false
    ```
 
 3. **Use a faster model** for initial runs:
    ```bash
-   ./doc-meta-gen --root ./docs --model mistral:7b
+   ./doc-meta-gen --root ./docs --model mistral:7b --update-revdate=false
    ```
 
 ### Optimizing Ollama

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 
 	"github.com/scribe/doc-meta-gen/internal/providers"
@@ -64,7 +65,7 @@ func FilterByType(files []string, fileType string) []string {
 	var filtered []string
 	for _, file := range files {
 		ext := strings.ToLower(filepath.Ext(file))
-		
+
 		switch fileType {
 		case "asciidoc":
 			if ext == ".adoc" {
@@ -77,5 +78,28 @@ func FilterByType(files []string, fileType string) []string {
 		}
 	}
 
+	return filtered
+}
+
+var moduleLangRe = regexp.MustCompile(`/modules/([^/]+)/`)
+
+// FilterByLang keeps English module pages by default.
+// When lang is "en", any path with /modules/<code>/ is kept only if <code> is "en".
+// Paths without a language module segment are kept. lang "all" disables the filter.
+func FilterByLang(files []string, lang string) []string {
+	lang = strings.ToLower(strings.TrimSpace(lang))
+	if lang == "" || lang == "all" {
+		return files
+	}
+
+	var filtered []string
+	for _, file := range files {
+		pathLower := strings.ToLower(filepath.ToSlash(file))
+		matches := moduleLangRe.FindStringSubmatch(pathLower)
+		if len(matches) > 1 && matches[1] != lang {
+			continue
+		}
+		filtered = append(filtered, file)
+	}
 	return filtered
 }

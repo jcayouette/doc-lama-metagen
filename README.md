@@ -4,7 +4,7 @@ AI-powered meta description generator for technical documentation using local LL
 
 ## Overview
 
-Uses local AI models via Ollama to automatically generate SEO-friendly meta descriptions for technical documentation (AsciiDoc and DocBook formats), following the SUSE Technical Writing Style Guide.
+Uses local AI models via Ollama to automatically generate SEO-friendly meta descriptions for technical documentation (AsciiDoc and DocBook formats), following ASD-STE100 Simplified Technical English.
 
 📖 **Documentation**:
 - [doc-meta-gen/README.md](doc-meta-gen/README.md) - Complete guide
@@ -86,10 +86,12 @@ ollama pull llama3.1:8b
 | `--model` | Ollama model name | `qwen3:14b` |
 | `--ollama-url` | Ollama API endpoint | `http://127.0.0.1:11434` |
 | `--type` | File type filter: `asciidoc`, `docbook`, `all` | `all` |
+| `--lang` | Antora module language to process (`en` or `all`) | `en` |
 | `--attributes-file` | Path to `.adoc` or `.ent` attributes/entity file (repeatable) | - |
 | `-a` | Build attribute for conditional parsing, e.g. `build-type=product` (repeatable) | - |
 | `--force-overwrite` | Overwrite existing descriptions | `false` |
 | `--dry-run` | Preview without writing files | `false` |
+| `--update-revdate` | Update `:revdate:` to today when writing descriptions. Pass `--update-revdate=false` to leave revdate unchanged (scripts own revdate) | `true` |
 | `--html-log` | Path to save an HTML report | - |
 | `--report-title` | Custom HTML report title | `Description Generation Report` |
 | `--banned-terms` | Comma-separated list of terms to forbid in output | - |
@@ -98,7 +100,7 @@ ollama pull llama3.1:8b
 
 **Dry run (preview only):**
 ```bash
-./doc-meta-gen --root /path/to/docs --dry-run
+./doc-meta-gen --root /path/to/docs --dry-run --update-revdate=false
 ```
 
 **AsciiDoc with attributes file and HTML report:**
@@ -107,6 +109,7 @@ ollama pull llama3.1:8b
   --root /path/to/docs \
   --type asciidoc \
   --attributes-file attributes.adoc \
+  --update-revdate=false \
   --html-log report.html
 ```
 
@@ -119,6 +122,7 @@ cd /path/to/doc-sleha && /path/to/doc-meta-gen/doc-meta-gen \
   --attributes-file xml/product-entities.ent \
   --attributes-file xml/network-entities.ent \
   --attributes-file xml/generic-entities.ent \
+  --update-revdate=false \
   --html-log report-meta-descriptions.html \
   --report-title "SLES HA Meta Descriptions"
 ```
@@ -127,5 +131,5 @@ cd /path/to/doc-sleha && /path/to/doc-meta-gen/doc-meta-gen \
 
 **Force overwrite existing descriptions:**
 ```bash
-./doc-meta-gen --root /path/to/docs --type docbook --force-overwrite
+./doc-meta-gen --root /path/to/docs --type docbook --force-overwrite --update-revdate=false
 ```

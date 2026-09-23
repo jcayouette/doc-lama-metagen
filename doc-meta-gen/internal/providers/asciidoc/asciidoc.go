@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"time"
 
 	"github.com/scribe/doc-meta-gen/internal/models"
 	"github.com/scribe/doc-meta-gen/pkg/attributes"
@@ -14,19 +15,20 @@ import (
 
 // Provider implements the ContentProvider interface for AsciiDoc files
 type Provider struct {
-	titleRe       *regexp.Regexp
-	descRe        *regexp.Regexp
-	navGenericRe  *regexp.Regexp
-	navGuideRe    *regexp.Regexp
-	headingRe     *regexp.Regexp
-	listItemRe    *regexp.Regexp
-	blockDelimRe  *regexp.Regexp
-	inlineCodeRe  *regexp.Regexp
-	boldRe        *regexp.Regexp
-	italicRe      *regexp.Regexp
-	xrefRe        *regexp.Regexp
-	linkRe        *regexp.Regexp
-	imageRe       *regexp.Regexp
+	titleRe      *regexp.Regexp
+	descRe       *regexp.Regexp
+	revdateRe    *regexp.Regexp
+	navGenericRe *regexp.Regexp
+	navGuideRe   *regexp.Regexp
+	headingRe    *regexp.Regexp
+	listItemRe   *regexp.Regexp
+	blockDelimRe *regexp.Regexp
+	inlineCodeRe *regexp.Regexp
+	boldRe       *regexp.Regexp
+	italicRe     *regexp.Regexp
+	xrefRe       *regexp.Regexp
+	linkRe       *regexp.Regexp
+	imageRe      *regexp.Regexp
 }
 
 // NewProvider creates a new AsciiDoc content provider
@@ -34,6 +36,7 @@ func NewProvider() *Provider {
 	return &Provider{
 		titleRe:      regexp.MustCompile(`^\s*=\s+(.+)$`),
 		descRe:       regexp.MustCompile(`^:\s*description\s*:\s*(.*)$`),
+		revdateRe:    regexp.MustCompile(`^:\s*revdate\s*:`),
 		navGenericRe: regexp.MustCompile(`^nav(?:-.+)?\.adoc$`),
 		navGuideRe:   regexp.MustCompile(`^nav-.+-guide\.adoc$`),
 		headingRe:    regexp.MustCompile(`^==+\s+(.+)$`),
@@ -72,9 +75,9 @@ func (p *Provider) CanHandle(path string) bool {
 		return false
 	}
 
-	// Skip files in nav, navigation, or partials directories
+	// Skip files in nav, navigation, partials, or archived version trees
 	pathLower := strings.ToLower(path)
-	skipDirs := []string{"/nav/", "/navigation/", "/partials/"}
+	skipDirs := []string{"/nav/", "/navigation/", "/partials/", "/archived-docs/", "/archived_docs/"}
 	for _, dir := range skipDirs {
 		if strings.Contains(pathLower, dir) {
 			return false
@@ -237,7 +240,7 @@ func (p *Provider) extractPlainText(text string) string {
 	}
 
 	result := strings.Join(cleanLines, " ")
-	
+
 	// Collapse multiple spaces
 	result = regexp.MustCompile(`\s+`).ReplaceAllString(result, " ")
 	result = strings.TrimSpace(result)
@@ -268,8 +271,9 @@ func (p *Provider) HasExistingDescription(path string) (bool, error) {
 	return false, scanner.Err()
 }
 
-// WriteDescription writes the generated description to the file
-func (p *Provider) WriteDescription(path string, description string, dryRun bool) error {
+// WriteDescription writes the generated description to the file.
+// When updateRevdate is false, :revdate: and :page-revdate: are left unchanged.
+func (p *Provider) WriteDescription(path string, description string, dryRun bool, updateRevdate bool) error {
 	if dryRun {
 		return nil
 	}
@@ -281,21 +285,13 @@ func (p *Provider) WriteDescription(path string, description string, dryRun bool
 	description = regexp.MustCompile(`\s+`).ReplaceAllString(description, " ")
 	description = strings.TrimSpace(description)
 
-	file, err := os.Open(path)
+	raw, err := os.ReadFile(path)
 	if err != nil {
 		return fmt.Errorf("failed to open file: %w", err)
 	}
-
-	var lines []string
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-	file.Close()
-
-	if err := scanner.Err(); err != nil {
-		return fmt.Errorf("error reading file: %w", err)
-	}
+	eofSuffix := trailingNewlineSuffix(raw)
+	body := string(raw[:len(raw)-len(eofSuffix)])
+	lines := strings.Split(body, "\n")
 
 	// Find title line
 	titleIdx := -1
@@ -354,6 +350,15 @@ func (p *Provider) WriteDescription(path string, description string, dryRun bool
 	// Now add new description
 	descLine := fmt.Sprintf(":description: %s", description)
 
+	if updateRevdate {
+		today := time.Now().Format("2006-01-02")
+		for i, line := range lines {
+			if p.revdateRe.MatchString(line) {
+				lines[i] = ":revdate: " + today
+			}
+		}
+	}
+
 	if titleIdx != -1 {
 		// Insert after title
 		insertIdx := titleIdx + 1
@@ -369,13 +374,22 @@ func (p *Provider) WriteDescription(path string, description string, dryRun bool
 		lines = append([]string{descLine}, lines...)
 	}
 
-	// Write back to file
-	output := strings.Join(lines, "\n") + "\n"
+	// Write back, keeping the original trailing newlines (or lack of them).
+	output := strings.Join(lines, "\n") + eofSuffix
 	if err := os.WriteFile(path, []byte(output), 0644); err != nil {
 		return fmt.Errorf("failed to write file: %w", err)
 	}
 
 	return nil
+}
+
+// trailingNewlineSuffix returns the exact CR/LF sequence at the end of raw.
+func trailingNewlineSuffix(raw []byte) string {
+	i := len(raw)
+	for i > 0 && (raw[i-1] == '\n' || raw[i-1] == '\r') {
+		i--
+	}
+	return string(raw[i:])
 }
 
 // RemoveDescriptions removes both :description: and :prev-description: attributes
@@ -384,21 +398,22 @@ func (p *Provider) RemoveDescriptions(path string, dryRun bool) error {
 		return nil
 	}
 
-	content, err := os.ReadFile(path)
+	raw, err := os.ReadFile(path)
 	if err != nil {
 		return fmt.Errorf("failed to read file: %w", err)
 	}
+	eofSuffix := trailingNewlineSuffix(raw)
+	body := string(raw[:len(raw)-len(eofSuffix)])
+	lines := strings.Split(body, "\n")
 
-	lines := strings.Split(string(content), "\n")
-	
 	// Remove all lines that start with :description: or :prev-description:
 	// Also track if we're in a multi-line description value
 	var filteredLines []string
 	skipNext := false
-	
+
 	for _, line := range lines {
 		trimmed := strings.TrimSpace(line)
-		
+
 		// Check if this line starts a description attribute
 		if strings.HasPrefix(trimmed, ":description:") || strings.HasPrefix(trimmed, ":prev-description:") {
 			// Check if the value continues on the next line (no value after colon on this line)
@@ -416,7 +431,7 @@ func (p *Provider) RemoveDescriptions(path string, dryRun bool) error {
 			}
 			continue // Skip this line
 		}
-		
+
 		// If we're skipping continuation lines, check if this might be one
 		if skipNext {
 			// If the line doesn't start with a new attribute (doesn't start with :), it might be a continuation
@@ -427,12 +442,11 @@ func (p *Provider) RemoveDescriptions(path string, dryRun bool) error {
 				skipNext = false
 			}
 		}
-		
+
 		filteredLines = append(filteredLines, line)
 	}
 
-	// Write back to file
-	output := strings.Join(filteredLines, "\n")
+	output := strings.Join(filteredLines, "\n") + eofSuffix
 	if err := os.WriteFile(path, []byte(output), 0644); err != nil {
 		return fmt.Errorf("failed to write file: %w", err)
 	}

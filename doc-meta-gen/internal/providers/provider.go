@@ -19,8 +19,10 @@ type ContentProvider interface {
 	// HasExistingDescription checks if the file already has a meta description
 	HasExistingDescription(path string) (bool, error)
 
-	// WriteDescription writes the generated description back to the file
-	WriteDescription(path string, description string, dryRun bool) error
+	// WriteDescription writes the generated description back to the file.
+	// When updateRevdate is true, :revdate: is set to today. When false, :revdate:
+	// and :page-revdate: are left unchanged.
+	WriteDescription(path string, description string, dryRun bool, updateRevdate bool) error
 
 	// RemoveDescriptions removes both :description: and :prev-description: attributes
 	RemoveDescriptions(path string, dryRun bool) error

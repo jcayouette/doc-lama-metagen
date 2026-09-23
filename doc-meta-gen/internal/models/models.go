@@ -25,6 +25,7 @@ const (
 	StatusAdded    Status = "ADDED"
 	StatusReplaced Status = "REPLACED"
 	StatusUpdated  Status = "UPDATED"
+	StatusCopied   Status = "COPIED"
 	StatusSkipped  Status = "SKIPPED"
 	StatusError    Status = "ERROR"
 	StatusDryRun   Status = "DRY_RUN"
@@ -50,9 +51,11 @@ type Config struct {
 	FileType           string   // "asciidoc", "docbook", "all"
 	ForceOverwrite     bool
 	DryRun             bool
-	RemoveDescriptions bool   // Remove description attributes instead of generating
+	UpdateRevdate      bool // Update :revdate: when writing descriptions (default true)
+	RemoveDescriptions bool // Remove description attributes instead of generating
 	HTMLLogPath        string
 	ReportTitle        string
 	BannedTerms        []string
 	BuildAttributes    map[string]string // For conditional processing
+	Lang               string            // Antora module language to process ("en" or "all")
 }

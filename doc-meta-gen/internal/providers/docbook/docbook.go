@@ -172,7 +172,7 @@ func (p *Provider) HasExistingDescription(path string) (bool, error) {
 //     if not already present.
 //   - xmlns attributes are stripped from the <info> opening tag to avoid
 //     duplicate namespace declarations.
-func (p *Provider) WriteDescription(path string, description string, dryRun bool) error {
+func (p *Provider) WriteDescription(path string, description string, dryRun bool, updateRevdate bool) error {
 	if dryRun {
 		return nil
 	}

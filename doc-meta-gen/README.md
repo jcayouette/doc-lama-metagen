@@ -8,7 +8,9 @@ A modular Go application that generates AI-powered meta descriptions for technic
 - **AsciiDoc/Antora Support**: Extracts content from `.adoc` files with full attribute resolution
 - **DocBook Support**: XML parsing with entity resolution and `<!DOCTYPE>` filtering
 - **Local AI**: Uses Ollama for privacy-focused, local LLM inference
-- **SUSE Style Guide**: Enforces technical writing best practices
+- **ASD-STE100**: Plain technical English — no marketing or decorative wording
+- **Version reuse**: Generate from the latest semantic version (or next/dev/latest) and copy the same description onto matching paths in older versions
+- **Antora attributes**: Loads `asciidoc.attributes` from the nearest `antora.yml`
 - **Attribute Resolution**: Handles complex AsciiDoc conditionals and nested attributes
 - **Smart Skipping**: Automatically skips navigation files and partials
 
@@ -46,7 +48,7 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 ### Basic Command
 
 ```bash
-./doc-meta-gen --root /path/to/docs
+./doc-meta-gen --root /path/to/docs --update-revdate=false
 ```
 
 ### Common Options
@@ -57,6 +59,7 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
   --attributes-file entities.adoc \
   --model llama3.1:8b \
   --type asciidoc \
+  --update-revdate=false \
   --dry-run
 ```
 
@@ -69,8 +72,10 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 | `--ollama-url` | Ollama API endpoint | `http://127.0.0.1:11434` |
 | `--attributes-file` | Path to `.adoc` or `.ent` attributes/entity file (repeatable) | - |
 | `--type` | File type: `asciidoc`, `docbook`, `all` | `all` |
+| `--lang` | Antora module language to process (`en` or `all`) | `en` |
 | `--force-overwrite` | Overwrite existing descriptions | `false` |
 | `--dry-run` | Preview without writing files | `false` |
+| `--update-revdate` | Update `:revdate:` to today when writing descriptions. Pass `--update-revdate=false` to leave revdate unchanged | `true` |
 | `--html-log` | Path to HTML report | - |
 | `--report-title` | Custom HTML report title | `Description Generation Report` |
 | `--banned-terms` | Comma-separated blacklist | - |
@@ -83,6 +88,7 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 ./doc-meta-gen \
   --root ./docs \
   --attributes-file attributes.adoc \
+  --update-revdate=false \
   --dry-run
 ```
 
@@ -91,7 +97,8 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 ./doc-meta-gen \
   --root ./docs \
   --type asciidoc \
-  --model mistral:latest
+  --model mistral:latest \
+  --update-revdate=false
 ```
 
 **Conditional build attributes:**
@@ -99,6 +106,7 @@ go build -o doc-meta-gen ./cmd/doc-meta-gen
 ./doc-meta-gen \
   --root ./docs \
   --attributes-file attributes.adoc \
+  --update-revdate=false \
   -a build-type=product \
   -a platform=linux
 ```
@@ -112,6 +120,7 @@ cd /path/to/doc-sleha && /path/to/doc-meta-gen/doc-meta-gen \
   --attributes-file xml/product-entities.ent \
   --attributes-file xml/network-entities.ent \
   --attributes-file xml/generic-entities.ent \
+  --update-revdate=false \
   --html-log report-meta-descriptions.html \
   --report-title "SLES HA Meta Descriptions"
 ```
@@ -157,6 +166,7 @@ Discovery → Parsing → AI Generation → Validation → Output
 
 Generated descriptions must:
 
+- Follow ASD-STE100 Simplified Technical English (short words, concrete verbs, no marketing language)
 - Be 120-160 characters (ONE sentence)
 - Use active voice (focus on what user can DO)
 - Start with a verb ("Learn", "Configure", "Deploy")
@@ -202,7 +212,7 @@ go test ./...
 go test -v ./internal/...
 
 # Integration test with sample docs
-./doc-meta-gen --root ./testdata --dry-run
+./doc-meta-gen --root ./testdata --dry-run --update-revdate=false
 ```
 
 ## Troubleshooting
@@ -226,7 +236,7 @@ ollama pull llama3.1:8b
 
 Try a more capable model:
 ```bash
-./doc-meta-gen --root ./docs --model llama3.1:70b
+./doc-meta-gen --root ./docs --model llama3.1:70b --update-revdate=false
 ```
 
 ## Roadmap

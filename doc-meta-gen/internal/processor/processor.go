@@ -132,13 +132,9 @@ func (p *Processor) generateDescription(provider providers.ContentProvider, path
 	}
 
 	const minContentLength = 150
-	if len(content.RawContent) < minContentLength {
+	if len(content.RawContent) < minContentLength && strings.TrimSpace(content.Title) == "" && strings.TrimSpace(content.RawContent) == "" {
 		result.Status = models.StatusWarning
-		if content.RawContent == "" {
-			result.Details = "Empty content after extraction"
-		} else {
-			result.Details = fmt.Sprintf("Insufficient content for generation (%d chars, minimum %d)", len(content.RawContent), minContentLength)
-		}
+		result.Details = "Empty content after extraction"
 		log.Printf("WARNING: %s - %s", path, result.Details)
 		return "", nil
 	}

@@ -1,0 +1,162 @@
+2026/09/28 18:04:56 Starting doc-meta-gen
+2026/09/28 18:04:56 Root directory: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs
+2026/09/28 18:04:56 Model: qwen3:14b
+2026/09/28 18:04:56 Ollama URL: http://127.0.0.1:11434
+2026/09/28 18:04:56 Update revdate: false
+2026/09/28 18:04:56 Language: en
+2026/09/28 18:04:56 Checking Ollama connection...
+2026/09/28 18:04:56 ✓ Ollama is available
+2026/09/28 18:04:56 Scanning for files...
+2026/09/28 18:04:56 Found 71 potential files
+2026/09/28 18:04:56 After type filter (asciidoc): 71 files
+2026/09/28 18:04:56 Processing 71 files (language: en)
+2026/09/28 18:04:56 Component runtime-enforcer: generate from version-0.9, copy to version-0.7, version-0.8
+2026/09/28 18:05:10 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/build.adoc (105 chars)
+  → Find the commands to install build system dependencies on SLES, openSUSE, Ubuntu, Debian, RHEL, or Fedora
+2026/09/28 18:05:20 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/compatibility.adoc (154 chars)
+  → Check your kernel version and configuration to ensure it supports the eBPF features required for monitoring and enforcing security policies at the kernel.
+2026/09/28 18:05:43 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/crd.adoc (154 chars)
+  → Find details about the CRD API Reference that describe the schema definitions, resource types, and related objects for managing workload policies and node
+2026/09/28 18:06:13 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/installation/quickstart.adoc (121 chars)
+  → Start a simple workload and generate a WorkloadPolicyProposal to create and test a policy for enforcing allowed processes
+2026/09/28 18:06:40 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/installation/uninstall.adoc (156 chars)
+  → Uninstall the application and all related policies by running specific helm chart commands that remove the deployment and associated resources while leaving
+2026/09/28 18:06:40 SKIPPED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/introduction.adoc - File already has a description
+2026/09/28 18:07:01 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/known_limitations.adoc (112 chars)
+  → Understand the current known limitations of runtime-enforcer and how they affect policy learning and enforcement
+2026/09/28 18:07:15 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer.adoc (111 chars)
+  → Manage WorkloadPolicy and WorkloadPolicyProposal using the Kubernetes plugin for SUSE Security Runtime Enforcer
+2026/09/28 18:07:35 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy.adoc (157 chars)
+  → Configure a WorkloadPolicy using the runtime-enforcer policy command to allow, deny, monitor, or protect specific executables in a container and view current
+2026/09/28 18:07:50 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_ack.adoc (152 chars)
+  → Acknowledge a WorkloadPolicy violation to continue running a workload after a policy check has failed and the system requires manual confirmation before
+2026/09/28 18:08:10 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_allow.adoc (157 chars)
+  → Allow executables for a WorkloadPolicy container by using the runtime-enforcer policy command to define which applications can run inside the container based
+2026/09/28 18:08:29 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_deny.adoc (154 chars)
+  → Deny specific executables from running inside a WorkloadPolicy container by configuring the runtime-enforcer policy to restrict which programs can execute
+2026/09/28 18:08:49 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_monitor.adoc (143 chars)
+  → Monitor the runtime-enforcer policy to check how it enforces WorkloadPolicy rules without changing the system or affecting application behavior
+2026/09/28 18:09:09 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_protect.adoc (149 chars)
+  → Set WorkloadPolicy mode to protect to define rules that control how workloads interact with resources and enforce security constraints during runtime
+2026/09/28 18:09:23 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_show.adoc (133 chars)
+  → Show WorkloadPolicy information by using options inherited from parent commands to list workloads mapped to WorkloadPolicy protection
+2026/09/28 18:09:44 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_show_protection.adoc (158 chars)
+  → Show WorkloadPolicy protection mapping for runtime-enforcer policy to list workloads with their assigned protection options and inherited settings from parent
+2026/09/28 18:10:07 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_proposal.adoc (152 chars)
+  → Promote WorkloadPolicyProposal to WorkloadPolicy by managing options and inheriting settings from parent commands to define and enforce runtime policies
+2026/09/28 18:10:24 ERROR processing /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl-plugin/runtime-enforcer_proposal_promote.adoc: generated description contains prompt leakage after retry
+2026/09/28 18:10:44 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/kubectl_plugin.adoc (147 chars)
+  → Use kubectl runtime-enforcer to manage WorkloadPolicyProposal and WorkloadPolicy operations, such as promoting proposals and switching policy modes
+2026/09/28 18:11:02 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/learning_mode_configuration.adoc (157 chars)
+  → Configure runtime-enforcer to run in learning mode and observe process executions to generate or update WorkloadPolicyProposal with observed executable paths
+2026/09/28 18:11:36 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/phases.adoc (119 chars)
+  → Learn how to move between the learn, monitor, and protect phases of runtime-enforcer and what happens during each phase
+2026/09/28 18:12:11 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/resource-consumption.adoc (127 chars)
+  → Configure the resource limits for the controller and agent to match your cluster size based on workload and policy requirements
+2026/09/28 18:12:41 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/setup-development-env.adoc (128 chars)
+  → Set up a local development environment using Tilt, Kubernetes, and Go by following the provided steps and configuration examples
+2026/09/28 18:13:24 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.9/modules/en/pages/troubleshooting.adoc (123 chars)
+  → Troubleshoot runtime-enforcer issues by checking logs and status fields to identify and resolve policy enforcement problems
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/build.adoc (105 chars)
+  → Find the commands to install build system dependencies on SLES, openSUSE, Ubuntu, Debian, RHEL, or Fedora
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/compatibility.adoc (154 chars)
+  → Check your kernel version and configuration to ensure it supports the eBPF features required for monitoring and enforcing security policies at the kernel.
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/crd.adoc (154 chars)
+  → Find details about the CRD API Reference that describe the schema definitions, resource types, and related objects for managing workload policies and node
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/installation/quickstart.adoc (121 chars)
+  → Start a simple workload and generate a WorkloadPolicyProposal to create and test a policy for enforcing allowed processes
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/installation/uninstall.adoc (156 chars)
+  → Uninstall the application and all related policies by running specific helm chart commands that remove the deployment and associated resources while leaving
+2026/09/28 18:13:24 SKIPPED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/introduction.adoc - File already has a description
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/known_limitations.adoc (112 chars)
+  → Understand the current known limitations of runtime-enforcer and how they affect policy learning and enforcement
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer.adoc (111 chars)
+  → Manage WorkloadPolicy and WorkloadPolicyProposal using the Kubernetes plugin for SUSE Security Runtime Enforcer
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy.adoc (157 chars)
+  → Configure a WorkloadPolicy using the runtime-enforcer policy command to allow, deny, monitor, or protect specific executables in a container and view current
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_allow.adoc (157 chars)
+  → Allow executables for a WorkloadPolicy container by using the runtime-enforcer policy command to define which applications can run inside the container based
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_deny.adoc (154 chars)
+  → Deny specific executables from running inside a WorkloadPolicy container by configuring the runtime-enforcer policy to restrict which programs can execute
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_monitor.adoc (143 chars)
+  → Monitor the runtime-enforcer policy to check how it enforces WorkloadPolicy rules without changing the system or affecting application behavior
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_protect.adoc (149 chars)
+  → Set WorkloadPolicy mode to protect to define rules that control how workloads interact with resources and enforce security constraints during runtime
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_show.adoc (133 chars)
+  → Show WorkloadPolicy information by using options inherited from parent commands to list workloads mapped to WorkloadPolicy protection
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_show_protection.adoc (158 chars)
+  → Show WorkloadPolicy protection mapping for runtime-enforcer policy to list workloads with their assigned protection options and inherited settings from parent
+2026/09/28 18:13:24 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_proposal.adoc (152 chars)
+  → Promote WorkloadPolicyProposal to WorkloadPolicy by managing options and inheriting settings from parent commands to define and enforce runtime policies
+2026/09/28 18:13:57 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl-plugin/runtime-enforcer_proposal_promote.adoc (128 chars)
+  → Promote a WorkloadPolicyProposal to WorkloadPolicy to create a new policy that enforces rules on workloads running in the system
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/kubectl_plugin.adoc (147 chars)
+  → Use kubectl runtime-enforcer to manage WorkloadPolicyProposal and WorkloadPolicy operations, such as promoting proposals and switching policy modes
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/learning_mode_configuration.adoc (157 chars)
+  → Configure runtime-enforcer to run in learning mode and observe process executions to generate or update WorkloadPolicyProposal with observed executable paths
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/phases.adoc (119 chars)
+  → Learn how to move between the learn, monitor, and protect phases of runtime-enforcer and what happens during each phase
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/resource-consumption.adoc (127 chars)
+  → Configure the resource limits for the controller and agent to match your cluster size based on workload and policy requirements
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/setup-development-env.adoc (128 chars)
+  → Set up a local development environment using Tilt, Kubernetes, and Go by following the provided steps and configuration examples
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.7/modules/en/pages/troubleshooting.adoc (123 chars)
+  → Troubleshoot runtime-enforcer issues by checking logs and status fields to identify and resolve policy enforcement problems
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/build.adoc (105 chars)
+  → Find the commands to install build system dependencies on SLES, openSUSE, Ubuntu, Debian, RHEL, or Fedora
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/compatibility.adoc (154 chars)
+  → Check your kernel version and configuration to ensure it supports the eBPF features required for monitoring and enforcing security policies at the kernel.
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/crd.adoc (154 chars)
+  → Find details about the CRD API Reference that describe the schema definitions, resource types, and related objects for managing workload policies and node
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/installation/quickstart.adoc (121 chars)
+  → Start a simple workload and generate a WorkloadPolicyProposal to create and test a policy for enforcing allowed processes
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/installation/uninstall.adoc (156 chars)
+  → Uninstall the application and all related policies by running specific helm chart commands that remove the deployment and associated resources while leaving
+2026/09/28 18:13:57 SKIPPED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/introduction.adoc - File already has a description
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/known_limitations.adoc (112 chars)
+  → Understand the current known limitations of runtime-enforcer and how they affect policy learning and enforcement
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer.adoc (111 chars)
+  → Manage WorkloadPolicy and WorkloadPolicyProposal using the Kubernetes plugin for SUSE Security Runtime Enforcer
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy.adoc (157 chars)
+  → Configure a WorkloadPolicy using the runtime-enforcer policy command to allow, deny, monitor, or protect specific executables in a container and view current
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_ack.adoc (152 chars)
+  → Acknowledge a WorkloadPolicy violation to continue running a workload after a policy check has failed and the system requires manual confirmation before
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_allow.adoc (157 chars)
+  → Allow executables for a WorkloadPolicy container by using the runtime-enforcer policy command to define which applications can run inside the container based
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_deny.adoc (154 chars)
+  → Deny specific executables from running inside a WorkloadPolicy container by configuring the runtime-enforcer policy to restrict which programs can execute
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_monitor.adoc (143 chars)
+  → Monitor the runtime-enforcer policy to check how it enforces WorkloadPolicy rules without changing the system or affecting application behavior
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_protect.adoc (149 chars)
+  → Set WorkloadPolicy mode to protect to define rules that control how workloads interact with resources and enforce security constraints during runtime
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_show.adoc (133 chars)
+  → Show WorkloadPolicy information by using options inherited from parent commands to list workloads mapped to WorkloadPolicy protection
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_policy_show_protection.adoc (158 chars)
+  → Show WorkloadPolicy protection mapping for runtime-enforcer policy to list workloads with their assigned protection options and inherited settings from parent
+2026/09/28 18:13:57 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_proposal.adoc (152 chars)
+  → Promote WorkloadPolicyProposal to WorkloadPolicy by managing options and inheriting settings from parent commands to define and enforce runtime policies
+2026/09/28 18:14:32 ADDED: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl-plugin/runtime-enforcer_proposal_promote.adoc (151 chars)
+  → Promote a WorkloadPolicyProposal to WorkloadPolicy to create and apply a new policy that defines and enforces rules for workloads running in the system
+2026/09/28 18:14:32 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/kubectl_plugin.adoc (147 chars)
+  → Use kubectl runtime-enforcer to manage WorkloadPolicyProposal and WorkloadPolicy operations, such as promoting proposals and switching policy modes
+2026/09/28 18:14:32 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/learning_mode_configuration.adoc (157 chars)
+  → Configure runtime-enforcer to run in learning mode and observe process executions to generate or update WorkloadPolicyProposal with observed executable paths
+2026/09/28 18:14:32 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/phases.adoc (119 chars)
+  → Learn how to move between the learn, monitor, and protect phases of runtime-enforcer and what happens during each phase
+2026/09/28 18:14:32 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/resource-consumption.adoc (127 chars)
+  → Configure the resource limits for the controller and agent to match your cluster size based on workload and policy requirements
+2026/09/28 18:14:32 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/setup-development-env.adoc (128 chars)
+  → Set up a local development environment using Tilt, Kubernetes, and Go by following the provided steps and configuration examples
+2026/09/28 18:14:32 COPIED from version-0.9: /home/scribe/projects/work/cn-metadata/runtime-enforcer-product-docs/docs/version-0.8/modules/en/pages/troubleshooting.adoc (123 chars)
+  → Troubleshoot runtime-enforcer issues by checking logs and status fields to identify and resolve policy enforcement problems
+2026/09/28 18:14:32 
+=== Processing Complete ===
+2026/09/28 18:14:32 Total time: 575.82 seconds
+2026/09/28 18:14:32 Files processed: 71
+2026/09/28 18:14:32 Added: 24
+2026/09/28 18:14:32 Replaced: 0
+2026/09/28 18:14:32 Copied: 43
+2026/09/28 18:14:32 Skipped: 3
+2026/09/28 18:14:32 Errors: 1
+2026/09/28 18:14:32 Warnings: 0
+2026/09/28 18:14:32 HTML report saved to: /home/scribe/doc-lama-metagen/reports/runtime-enforcer.html

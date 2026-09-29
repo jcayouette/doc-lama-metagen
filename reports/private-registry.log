@@ -1,0 +1,53 @@
+2026/09/28 17:28:09 Starting doc-meta-gen
+2026/09/28 17:28:09 Root directory: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc
+2026/09/28 17:28:09 Model: qwen3:14b
+2026/09/28 17:28:09 Ollama URL: http://127.0.0.1:11434
+2026/09/28 17:28:09 Update revdate: false
+2026/09/28 17:28:09 Language: all
+2026/09/28 17:28:09 Checking Ollama connection...
+2026/09/28 17:28:09 ✓ Ollama is available
+2026/09/28 17:28:09 Scanning for files...
+2026/09/28 17:28:09 Found 15 potential files
+2026/09/28 17:28:09 After type filter (asciidoc): 15 files
+2026/09/28 17:28:09 Processing 15 files (language: all)
+2026/09/28 17:28:19 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/backup-restore-velero.adoc (116 chars)
+  → Back up registry resources and persistent data with Velero to protect against accidental deletion or cluster failure
+2026/09/28 17:28:27 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/book.adoc (153 chars)
+  → Getting started with this system shows you how to set up and use the main parts of the system, including installing, configuring, and managing the server
+2026/09/28 17:28:33 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/configure-rancher-oidc.adoc (128 chars)
+  → Configure to act as an OIDC Identity Provider and allow users to authenticate into external applications using their credentials
+2026/09/28 17:28:39 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/faq.adoc (125 chars)
+  → Find answers to common questions about subscription requirements, product features, deployment options, and security scanning
+2026/09/28 17:28:46 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/ha-setup.adoc (139 chars)
+  → Deploy a highly available registry on a cluster by choosing resilience options, distributing components, and setting up a reliable endpoint
+2026/09/28 17:28:53 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/ha_helm_chart_example.adoc (127 chars)
+  → Create a high-availability setup by using this example values file with three replicas and nodeSelector configuration settings.
+2026/09/28 17:29:05 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/helm_chart_override.adoc (157 chars)
+  → How to change default settings when installing a chart to set up a private registry with specific configurations for replicas, scheduling, exposure, and data
+2026/09/28 17:29:20 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/install-airgap-environment.adoc (151 chars)
+  → Install Hauler on a connected system and an air-gapped environment to transfer charts, container images, and other OCI artifacts into isolated networks
+2026/09/28 17:29:31 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/install-using-cmdline.adoc (156 chars)
+  → Install the application on a cluster using the command line by obtaining mirroring credentials from the subscription portal creating a namespace and storing
+2026/09/28 17:29:38 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/install-using-rancher.adoc (122 chars)
+  → Install using the UI by meeting requirements and following steps to add a repository, create a secret, and install a chart
+2026/09/28 17:29:45 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/introduction.adoc (143 chars)
+  → Learn what it is and how it works as an on-premises container registry with features like security, user management, and deployment flexibility
+2026/09/28 17:29:52 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/migrating-from-upstream-harbor.adoc (133 chars)
+  → Migrate data from an existing installation to a new one by exporting and restoring the database and copying the registry blob storage
+2026/09/28 17:29:59 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/release_notes.adoc (104 chars)
+  → Find important updates and changes for the on-premises container registry in this release notes document
+2026/09/28 17:30:08 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/requirements.adoc (148 chars)
+  → Check the minimum platform requirements and recommended production sizing for your deployment to ensure compatibility and performance with supported
+2026/09/28 17:30:19 ADDED: /home/scribe/projects/work/cn-metadata/private-registry-product-docs/en/adoc/troubleshooting.adoc (156 chars)
+  → Troubleshooting helps you find and fix problems that happen when you deploy or use the product, such as the 401 unauthorized error that appears when you try
+2026/09/28 17:30:19 
+=== Processing Complete ===
+2026/09/28 17:30:19 Total time: 130.66 seconds
+2026/09/28 17:30:19 Files processed: 15
+2026/09/28 17:30:19 Added: 15
+2026/09/28 17:30:19 Replaced: 0
+2026/09/28 17:30:19 Copied: 0
+2026/09/28 17:30:19 Skipped: 0
+2026/09/28 17:30:19 Errors: 0
+2026/09/28 17:30:19 Warnings: 0
+2026/09/28 17:30:19 HTML report saved to: /home/scribe/doc-lama-metagen/reports/private-registry.html

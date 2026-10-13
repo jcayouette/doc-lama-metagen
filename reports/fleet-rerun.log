@@ -1,0 +1,806 @@
+2026/10/13 13:54:46 Starting doc-meta-gen
+2026/10/13 13:54:46 Root directory: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs
+2026/10/13 13:54:46 Model: qwen3:14b
+2026/10/13 13:54:46 Ollama URL: http://127.0.0.1:11434
+2026/10/13 13:54:46 Update revdate: false
+2026/10/13 13:54:46 Language: all
+2026/10/13 13:54:46 Checking Ollama connection...
+2026/10/13 13:54:46 ✓ Ollama is available
+2026/10/13 13:54:46 Scanning for files...
+2026/10/13 13:54:46 Found 390 potential files
+2026/10/13 13:54:46 After type filter (asciidoc): 390 files
+2026/10/13 13:54:46 Processing 390 files (language: all)
+2026/10/13 13:54:46 Component ROOT: generate from v0.16, copy to next, v0.12, v0.13, v0.14, v0.15
+2026/10/13 13:54:46 Loaded 2 attributes from /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/antora.yml
+2026/10/13 13:54:54 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/changelogs/latest.adoc (159 chars)
+  → Update v0.16.0 introduces changes to how Helm repository credentials are forwarded, requires new configuration for credential forwarding, and adds a new Policy
+2026/10/13 13:54:56 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/changelogs/other.adoc (159 chars)
+  → Find all previous versions of Fleet, along with information about what changed in each release, by visiting the official GitHub Release page where every update
+2026/10/13 13:54:59 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/changelogs/v0.16.0.adoc (156 chars)
+  → Update v0.16.0 introduces changes to how credentials are forwarded to Helm repositories and adds a new Policy resource to manage multi-tenant access control
+2026/10/13 13:55:01 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/experimental-features/enableexperimental.adoc (152 chars)
+  → Enable experimental features in Fleet by using specific environment variables during deployment. This lets you activate advanced options like scheduling
+2026/10/13 13:55:02 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/experimental-features/scheduling.adoc (117 chars)
+  → Define when clusters can receive updates by creating a schedule with a cron expression, duration, and target clusters
+2026/10/13 13:55:05 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/architecture.adoc (117 chars)
+  → Architecture defines how Fleet controller and cluster agents interact to manage clusters using a two-stage pull model
+2026/10/13 13:55:06 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/concepts.adoc (130 chars)
+  → Learn the key components and concepts of Fleet, including Fleet Manager, Fleet controller, GitRepo, Bundle, and Downstream Cluster
+2026/10/13 13:55:07 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/gitrepo-content.adoc (113 chars)
+  → Understand what files and structures are in a Git repository and how Fleet uses them to create and manage bundles
+2026/10/13 13:55:09 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/glossary.adoc (142 chars)
+  → Define terms used in Fleets system, such as agent, bundle, cluster, and GitRepo, to help you understand how workloads are managed and deployed
+2026/10/13 13:55:10 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/multi-tenancy.adoc (124 chars)
+  → Understand how Fleet manages trust between multiple tenants to ensure secure and isolated resource access in shared clusters
+2026/10/13 13:55:12 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/namespaces.adoc (123 chars)
+  → Understand how to create, configure, and restrict namespaces for deploying workloads and managing resources across clusters
+2026/10/13 13:55:13 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/ref-bundle-stages.adoc (108 chars)
+  → Understand how a bundle is created, updated, and deployed across clusters using GitRepo and Fleet components
+2026/10/13 13:55:14 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/resources-during-deployment.adoc (139 chars)
+  → Create a deployment from a git repository by identifying and managing the custom resources, including internal ones, needed for the process
+2026/10/13 13:55:17 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/explanations/target-customization.adoc (120 chars)
+  → Target customizations let you adjust bundle settings for specific clusters without creating separate bundles or GitRepos
+2026/10/13 13:55:18 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-operators/cluster-group.adoc (109 chars)
+  → Create cluster groups to organize clusters under a named selector for easier management and aggregated status
+2026/10/13 13:55:19 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-operators/cluster-registration.adoc (104 chars)
+  → Register a downstream cluster by installing an agent and using a registration token to start the process
+2026/10/13 13:55:22 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-operators/installation.adoc (141 chars)
+  → Installation Details describes how to set up Fleet on a Kubernetes cluster using Helm charts and configure it for single or multi-cluster use
+2026/10/13 13:55:23 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-operators/resource-limits.adoc (136 chars)
+  → Configure resource limits and requests for Fleet controllers and downstream cluster agents using the resources and agentResources fields
+2026/10/13 13:55:24 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-operators/tenant-setup.adoc (144 chars)
+  → Set up a tenant with proper isolation by creating upstream RBAC, downstream RBAC, and a policy that restricts access and defines allowed actions
+2026/10/13 13:55:26 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/bundle-add.adoc (120 chars)
+  → Create a Bundle Resource by defining the resources explicitly in the Bundle Spec when deploying without a git repository
+2026/10/13 13:55:28 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/bundle-diffs.adoc (159 chars)
+  → Generate diffs to ignore modified GitRepos in Fleet by using the fleet bundlediff command to create comparePatches that instruct Fleet to skip specific objects
+2026/10/13 13:55:30 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/downstream-resource-propagation.adoc (158 chars)
+  → Automatically copying resources to downstream clusters simplifies managing dependencies for charts and ensures workloads use the latest versions of referenced
+2026/10/13 13:55:33 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/fetch-helm-oci.adoc (129 chars)
+  → Fetch Helm charts from OCI registries by using the repo field in a fleet.yaml file to reference the chart and specify the version
+2026/10/13 13:55:35 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/fine-tune-error.adoc (100 chars)
+  → Use the ignore.conditions setting in the fleet.yaml file to tell Fleet to ignore specific conditions
+2026/10/13 13:55:38 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/gitrepo-add.adoc (153 chars)
+  → Create a GitRepo resource to register a Git repository in Kubernetes by defining its configuration including the repository URL and authentication method
+2026/10/13 13:55:39 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/gitrepo-targets.adoc (106 chars)
+  → Map clusters to downstream targets using grouping configuration to deploy bundles across multiple clusters
+2026/10/13 13:55:40 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/helm-ops.adoc (125 chars)
+  → Create a HelmOp resource to deploy Helm charts directly from a Helm repository or OCI registry without using a git repository
+2026/10/13 13:55:41 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/imagescan.adoc (124 chars)
+  → Use image scan to automatically update container image references in your git repository without manual changes to manifests
+2026/10/13 13:55:42 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/install-use-fleet-cli.adoc (103 chars)
+  → Install Fleet CLI to create, apply, and inspect bundles from your local machine without needing GitRepo
+2026/10/13 13:55:43 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/observability.adoc (128 chars)
+  → Understand how Fleet reports resource status, generates Kubernetes events, and provides metrics for monitoring and observability
+2026/10/13 13:55:45 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/oci-storage.adoc (103 chars)
+  → Use OCI storage to avoid etcd size limits and manage large Kubernetes bundle resources more efficiently
+2026/10/13 13:55:46 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/rollout.adoc (104 chars)
+  → Understand how to control app deployments across clusters using partitions and rollout strategy settings
+2026/10/13 13:55:47 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/templating.adoc (137 chars)
+  → Customize cluster deployments with Fleet templating by using dynamic values, labels, and reusable variables in fleet.yaml and Helm charts
+2026/10/13 13:55:48 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/validate-fleet-cli.adoc (118 chars)
+  → Validate Fleet CLI deployment by checking Bundle and BundleDeployment status to see if resources are applied correctly
+2026/10/13 13:55:51 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/how-tos-for-users/webhook.adoc (147 chars)
+  → Configure webhooks to replace polling in Fleet and reduce the delay between a Git push and Fleet processing changes by setting up a webhook service
+2026/10/13 13:55:52 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/index.adoc (152 chars)
+  → What Fleet is and how it helps manage Kubernetes clusters by using GitOps to control and monitor deployments allowing users to manage resources from Git
+2026/10/13 13:55:54 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/persona.adoc (159 chars)
+  → Identify the main people involved in a project and describe their responsibilities to help team members understand who is responsible for what during different
+2026/10/13 13:55:55 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent.adoc (123 chars)
+  → Monitor and control cluster resources by using the Fleet agent to send status updates and register with an upstream cluster
+2026/10/13 13:55:57 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_clusterstatus.adoc (129 chars)
+  → Monitor and update the status of resources in the cluster by sending continuous reports to the upstream cluster using fleet-agent
+2026/10/13 13:55:58 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_register.adoc (116 chars)
+  → Register the fleet-agent with an upstream cluster to enable communication between the agent and the Fleet controller
+2026/10/13 13:55:59 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup.adoc (111 chars)
+  → Clean up outdated resources using fleet cleanup commands for cluster registrations, git jobs, and other sources
+2026/10/13 13:56:00 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_clusterregistration.adoc (149 chars)
+  → Remove outdated cluster registrations from the fleet cleanup process to ensure only current and valid cluster information is maintained in the system
+2026/10/13 13:56:02 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_gitjob.adoc (109 chars)
+  → Remove outdated git jobs from your fleet to keep your environment organized and ensure only current tasks run
+2026/10/13 13:56:03 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet.adoc (127 chars)
+  → Manage Fleet operations by using commands to create, deploy, clean up, monitor, and analyze cluster setups, helping you control
+2026/10/13 13:56:04 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_analyze.adoc (102 chars)
+  → Analyze fleet monitor snapshots to check resource status, detect issues, and compare changes over time
+2026/10/13 13:56:05 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_apply.adoc (123 chars)
+  → Apply fleet bundles to a cluster and configure bundle creation settings using command-line options or environment variables
+2026/10/13 13:56:09 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_bundlediff.adoc (149 chars)
+  → Display bundle diffs from resource status to see changes between the desired state from Git or Helm and the actual state in the cluster by extracting
+2026/10/13 13:56:10 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_deploy.adoc (145 chars)
+  → Create a Helm release to deploy a bundledeployment/content resource to a cluster without directly deploying the bundledeployment/content resource
+2026/10/13 13:56:11 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_dump.adoc (111 chars)
+  → Dump cluster data into an archive containing Fleet resources, Kubernetes events, and monitoring service metrics
+2026/10/13 13:56:12 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_gitcloner.adoc (113 chars)
+  → Clones a git repository from a source or text using fleet gitcloner with options to customize the cloning process
+2026/10/13 13:56:13 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_monitor.adoc (124 chars)
+  → Monitor Fleet deployments to find and fix problems by checking resource states and diagnosing issues in the GitOps lifecycle
+2026/10/13 13:56:15 ERROR processing /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-cli/fleet_target.adoc: generated description too short: 94 characters
+2026/10/13 13:56:16 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller.adoc (105 chars)
+  → Configure Fleet controller gitjob operations to manage how the controller interacts with git repositories
+2026/10/13 13:56:18 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_agentmanagement.adoc (113 chars)
+  → Manage Fleet agent settings by configuring options that control how the agent interacts with the Fleet controller
+2026/10/13 13:56:19 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_cleanup.adoc (128 chars)
+  → Remove old controller resources using the fleet-controller cleanup command to keep your system organized and running efficiently
+2026/10/13 13:56:20 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_gitjob.adoc (114 chars)
+  → Configure Fleet controller gitjob operations to manage the Fleet controller that communicates with the Fleet agent
+2026/10/13 13:56:22 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-bundle.adoc (136 chars)
+  → Create a Bundle Resource to define the structure and contents of the bundle that Fleet automatically generates when a GitRepo is created
+2026/10/13 13:56:23 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-configuration.adoc (103 chars)
+  → Configure Fleet by using Helm values in a ConfigMap named rancher-config in the cattle-system namespace
+2026/10/13 13:56:24 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-crd-schema.adoc (108 chars)
+  → Understand the structure and purpose of Fleet CRDs by reviewing their schema and definitions in this summary
+2026/10/13 13:56:25 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-crds.adoc (122 chars)
+  → Understand the structure and components of a custom resource specification for deploying application resources to clusters
+2026/10/13 13:56:26 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-fleet-yaml.adoc (117 chars)
+  → Create or modify a bundle by using the fleet.yaml file to set options like namespace, labels, and Helm chart settings
+2026/10/13 13:56:28 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-gitrepo.adoc (153 chars)
+  → Create a GitRepo resource to describe a git repository, specify how it is accessed, and locate the bundles, ensuring the resource matches the GitRepoSpec
+2026/10/13 13:56:29 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-policy.adoc (118 chars)
+  → Understand how the Policy resource controls GitRepo, HelmOp, and Bundle actions and sets default values in a namespace
+2026/10/13 13:56:30 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-registration.adoc (128 chars)
+  → Learn how cluster registration works by following the process of creating resources and secrets to register a downstream cluster
+2026/10/13 13:56:32 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-resources.adoc (149 chars)
+  → List of Deployed Resources shows what happens after installing Fleet in Rancher, including the names of the resources created in the upstream cluster
+2026/10/13 13:56:33 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-schedule.adoc (157 chars)
+  → Define the Schedule resource to set time windows when Fleet accepts changes to Clusters and refer to Scheduling for more details on how to use it effectively
+2026/10/13 13:56:36 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/reference/ref-status-fields.adoc (151 chars)
+  → Describe the status fields used to show the current state of resources like GitRepos, HelmOps, Clusters, and Bundles and how these states are displayed
+2026/10/13 13:56:39 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/troubleshooting.adoc (113 chars)
+  → Check the logs for Kubernetes job pods in the local management cluster to find errors in the GitRepo or Helm repo
+2026/10/13 13:56:41 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/tutorials/best-practices.adoc (146 chars)
+  → Learn best practices for organizing repositories, managing branch watches, avoiding nested resources, and designing bundles to improve performance
+2026/10/13 13:56:43 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/tutorials/quickstart.adoc (125 chars)
+  → Install Fleet using a Helm chart by following the official instructions to set up the Helm 3 CLI and add the Fleet repository
+2026/10/13 13:56:44 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/tutorials/tut-deployment.adoc (103 chars)
+  → Create a deployment by setting up a Git repo and applying a GitRepo resource with correct configuration
+2026/10/13 13:56:45 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.16/modules/ROOT/pages/tutorials/uninstall.adoc (110 chars)
+  → Uninstall the Fleet Standalone components by removing Helm charts, workloads, custom resources, and namespaces
+2026/10/13 13:56:45 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/changelogs/latest.adoc (159 chars)
+  → Update v0.16.0 introduces changes to how Helm repository credentials are forwarded, requires new configuration for credential forwarding, and adds a new Policy
+2026/10/13 13:56:45 Loaded 2 attributes from /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/antora.yml
+2026/10/13 13:56:47 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/changelogs/next.adoc (126 chars)
+  → Check the GitHub Release page to find information about the next development version of Fleet and see the changes and features
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/experimental-features/enableexperimental.adoc (152 chars)
+  → Enable experimental features in Fleet by using specific environment variables during deployment. This lets you activate advanced options like scheduling
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/experimental-features/scheduling.adoc (117 chars)
+  → Define when clusters can receive updates by creating a schedule with a cron expression, duration, and target clusters
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/architecture.adoc (117 chars)
+  → Architecture defines how Fleet controller and cluster agents interact to manage clusters using a two-stage pull model
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/concepts.adoc (130 chars)
+  → Learn the key components and concepts of Fleet, including Fleet Manager, Fleet controller, GitRepo, Bundle, and Downstream Cluster
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/gitrepo-content.adoc (113 chars)
+  → Understand what files and structures are in a Git repository and how Fleet uses them to create and manage bundles
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/glossary.adoc (142 chars)
+  → Define terms used in Fleets system, such as agent, bundle, cluster, and GitRepo, to help you understand how workloads are managed and deployed
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/multi-tenancy.adoc (124 chars)
+  → Understand how Fleet manages trust between multiple tenants to ensure secure and isolated resource access in shared clusters
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/namespaces.adoc (123 chars)
+  → Understand how to create, configure, and restrict namespaces for deploying workloads and managing resources across clusters
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/ref-bundle-stages.adoc (108 chars)
+  → Understand how a bundle is created, updated, and deployed across clusters using GitRepo and Fleet components
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/resources-during-deployment.adoc (139 chars)
+  → Create a deployment from a git repository by identifying and managing the custom resources, including internal ones, needed for the process
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/explanations/target-customization.adoc (120 chars)
+  → Target customizations let you adjust bundle settings for specific clusters without creating separate bundles or GitRepos
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-operators/cluster-group.adoc (109 chars)
+  → Create cluster groups to organize clusters under a named selector for easier management and aggregated status
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-operators/cluster-registration.adoc (104 chars)
+  → Register a downstream cluster by installing an agent and using a registration token to start the process
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-operators/installation.adoc (141 chars)
+  → Installation Details describes how to set up Fleet on a Kubernetes cluster using Helm charts and configure it for single or multi-cluster use
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-operators/resource-limits.adoc (136 chars)
+  → Configure resource limits and requests for Fleet controllers and downstream cluster agents using the resources and agentResources fields
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-operators/tenant-setup.adoc (144 chars)
+  → Set up a tenant with proper isolation by creating upstream RBAC, downstream RBAC, and a policy that restricts access and defines allowed actions
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/bundle-add.adoc (120 chars)
+  → Create a Bundle Resource by defining the resources explicitly in the Bundle Spec when deploying without a git repository
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/bundle-diffs.adoc (159 chars)
+  → Generate diffs to ignore modified GitRepos in Fleet by using the fleet bundlediff command to create comparePatches that instruct Fleet to skip specific objects
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/downstream-resource-propagation.adoc (158 chars)
+  → Automatically copying resources to downstream clusters simplifies managing dependencies for charts and ensures workloads use the latest versions of referenced
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/fetch-helm-oci.adoc (129 chars)
+  → Fetch Helm charts from OCI registries by using the repo field in a fleet.yaml file to reference the chart and specify the version
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/fine-tune-error.adoc (100 chars)
+  → Use the ignore.conditions setting in the fleet.yaml file to tell Fleet to ignore specific conditions
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/gitrepo-add.adoc (153 chars)
+  → Create a GitRepo resource to register a Git repository in Kubernetes by defining its configuration including the repository URL and authentication method
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/gitrepo-targets.adoc (106 chars)
+  → Map clusters to downstream targets using grouping configuration to deploy bundles across multiple clusters
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/helm-ops.adoc (125 chars)
+  → Create a HelmOp resource to deploy Helm charts directly from a Helm repository or OCI registry without using a git repository
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/imagescan.adoc (124 chars)
+  → Use image scan to automatically update container image references in your git repository without manual changes to manifests
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/install-use-fleet-cli.adoc (103 chars)
+  → Install Fleet CLI to create, apply, and inspect bundles from your local machine without needing GitRepo
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/observability.adoc (128 chars)
+  → Understand how Fleet reports resource status, generates Kubernetes events, and provides metrics for monitoring and observability
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/oci-storage.adoc (103 chars)
+  → Use OCI storage to avoid etcd size limits and manage large Kubernetes bundle resources more efficiently
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/rollout.adoc (104 chars)
+  → Understand how to control app deployments across clusters using partitions and rollout strategy settings
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/templating.adoc (137 chars)
+  → Customize cluster deployments with Fleet templating by using dynamic values, labels, and reusable variables in fleet.yaml and Helm charts
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/validate-fleet-cli.adoc (118 chars)
+  → Validate Fleet CLI deployment by checking Bundle and BundleDeployment status to see if resources are applied correctly
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/how-tos-for-users/webhook.adoc (147 chars)
+  → Configure webhooks to replace polling in Fleet and reduce the delay between a Git push and Fleet processing changes by setting up a webhook service
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/index.adoc (152 chars)
+  → What Fleet is and how it helps manage Kubernetes clusters by using GitOps to control and monitor deployments allowing users to manage resources from Git
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/persona.adoc (159 chars)
+  → Identify the main people involved in a project and describe their responsibilities to help team members understand who is responsible for what during different
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent.adoc (123 chars)
+  → Monitor and control cluster resources by using the Fleet agent to send status updates and register with an upstream cluster
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_clusterstatus.adoc (129 chars)
+  → Monitor and update the status of resources in the cluster by sending continuous reports to the upstream cluster using fleet-agent
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_register.adoc (116 chars)
+  → Register the fleet-agent with an upstream cluster to enable communication between the agent and the Fleet controller
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup.adoc (111 chars)
+  → Clean up outdated resources using fleet cleanup commands for cluster registrations, git jobs, and other sources
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_clusterregistration.adoc (149 chars)
+  → Remove outdated cluster registrations from the fleet cleanup process to ensure only current and valid cluster information is maintained in the system
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_gitjob.adoc (109 chars)
+  → Remove outdated git jobs from your fleet to keep your environment organized and ensure only current tasks run
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet.adoc (127 chars)
+  → Manage Fleet operations by using commands to create, deploy, clean up, monitor, and analyze cluster setups, helping you control
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_analyze.adoc (102 chars)
+  → Analyze fleet monitor snapshots to check resource status, detect issues, and compare changes over time
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_apply.adoc (123 chars)
+  → Apply fleet bundles to a cluster and configure bundle creation settings using command-line options or environment variables
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_bundlediff.adoc (149 chars)
+  → Display bundle diffs from resource status to see changes between the desired state from Git or Helm and the actual state in the cluster by extracting
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_deploy.adoc (145 chars)
+  → Create a Helm release to deploy a bundledeployment/content resource to a cluster without directly deploying the bundledeployment/content resource
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_dump.adoc (111 chars)
+  → Dump cluster data into an archive containing Fleet resources, Kubernetes events, and monitoring service metrics
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_gitcloner.adoc (113 chars)
+  → Clones a git repository from a source or text using fleet gitcloner with options to customize the cloning process
+2026/10/13 13:56:47 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_monitor.adoc (124 chars)
+  → Monitor Fleet deployments to find and fix problems by checking resource states and diagnosing issues in the GitOps lifecycle
+2026/10/13 13:56:48 ERROR processing /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-cli/fleet_target.adoc: generated description too short: 94 characters
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller.adoc (105 chars)
+  → Configure Fleet controller gitjob operations to manage how the controller interacts with git repositories
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_agentmanagement.adoc (113 chars)
+  → Manage Fleet agent settings by configuring options that control how the agent interacts with the Fleet controller
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_cleanup.adoc (128 chars)
+  → Remove old controller resources using the fleet-controller cleanup command to keep your system organized and running efficiently
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_gitjob.adoc (114 chars)
+  → Configure Fleet controller gitjob operations to manage the Fleet controller that communicates with the Fleet agent
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-bundle.adoc (136 chars)
+  → Create a Bundle Resource to define the structure and contents of the bundle that Fleet automatically generates when a GitRepo is created
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-configuration.adoc (103 chars)
+  → Configure Fleet by using Helm values in a ConfigMap named rancher-config in the cattle-system namespace
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-crd-schema.adoc (108 chars)
+  → Understand the structure and purpose of Fleet CRDs by reviewing their schema and definitions in this summary
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-crds.adoc (122 chars)
+  → Understand the structure and components of a custom resource specification for deploying application resources to clusters
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-fleet-yaml.adoc (117 chars)
+  → Create or modify a bundle by using the fleet.yaml file to set options like namespace, labels, and Helm chart settings
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-gitrepo.adoc (153 chars)
+  → Create a GitRepo resource to describe a git repository, specify how it is accessed, and locate the bundles, ensuring the resource matches the GitRepoSpec
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-policy.adoc (118 chars)
+  → Understand how the Policy resource controls GitRepo, HelmOp, and Bundle actions and sets default values in a namespace
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-registration.adoc (128 chars)
+  → Learn how cluster registration works by following the process of creating resources and secrets to register a downstream cluster
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-resources.adoc (149 chars)
+  → List of Deployed Resources shows what happens after installing Fleet in Rancher, including the names of the resources created in the upstream cluster
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-schedule.adoc (157 chars)
+  → Define the Schedule resource to set time windows when Fleet accepts changes to Clusters and refer to Scheduling for more details on how to use it effectively
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/reference/ref-status-fields.adoc (151 chars)
+  → Describe the status fields used to show the current state of resources like GitRepos, HelmOps, Clusters, and Bundles and how these states are displayed
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/troubleshooting.adoc (113 chars)
+  → Check the logs for Kubernetes job pods in the local management cluster to find errors in the GitRepo or Helm repo
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/tutorials/best-practices.adoc (146 chars)
+  → Learn best practices for organizing repositories, managing branch watches, avoiding nested resources, and designing bundles to improve performance
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/tutorials/quickstart.adoc (125 chars)
+  → Install Fleet using a Helm chart by following the official instructions to set up the Helm 3 CLI and add the Fleet repository
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/tutorials/tut-deployment.adoc (103 chars)
+  → Create a deployment by setting up a Git repo and applying a GitRepo resource with correct configuration
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/next/modules/ROOT/pages/tutorials/uninstall.adoc (110 chars)
+  → Uninstall the Fleet Standalone components by removing Helm charts, workloads, custom resources, and namespaces
+2026/10/13 13:56:48 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/changelogs/other.adoc (159 chars)
+  → Find all previous versions of Fleet, along with information about what changed in each release, by visiting the official GitHub Release page where every update
+2026/10/13 13:56:48 Loaded 2 attributes from /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/antora.yml
+2026/10/13 13:56:51 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/changelogs/v0.12.0.adoc (103 chars)
+  → The v0.12.0 release adds a new HelmOps controller that allows managing Helm charts with the HelmApp CRD
+2026/10/13 13:56:51 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/experimental-features/enableexperimental.adoc (152 chars)
+  → Enable experimental features in Fleet by using specific environment variables during deployment. This lets you activate advanced options like scheduling
+2026/10/13 13:56:52 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/experimental-features/oci-storage.adoc (110 chars)
+  → Choose OCI registry storage for bundle resources to avoid etcd size limits and store large bundles efficiently
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/explanations/architecture.adoc (117 chars)
+  → Architecture defines how Fleet controller and cluster agents interact to manage clusters using a two-stage pull model
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/explanations/concepts.adoc (130 chars)
+  → Learn the key components and concepts of Fleet, including Fleet Manager, Fleet controller, GitRepo, Bundle, and Downstream Cluster
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/explanations/gitrepo-content.adoc (113 chars)
+  → Understand what files and structures are in a Git repository and how Fleet uses them to create and manage bundles
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/explanations/namespaces.adoc (123 chars)
+  → Understand how to create, configure, and restrict namespaces for deploying workloads and managing resources across clusters
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/explanations/ref-bundle-stages.adoc (108 chars)
+  → Understand how a bundle is created, updated, and deployed across clusters using GitRepo and Fleet components
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/explanations/resources-during-deployment.adoc (139 chars)
+  → Create a deployment from a git repository by identifying and managing the custom resources, including internal ones, needed for the process
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-operators/cluster-group.adoc (109 chars)
+  → Create cluster groups to organize clusters under a named selector for easier management and aggregated status
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-operators/cluster-registration.adoc (104 chars)
+  → Register a downstream cluster by installing an agent and using a registration token to start the process
+2026/10/13 13:56:52 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-operators/installation.adoc (141 chars)
+  → Installation Details describes how to set up Fleet on a Kubernetes cluster using Helm charts and configure it for single or multi-cluster use
+2026/10/13 13:56:53 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-operators/multi-user.adoc (128 chars)
+  → Set up multi-user access by configuring namespaces, GitRepo restrictions, and GlobalRoles to isolate and manage tenant resources
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/bundle-add.adoc (120 chars)
+  → Create a Bundle Resource by defining the resources explicitly in the Bundle Spec when deploying without a git repository
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/bundle-diffs.adoc (159 chars)
+  → Generate diffs to ignore modified GitRepos in Fleet by using the fleet bundlediff command to create comparePatches that instruct Fleet to skip specific objects
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/fetch-helm-oci.adoc (129 chars)
+  → Fetch Helm charts from OCI registries by using the repo field in a fleet.yaml file to reference the chart and specify the version
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/gitrepo-add.adoc (153 chars)
+  → Create a GitRepo resource to register a Git repository in Kubernetes by defining its configuration including the repository URL and authentication method
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/gitrepo-targets.adoc (106 chars)
+  → Map clusters to downstream targets using grouping configuration to deploy bundles across multiple clusters
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/helm-ops.adoc (125 chars)
+  → Create a HelmOp resource to deploy Helm charts directly from a Helm repository or OCI registry without using a git repository
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/imagescan.adoc (124 chars)
+  → Use image scan to automatically update container image references in your git repository without manual changes to manifests
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/install-use-fleet-cli.adoc (103 chars)
+  → Install Fleet CLI to create, apply, and inspect bundles from your local machine without needing GitRepo
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/observability.adoc (128 chars)
+  → Understand how Fleet reports resource status, generates Kubernetes events, and provides metrics for monitoring and observability
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/oci-storage.adoc (103 chars)
+  → Use OCI storage to avoid etcd size limits and manage large Kubernetes bundle resources more efficiently
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/rollout.adoc (104 chars)
+  → Understand how to control app deployments across clusters using partitions and rollout strategy settings
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/validate-fleet-cli.adoc (118 chars)
+  → Validate Fleet CLI deployment by checking Bundle and BundleDeployment status to see if resources are applied correctly
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/how-tos-for-users/webhook.adoc (147 chars)
+  → Configure webhooks to replace polling in Fleet and reduce the delay between a Git push and Fleet processing changes by setting up a webhook service
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/index.adoc (152 chars)
+  → What Fleet is and how it helps manage Kubernetes clusters by using GitOps to control and monitor deployments allowing users to manage resources from Git
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/persona.adoc (159 chars)
+  → Identify the main people involved in a project and describe their responsibilities to help team members understand who is responsible for what during different
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent.adoc (123 chars)
+  → Monitor and control cluster resources by using the Fleet agent to send status updates and register with an upstream cluster
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_clusterstatus.adoc (129 chars)
+  → Monitor and update the status of resources in the cluster by sending continuous reports to the upstream cluster using fleet-agent
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_register.adoc (116 chars)
+  → Register the fleet-agent with an upstream cluster to enable communication between the agent and the Fleet controller
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup.adoc (111 chars)
+  → Clean up outdated resources using fleet cleanup commands for cluster registrations, git jobs, and other sources
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_clusterregistration.adoc (149 chars)
+  → Remove outdated cluster registrations from the fleet cleanup process to ensure only current and valid cluster information is maintained in the system
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_gitjob.adoc (109 chars)
+  → Remove outdated git jobs from your fleet to keep your environment organized and ensure only current tasks run
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/fleet.adoc (127 chars)
+  → Manage Fleet operations by using commands to create, deploy, clean up, monitor, and analyze cluster setups, helping you control
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/fleet_apply.adoc (123 chars)
+  → Apply fleet bundles to a cluster and configure bundle creation settings using command-line options or environment variables
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/fleet_deploy.adoc (145 chars)
+  → Create a Helm release to deploy a bundledeployment/content resource to a cluster without directly deploying the bundledeployment/content resource
+2026/10/13 13:56:53 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/fleet_gitcloner.adoc (113 chars)
+  → Clones a git repository from a source or text using fleet gitcloner with options to customize the cloning process
+2026/10/13 13:56:55 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/fleet_target.adoc (126 chars)
+  → List available targets for a bundle to help manage fleet operations and identify targets that can be included in the next task
+2026/10/13 13:56:56 ERROR processing /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-cli/fleet_test.adoc: generated description too short: 95 characters
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller.adoc (105 chars)
+  → Configure Fleet controller gitjob operations to manage how the controller interacts with git repositories
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_agentmanagement.adoc (113 chars)
+  → Manage Fleet agent settings by configuring options that control how the agent interacts with the Fleet controller
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_cleanup.adoc (128 chars)
+  → Remove old controller resources using the fleet-controller cleanup command to keep your system organized and running efficiently
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_gitjob.adoc (114 chars)
+  → Configure Fleet controller gitjob operations to manage the Fleet controller that communicates with the Fleet agent
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-bundle.adoc (136 chars)
+  → Create a Bundle Resource to define the structure and contents of the bundle that Fleet automatically generates when a GitRepo is created
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-configuration.adoc (103 chars)
+  → Configure Fleet by using Helm values in a ConfigMap named rancher-config in the cattle-system namespace
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-crds.adoc (122 chars)
+  → Understand the structure and components of a custom resource specification for deploying application resources to clusters
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-fleet-yaml.adoc (117 chars)
+  → Create or modify a bundle by using the fleet.yaml file to set options like namespace, labels, and Helm chart settings
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-gitrepo.adoc (153 chars)
+  → Create a GitRepo resource to describe a git repository, specify how it is accessed, and locate the bundles, ensuring the resource matches the GitRepoSpec
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-registration.adoc (128 chars)
+  → Learn how cluster registration works by following the process of creating resources and secrets to register a downstream cluster
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-resources.adoc (149 chars)
+  → List of Deployed Resources shows what happens after installing Fleet in Rancher, including the names of the resources created in the upstream cluster
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/reference/ref-status-fields.adoc (151 chars)
+  → Describe the status fields used to show the current state of resources like GitRepos, HelmOps, Clusters, and Bundles and how these states are displayed
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/troubleshooting.adoc (113 chars)
+  → Check the logs for Kubernetes job pods in the local management cluster to find errors in the GitRepo or Helm repo
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/tutorials/quickstart.adoc (125 chars)
+  → Install Fleet using a Helm chart by following the official instructions to set up the Helm 3 CLI and add the Fleet repository
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/tutorials/tut-deployment.adoc (103 chars)
+  → Create a deployment by setting up a Git repo and applying a GitRepo resource with correct configuration
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.12/modules/ROOT/pages/tutorials/uninstall.adoc (110 chars)
+  → Uninstall the Fleet Standalone components by removing Helm charts, workloads, custom resources, and namespaces
+2026/10/13 13:56:56 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/changelogs/other.adoc (159 chars)
+  → Find all previous versions of Fleet, along with information about what changed in each release, by visiting the official GitHub Release page where every update
+2026/10/13 13:56:56 Loaded 2 attributes from /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/antora.yml
+2026/10/13 13:56:59 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/changelogs/v0.13.0.adoc (147 chars)
+  → V0.13.0 introduces new features, improvements, and changes to Fleet, including support for user-driven bundle scans and configurable replica counts
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/architecture.adoc (117 chars)
+  → Architecture defines how Fleet controller and cluster agents interact to manage clusters using a two-stage pull model
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/concepts.adoc (130 chars)
+  → Learn the key components and concepts of Fleet, including Fleet Manager, Fleet controller, GitRepo, Bundle, and Downstream Cluster
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/gitrepo-content.adoc (113 chars)
+  → Understand what files and structures are in a Git repository and how Fleet uses them to create and manage bundles
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/glossary.adoc (142 chars)
+  → Define terms used in Fleets system, such as agent, bundle, cluster, and GitRepo, to help you understand how workloads are managed and deployed
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/namespaces.adoc (123 chars)
+  → Understand how to create, configure, and restrict namespaces for deploying workloads and managing resources across clusters
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/ref-bundle-stages.adoc (108 chars)
+  → Understand how a bundle is created, updated, and deployed across clusters using GitRepo and Fleet components
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/explanations/resources-during-deployment.adoc (139 chars)
+  → Create a deployment from a git repository by identifying and managing the custom resources, including internal ones, needed for the process
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-operators/cluster-group.adoc (109 chars)
+  → Create cluster groups to organize clusters under a named selector for easier management and aggregated status
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-operators/cluster-registration.adoc (104 chars)
+  → Register a downstream cluster by installing an agent and using a registration token to start the process
+2026/10/13 13:56:59 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-operators/installation.adoc (141 chars)
+  → Installation Details describes how to set up Fleet on a Kubernetes cluster using Helm charts and configure it for single or multi-cluster use
+2026/10/13 13:57:01 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-operators/multi-user.adoc (129 chars)
+  → Set up multi-user access by configuring namespaces, GitRepo restrictions, and GlobalRoles to isolate and control user permissions
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/bundle-add.adoc (120 chars)
+  → Create a Bundle Resource by defining the resources explicitly in the Bundle Spec when deploying without a git repository
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/bundle-diffs.adoc (159 chars)
+  → Generate diffs to ignore modified GitRepos in Fleet by using the fleet bundlediff command to create comparePatches that instruct Fleet to skip specific objects
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/fetch-helm-oci.adoc (129 chars)
+  → Fetch Helm charts from OCI registries by using the repo field in a fleet.yaml file to reference the chart and specify the version
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/fine-tune-error.adoc (100 chars)
+  → Use the ignore.conditions setting in the fleet.yaml file to tell Fleet to ignore specific conditions
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/gitrepo-add.adoc (153 chars)
+  → Create a GitRepo resource to register a Git repository in Kubernetes by defining its configuration including the repository URL and authentication method
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/gitrepo-targets.adoc (106 chars)
+  → Map clusters to downstream targets using grouping configuration to deploy bundles across multiple clusters
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/helm-ops.adoc (125 chars)
+  → Create a HelmOp resource to deploy Helm charts directly from a Helm repository or OCI registry without using a git repository
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/imagescan.adoc (124 chars)
+  → Use image scan to automatically update container image references in your git repository without manual changes to manifests
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/install-use-fleet-cli.adoc (103 chars)
+  → Install Fleet CLI to create, apply, and inspect bundles from your local machine without needing GitRepo
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/observability.adoc (128 chars)
+  → Understand how Fleet reports resource status, generates Kubernetes events, and provides metrics for monitoring and observability
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/oci-storage.adoc (103 chars)
+  → Use OCI storage to avoid etcd size limits and manage large Kubernetes bundle resources more efficiently
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/rollout.adoc (104 chars)
+  → Understand how to control app deployments across clusters using partitions and rollout strategy settings
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/validate-fleet-cli.adoc (118 chars)
+  → Validate Fleet CLI deployment by checking Bundle and BundleDeployment status to see if resources are applied correctly
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/how-tos-for-users/webhook.adoc (147 chars)
+  → Configure webhooks to replace polling in Fleet and reduce the delay between a Git push and Fleet processing changes by setting up a webhook service
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/index.adoc (152 chars)
+  → What Fleet is and how it helps manage Kubernetes clusters by using GitOps to control and monitor deployments allowing users to manage resources from Git
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/persona.adoc (159 chars)
+  → Identify the main people involved in a project and describe their responsibilities to help team members understand who is responsible for what during different
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent.adoc (123 chars)
+  → Monitor and control cluster resources by using the Fleet agent to send status updates and register with an upstream cluster
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_clusterstatus.adoc (129 chars)
+  → Monitor and update the status of resources in the cluster by sending continuous reports to the upstream cluster using fleet-agent
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_register.adoc (116 chars)
+  → Register the fleet-agent with an upstream cluster to enable communication between the agent and the Fleet controller
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup.adoc (111 chars)
+  → Clean up outdated resources using fleet cleanup commands for cluster registrations, git jobs, and other sources
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_clusterregistration.adoc (149 chars)
+  → Remove outdated cluster registrations from the fleet cleanup process to ensure only current and valid cluster information is maintained in the system
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_gitjob.adoc (109 chars)
+  → Remove outdated git jobs from your fleet to keep your environment organized and ensure only current tasks run
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/fleet.adoc (127 chars)
+  → Manage Fleet operations by using commands to create, deploy, clean up, monitor, and analyze cluster setups, helping you control
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/fleet_apply.adoc (123 chars)
+  → Apply fleet bundles to a cluster and configure bundle creation settings using command-line options or environment variables
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/fleet_deploy.adoc (145 chars)
+  → Create a Helm release to deploy a bundledeployment/content resource to a cluster without directly deploying the bundledeployment/content resource
+2026/10/13 13:57:01 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/fleet_gitcloner.adoc (113 chars)
+  → Clones a git repository from a source or text using fleet gitcloner with options to customize the cloning process
+2026/10/13 13:57:02 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/fleet_target.adoc (128 chars)
+  → List available targets for a bundle to help manage fleet operations and understand which targets can be included in a fleet task
+2026/10/13 13:57:03 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-cli/fleet_test.adoc (127 chars)
+  → Test a fleet by matching a bundle to a target and generate output using available options to manage and verify fleet operations
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller.adoc (105 chars)
+  → Configure Fleet controller gitjob operations to manage how the controller interacts with git repositories
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_agentmanagement.adoc (113 chars)
+  → Manage Fleet agent settings by configuring options that control how the agent interacts with the Fleet controller
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_cleanup.adoc (128 chars)
+  → Remove old controller resources using the fleet-controller cleanup command to keep your system organized and running efficiently
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_gitjob.adoc (114 chars)
+  → Configure Fleet controller gitjob operations to manage the Fleet controller that communicates with the Fleet agent
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-bundle.adoc (136 chars)
+  → Create a Bundle Resource to define the structure and contents of the bundle that Fleet automatically generates when a GitRepo is created
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-configuration.adoc (103 chars)
+  → Configure Fleet by using Helm values in a ConfigMap named rancher-config in the cattle-system namespace
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-crds.adoc (122 chars)
+  → Understand the structure and components of a custom resource specification for deploying application resources to clusters
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-fleet-yaml.adoc (117 chars)
+  → Create or modify a bundle by using the fleet.yaml file to set options like namespace, labels, and Helm chart settings
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-gitrepo.adoc (153 chars)
+  → Create a GitRepo resource to describe a git repository, specify how it is accessed, and locate the bundles, ensuring the resource matches the GitRepoSpec
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-registration.adoc (128 chars)
+  → Learn how cluster registration works by following the process of creating resources and secrets to register a downstream cluster
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-resources.adoc (149 chars)
+  → List of Deployed Resources shows what happens after installing Fleet in Rancher, including the names of the resources created in the upstream cluster
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/reference/ref-status-fields.adoc (151 chars)
+  → Describe the status fields used to show the current state of resources like GitRepos, HelmOps, Clusters, and Bundles and how these states are displayed
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/troubleshooting.adoc (113 chars)
+  → Check the logs for Kubernetes job pods in the local management cluster to find errors in the GitRepo or Helm repo
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/tutorials/quickstart.adoc (125 chars)
+  → Install Fleet using a Helm chart by following the official instructions to set up the Helm 3 CLI and add the Fleet repository
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/tutorials/tut-deployment.adoc (103 chars)
+  → Create a deployment by setting up a Git repo and applying a GitRepo resource with correct configuration
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.13/modules/ROOT/pages/tutorials/uninstall.adoc (110 chars)
+  → Uninstall the Fleet Standalone components by removing Helm charts, workloads, custom resources, and namespaces
+2026/10/13 13:57:03 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/changelogs/other.adoc (159 chars)
+  → Find all previous versions of Fleet, along with information about what changed in each release, by visiting the official GitHub Release page where every update
+2026/10/13 13:57:03 Loaded 2 attributes from /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/antora.yml
+2026/10/13 13:57:07 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/changelogs/v0.14.0.adoc (138 chars)
+  → V0.14.0 adds support for GitHub App authentication, experimental GitOps scheduling, and improves traceability and error reporting in Fleet
+2026/10/13 13:57:07 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/experimental-features/enableexperimental.adoc (152 chars)
+  → Enable experimental features in Fleet by using specific environment variables during deployment. This lets you activate advanced options like scheduling
+2026/10/13 13:57:09 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/experimental-features/experimental-downstream-resource.adoc (100 chars)
+  → Fleet automatically copies secrets and config maps to downstream clusters before deploying workloads
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/experimental-features/scheduling.adoc (117 chars)
+  → Define when clusters can receive updates by creating a schedule with a cron expression, duration, and target clusters
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/architecture.adoc (117 chars)
+  → Architecture defines how Fleet controller and cluster agents interact to manage clusters using a two-stage pull model
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/concepts.adoc (130 chars)
+  → Learn the key components and concepts of Fleet, including Fleet Manager, Fleet controller, GitRepo, Bundle, and Downstream Cluster
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/gitrepo-content.adoc (113 chars)
+  → Understand what files and structures are in a Git repository and how Fleet uses them to create and manage bundles
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/glossary.adoc (142 chars)
+  → Define terms used in Fleets system, such as agent, bundle, cluster, and GitRepo, to help you understand how workloads are managed and deployed
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/namespaces.adoc (123 chars)
+  → Understand how to create, configure, and restrict namespaces for deploying workloads and managing resources across clusters
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/ref-bundle-stages.adoc (108 chars)
+  → Understand how a bundle is created, updated, and deployed across clusters using GitRepo and Fleet components
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/explanations/resources-during-deployment.adoc (139 chars)
+  → Create a deployment from a git repository by identifying and managing the custom resources, including internal ones, needed for the process
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-operators/cluster-group.adoc (109 chars)
+  → Create cluster groups to organize clusters under a named selector for easier management and aggregated status
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-operators/cluster-registration.adoc (104 chars)
+  → Register a downstream cluster by installing an agent and using a registration token to start the process
+2026/10/13 13:57:09 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-operators/installation.adoc (141 chars)
+  → Installation Details describes how to set up Fleet on a Kubernetes cluster using Helm charts and configure it for single or multi-cluster use
+2026/10/13 13:57:10 REPLACED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-operators/multi-user.adoc (147 chars)
+  → Set up a multi-user environment by configuring namespaces, GitRepo resources, and GlobalRoles to isolate tenant access and control fleet workspaces
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/bundle-add.adoc (120 chars)
+  → Create a Bundle Resource by defining the resources explicitly in the Bundle Spec when deploying without a git repository
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/bundle-diffs.adoc (159 chars)
+  → Generate diffs to ignore modified GitRepos in Fleet by using the fleet bundlediff command to create comparePatches that instruct Fleet to skip specific objects
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/fetch-helm-oci.adoc (129 chars)
+  → Fetch Helm charts from OCI registries by using the repo field in a fleet.yaml file to reference the chart and specify the version
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/fine-tune-error.adoc (100 chars)
+  → Use the ignore.conditions setting in the fleet.yaml file to tell Fleet to ignore specific conditions
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/gitrepo-add.adoc (153 chars)
+  → Create a GitRepo resource to register a Git repository in Kubernetes by defining its configuration including the repository URL and authentication method
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/gitrepo-targets.adoc (106 chars)
+  → Map clusters to downstream targets using grouping configuration to deploy bundles across multiple clusters
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/helm-ops.adoc (125 chars)
+  → Create a HelmOp resource to deploy Helm charts directly from a Helm repository or OCI registry without using a git repository
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/imagescan.adoc (124 chars)
+  → Use image scan to automatically update container image references in your git repository without manual changes to manifests
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/install-use-fleet-cli.adoc (103 chars)
+  → Install Fleet CLI to create, apply, and inspect bundles from your local machine without needing GitRepo
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/observability.adoc (128 chars)
+  → Understand how Fleet reports resource status, generates Kubernetes events, and provides metrics for monitoring and observability
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/oci-storage.adoc (103 chars)
+  → Use OCI storage to avoid etcd size limits and manage large Kubernetes bundle resources more efficiently
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/rollout.adoc (104 chars)
+  → Understand how to control app deployments across clusters using partitions and rollout strategy settings
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/validate-fleet-cli.adoc (118 chars)
+  → Validate Fleet CLI deployment by checking Bundle and BundleDeployment status to see if resources are applied correctly
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/how-tos-for-users/webhook.adoc (147 chars)
+  → Configure webhooks to replace polling in Fleet and reduce the delay between a Git push and Fleet processing changes by setting up a webhook service
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/index.adoc (152 chars)
+  → What Fleet is and how it helps manage Kubernetes clusters by using GitOps to control and monitor deployments allowing users to manage resources from Git
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/persona.adoc (159 chars)
+  → Identify the main people involved in a project and describe their responsibilities to help team members understand who is responsible for what during different
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent.adoc (123 chars)
+  → Monitor and control cluster resources by using the Fleet agent to send status updates and register with an upstream cluster
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_clusterstatus.adoc (129 chars)
+  → Monitor and update the status of resources in the cluster by sending continuous reports to the upstream cluster using fleet-agent
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_register.adoc (116 chars)
+  → Register the fleet-agent with an upstream cluster to enable communication between the agent and the Fleet controller
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup.adoc (111 chars)
+  → Clean up outdated resources using fleet cleanup commands for cluster registrations, git jobs, and other sources
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_clusterregistration.adoc (149 chars)
+  → Remove outdated cluster registrations from the fleet cleanup process to ensure only current and valid cluster information is maintained in the system
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_gitjob.adoc (109 chars)
+  → Remove outdated git jobs from your fleet to keep your environment organized and ensure only current tasks run
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet.adoc (127 chars)
+  → Manage Fleet operations by using commands to create, deploy, clean up, monitor, and analyze cluster setups, helping you control
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_analyze.adoc (102 chars)
+  → Analyze fleet monitor snapshots to check resource status, detect issues, and compare changes over time
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_apply.adoc (123 chars)
+  → Apply fleet bundles to a cluster and configure bundle creation settings using command-line options or environment variables
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_deploy.adoc (145 chars)
+  → Create a Helm release to deploy a bundledeployment/content resource to a cluster without directly deploying the bundledeployment/content resource
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_dump.adoc (111 chars)
+  → Dump cluster data into an archive containing Fleet resources, Kubernetes events, and monitoring service metrics
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_gitcloner.adoc (113 chars)
+  → Clones a git repository from a source or text using fleet gitcloner with options to customize the cloning process
+2026/10/13 13:57:10 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_monitor.adoc (124 chars)
+  → Monitor Fleet deployments to find and fix problems by checking resource states and diagnosing issues in the GitOps lifecycle
+2026/10/13 13:57:11 ERROR processing /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-cli/fleet_target.adoc: generated description too short: 99 characters
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller.adoc (105 chars)
+  → Configure Fleet controller gitjob operations to manage how the controller interacts with git repositories
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_agentmanagement.adoc (113 chars)
+  → Manage Fleet agent settings by configuring options that control how the agent interacts with the Fleet controller
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_cleanup.adoc (128 chars)
+  → Remove old controller resources using the fleet-controller cleanup command to keep your system organized and running efficiently
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_gitjob.adoc (114 chars)
+  → Configure Fleet controller gitjob operations to manage the Fleet controller that communicates with the Fleet agent
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-bundle.adoc (136 chars)
+  → Create a Bundle Resource to define the structure and contents of the bundle that Fleet automatically generates when a GitRepo is created
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-configuration.adoc (103 chars)
+  → Configure Fleet by using Helm values in a ConfigMap named rancher-config in the cattle-system namespace
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-crd-schema.adoc (108 chars)
+  → Understand the structure and purpose of Fleet CRDs by reviewing their schema and definitions in this summary
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-crds.adoc (122 chars)
+  → Understand the structure and components of a custom resource specification for deploying application resources to clusters
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-fleet-yaml.adoc (117 chars)
+  → Create or modify a bundle by using the fleet.yaml file to set options like namespace, labels, and Helm chart settings
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-gitrepo.adoc (153 chars)
+  → Create a GitRepo resource to describe a git repository, specify how it is accessed, and locate the bundles, ensuring the resource matches the GitRepoSpec
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-registration.adoc (128 chars)
+  → Learn how cluster registration works by following the process of creating resources and secrets to register a downstream cluster
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-resources.adoc (149 chars)
+  → List of Deployed Resources shows what happens after installing Fleet in Rancher, including the names of the resources created in the upstream cluster
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-schedule.adoc (157 chars)
+  → Define the Schedule resource to set time windows when Fleet accepts changes to Clusters and refer to Scheduling for more details on how to use it effectively
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/reference/ref-status-fields.adoc (151 chars)
+  → Describe the status fields used to show the current state of resources like GitRepos, HelmOps, Clusters, and Bundles and how these states are displayed
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/troubleshooting.adoc (113 chars)
+  → Check the logs for Kubernetes job pods in the local management cluster to find errors in the GitRepo or Helm repo
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/tutorials/best-practices.adoc (146 chars)
+  → Learn best practices for organizing repositories, managing branch watches, avoiding nested resources, and designing bundles to improve performance
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/tutorials/quickstart.adoc (125 chars)
+  → Install Fleet using a Helm chart by following the official instructions to set up the Helm 3 CLI and add the Fleet repository
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/tutorials/tut-deployment.adoc (103 chars)
+  → Create a deployment by setting up a Git repo and applying a GitRepo resource with correct configuration
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.14/modules/ROOT/pages/tutorials/uninstall.adoc (110 chars)
+  → Uninstall the Fleet Standalone components by removing Helm charts, workloads, custom resources, and namespaces
+2026/10/13 13:57:11 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/changelogs/other.adoc (159 chars)
+  → Find all previous versions of Fleet, along with information about what changed in each release, by visiting the official GitHub Release page where every update
+2026/10/13 13:57:11 Loaded 2 attributes from /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/antora.yml
+2026/10/13 13:57:14 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/changelogs/v0.15.0.adoc (125 chars)
+  → This release introduces Helm v4 and, since this version also incorporates Server-Side Apply, drift correction may be affected
+2026/10/13 13:57:14 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/experimental-features/enableexperimental.adoc (152 chars)
+  → Enable experimental features in Fleet by using specific environment variables during deployment. This lets you activate advanced options like scheduling
+2026/10/13 13:57:16 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/experimental-features/experimental-downstream-resource.adoc (154 chars)
+  → Copy resources such as secrets and config maps from an upstream cluster to targeted downstream clusters automatically before deploying workloads to ensure
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/experimental-features/scheduling.adoc (117 chars)
+  → Define when clusters can receive updates by creating a schedule with a cron expression, duration, and target clusters
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/architecture.adoc (117 chars)
+  → Architecture defines how Fleet controller and cluster agents interact to manage clusters using a two-stage pull model
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/concepts.adoc (130 chars)
+  → Learn the key components and concepts of Fleet, including Fleet Manager, Fleet controller, GitRepo, Bundle, and Downstream Cluster
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/gitrepo-content.adoc (113 chars)
+  → Understand what files and structures are in a Git repository and how Fleet uses them to create and manage bundles
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/glossary.adoc (142 chars)
+  → Define terms used in Fleets system, such as agent, bundle, cluster, and GitRepo, to help you understand how workloads are managed and deployed
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/namespaces.adoc (123 chars)
+  → Understand how to create, configure, and restrict namespaces for deploying workloads and managing resources across clusters
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/ref-bundle-stages.adoc (108 chars)
+  → Understand how a bundle is created, updated, and deployed across clusters using GitRepo and Fleet components
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/explanations/resources-during-deployment.adoc (139 chars)
+  → Create a deployment from a git repository by identifying and managing the custom resources, including internal ones, needed for the process
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-operators/cluster-group.adoc (109 chars)
+  → Create cluster groups to organize clusters under a named selector for easier management and aggregated status
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-operators/cluster-registration.adoc (104 chars)
+  → Register a downstream cluster by installing an agent and using a registration token to start the process
+2026/10/13 13:57:16 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-operators/installation.adoc (141 chars)
+  → Installation Details describes how to set up Fleet on a Kubernetes cluster using Helm charts and configure it for single or multi-cluster use
+2026/10/13 13:57:17 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-operators/multi-user.adoc (123 chars)
+  → Set up a multi-user environment by configuring namespaces, roles, and restrictions to control access and isolate workspaces
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-operators/resource-limits.adoc (136 chars)
+  → Configure resource limits and requests for Fleet controllers and downstream cluster agents using the resources and agentResources fields
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/bundle-add.adoc (120 chars)
+  → Create a Bundle Resource by defining the resources explicitly in the Bundle Spec when deploying without a git repository
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/bundle-diffs.adoc (159 chars)
+  → Generate diffs to ignore modified GitRepos in Fleet by using the fleet bundlediff command to create comparePatches that instruct Fleet to skip specific objects
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/fetch-helm-oci.adoc (129 chars)
+  → Fetch Helm charts from OCI registries by using the repo field in a fleet.yaml file to reference the chart and specify the version
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/fine-tune-error.adoc (100 chars)
+  → Use the ignore.conditions setting in the fleet.yaml file to tell Fleet to ignore specific conditions
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/gitrepo-add.adoc (153 chars)
+  → Create a GitRepo resource to register a Git repository in Kubernetes by defining its configuration including the repository URL and authentication method
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/gitrepo-targets.adoc (106 chars)
+  → Map clusters to downstream targets using grouping configuration to deploy bundles across multiple clusters
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/helm-ops.adoc (125 chars)
+  → Create a HelmOp resource to deploy Helm charts directly from a Helm repository or OCI registry without using a git repository
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/imagescan.adoc (124 chars)
+  → Use image scan to automatically update container image references in your git repository without manual changes to manifests
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/install-use-fleet-cli.adoc (103 chars)
+  → Install Fleet CLI to create, apply, and inspect bundles from your local machine without needing GitRepo
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/observability.adoc (128 chars)
+  → Understand how Fleet reports resource status, generates Kubernetes events, and provides metrics for monitoring and observability
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/oci-storage.adoc (103 chars)
+  → Use OCI storage to avoid etcd size limits and manage large Kubernetes bundle resources more efficiently
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/rollout.adoc (104 chars)
+  → Understand how to control app deployments across clusters using partitions and rollout strategy settings
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/templating.adoc (137 chars)
+  → Customize cluster deployments with Fleet templating by using dynamic values, labels, and reusable variables in fleet.yaml and Helm charts
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/validate-fleet-cli.adoc (118 chars)
+  → Validate Fleet CLI deployment by checking Bundle and BundleDeployment status to see if resources are applied correctly
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/how-tos-for-users/webhook.adoc (147 chars)
+  → Configure webhooks to replace polling in Fleet and reduce the delay between a Git push and Fleet processing changes by setting up a webhook service
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/index.adoc (152 chars)
+  → What Fleet is and how it helps manage Kubernetes clusters by using GitOps to control and monitor deployments allowing users to manage resources from Git
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/persona.adoc (159 chars)
+  → Identify the main people involved in a project and describe their responsibilities to help team members understand who is responsible for what during different
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent.adoc (123 chars)
+  → Monitor and control cluster resources by using the Fleet agent to send status updates and register with an upstream cluster
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_clusterstatus.adoc (129 chars)
+  → Monitor and update the status of resources in the cluster by sending continuous reports to the upstream cluster using fleet-agent
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-agent/fleet-agent_register.adoc (116 chars)
+  → Register the fleet-agent with an upstream cluster to enable communication between the agent and the Fleet controller
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup.adoc (111 chars)
+  → Clean up outdated resources using fleet cleanup commands for cluster registrations, git jobs, and other sources
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_clusterregistration.adoc (149 chars)
+  → Remove outdated cluster registrations from the fleet cleanup process to ensure only current and valid cluster information is maintained in the system
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/cleanup/fleet_cleanup_gitjob.adoc (109 chars)
+  → Remove outdated git jobs from your fleet to keep your environment organized and ensure only current tasks run
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet.adoc (127 chars)
+  → Manage Fleet operations by using commands to create, deploy, clean up, monitor, and analyze cluster setups, helping you control
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_analyze.adoc (102 chars)
+  → Analyze fleet monitor snapshots to check resource status, detect issues, and compare changes over time
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_apply.adoc (123 chars)
+  → Apply fleet bundles to a cluster and configure bundle creation settings using command-line options or environment variables
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_bundlediff.adoc (149 chars)
+  → Display bundle diffs from resource status to see changes between the desired state from Git or Helm and the actual state in the cluster by extracting
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_deploy.adoc (145 chars)
+  → Create a Helm release to deploy a bundledeployment/content resource to a cluster without directly deploying the bundledeployment/content resource
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_dump.adoc (111 chars)
+  → Dump cluster data into an archive containing Fleet resources, Kubernetes events, and monitoring service metrics
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_gitcloner.adoc (113 chars)
+  → Clones a git repository from a source or text using fleet gitcloner with options to customize the cloning process
+2026/10/13 13:57:17 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_monitor.adoc (124 chars)
+  → Monitor Fleet deployments to find and fix problems by checking resource states and diagnosing issues in the GitOps lifecycle
+2026/10/13 13:57:18 ADDED: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-cli/fleet_target.adoc (150 chars)
+  → Print available targets for a bundle to help manage Fleet operations and understand which devices or systems are included in the current configuration
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller.adoc (105 chars)
+  → Configure Fleet controller gitjob operations to manage how the controller interacts with git repositories
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_agentmanagement.adoc (113 chars)
+  → Manage Fleet agent settings by configuring options that control how the agent interacts with the Fleet controller
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_cleanup.adoc (128 chars)
+  → Remove old controller resources using the fleet-controller cleanup command to keep your system organized and running efficiently
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/cli/fleet-controller/fleet-controller_gitjob.adoc (114 chars)
+  → Configure Fleet controller gitjob operations to manage the Fleet controller that communicates with the Fleet agent
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-bundle.adoc (136 chars)
+  → Create a Bundle Resource to define the structure and contents of the bundle that Fleet automatically generates when a GitRepo is created
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-configuration.adoc (103 chars)
+  → Configure Fleet by using Helm values in a ConfigMap named rancher-config in the cattle-system namespace
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-crd-schema.adoc (108 chars)
+  → Understand the structure and purpose of Fleet CRDs by reviewing their schema and definitions in this summary
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-crds.adoc (122 chars)
+  → Understand the structure and components of a custom resource specification for deploying application resources to clusters
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-fleet-yaml.adoc (117 chars)
+  → Create or modify a bundle by using the fleet.yaml file to set options like namespace, labels, and Helm chart settings
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-gitrepo.adoc (153 chars)
+  → Create a GitRepo resource to describe a git repository, specify how it is accessed, and locate the bundles, ensuring the resource matches the GitRepoSpec
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-registration.adoc (128 chars)
+  → Learn how cluster registration works by following the process of creating resources and secrets to register a downstream cluster
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-resources.adoc (149 chars)
+  → List of Deployed Resources shows what happens after installing Fleet in Rancher, including the names of the resources created in the upstream cluster
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-schedule.adoc (157 chars)
+  → Define the Schedule resource to set time windows when Fleet accepts changes to Clusters and refer to Scheduling for more details on how to use it effectively
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/reference/ref-status-fields.adoc (151 chars)
+  → Describe the status fields used to show the current state of resources like GitRepos, HelmOps, Clusters, and Bundles and how these states are displayed
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/troubleshooting.adoc (113 chars)
+  → Check the logs for Kubernetes job pods in the local management cluster to find errors in the GitRepo or Helm repo
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/tutorials/best-practices.adoc (146 chars)
+  → Learn best practices for organizing repositories, managing branch watches, avoiding nested resources, and designing bundles to improve performance
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/tutorials/quickstart.adoc (125 chars)
+  → Install Fleet using a Helm chart by following the official instructions to set up the Helm 3 CLI and add the Fleet repository
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/tutorials/tut-deployment.adoc (103 chars)
+  → Create a deployment by setting up a Git repo and applying a GitRepo resource with correct configuration
+2026/10/13 13:57:18 COPIED from v0.16: /home/scribe/projects/work/cn-metadata/fleet-product-docs/community-docs/v0.15/modules/ROOT/pages/tutorials/uninstall.adoc (110 chars)
+  → Uninstall the Fleet Standalone components by removing Helm charts, workloads, custom resources, and namespaces
+2026/10/13 13:57:18 
+=== Processing Complete ===
+2026/10/13 13:57:18 Total time: 152.52 seconds
+2026/10/13 13:57:18 Files processed: 390
+2026/10/13 13:57:18 Added: 19
+2026/10/13 13:57:18 Replaced: 68
+2026/10/13 13:57:18 Copied: 299
+2026/10/13 13:57:18 Skipped: 0
+2026/10/13 13:57:18 Errors: 4
+2026/10/13 13:57:18 Warnings: 0
+2026/10/13 13:57:18 HTML report saved to: /home/scribe/doc-lama-metagen/reports/fleet-rerun.html

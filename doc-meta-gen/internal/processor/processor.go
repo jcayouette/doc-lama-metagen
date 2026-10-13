@@ -148,7 +148,7 @@ func (p *Processor) generateDescription(provider providers.ContentProvider, path
 
 	correctedDesc, err := p.generator.ValidateGrammar(description)
 	if err == nil && correctedDesc != "" {
-		description = correctedDesc
+		description = p.generator.KeepIfComplete(content.Title, description, correctedDesc)
 	}
 
 	if attrs := p.attrsFor(path); attrs != nil {

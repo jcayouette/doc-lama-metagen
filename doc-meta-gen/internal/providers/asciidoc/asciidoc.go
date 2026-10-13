@@ -23,6 +23,7 @@ type Provider struct {
 	headingRe    *regexp.Regexp
 	listItemRe   *regexp.Regexp
 	blockDelimRe *regexp.Regexp
+	tableDelimRe *regexp.Regexp
 	inlineCodeRe *regexp.Regexp
 	boldRe       *regexp.Regexp
 	italicRe     *regexp.Regexp
@@ -41,7 +42,8 @@ func NewProvider() *Provider {
 		navGuideRe:   regexp.MustCompile(`^nav-.+-guide\.adoc$`),
 		headingRe:    regexp.MustCompile(`^==+\s+(.+)$`),
 		listItemRe:   regexp.MustCompile(`^[\*\.\-]+\s+(.+)$`),
-		blockDelimRe: regexp.MustCompile(`^(\|===|----|\.\.\.\.|====|\*\*\*\*|____|\+\+\+\+)$`),
+		blockDelimRe: regexp.MustCompile(`^(----|\.\.\.\.|\+\+\+\+)$`),
+		tableDelimRe: regexp.MustCompile(`^\|={3,}$`),
 		inlineCodeRe: regexp.MustCompile("`([^`]+)`"),
 		boldRe:       regexp.MustCompile(`\*([^*]+)\*`),
 		italicRe:     regexp.MustCompile(`_([^_]+)_`),
@@ -185,6 +187,7 @@ func (p *Provider) extractPlainText(text string) string {
 	var cleanLines []string
 	inBlock := false
 	blockDepth := 0
+	inTable := false
 
 	for _, line := range lines {
 		trimmed := strings.TrimSpace(line)
@@ -194,7 +197,7 @@ func (p *Provider) extractPlainText(text string) string {
 			continue
 		}
 
-		// Handle block delimiters
+		// Listing, literal, and passthrough blocks are sample text, not the page subject.
 		if p.blockDelimRe.MatchString(trimmed) {
 			if inBlock {
 				blockDepth--
@@ -208,9 +211,23 @@ func (p *Provider) extractPlainText(text string) string {
 			continue
 		}
 
-		// Skip lines inside blocks (code, examples, etc.)
 		if inBlock {
 			continue
+		}
+
+		// Tables often hold the only facts on the page. Keep the cell text.
+		// Sidebars, quotes, and examples stay as well: their delimiters are not content.
+		if p.tableDelimRe.MatchString(trimmed) {
+			inTable = !inTable
+			continue
+		}
+		if trimmed == "====" || trimmed == "****" || trimmed == "____" {
+			continue
+		}
+		if inTable {
+			trimmed = strings.TrimPrefix(trimmed, "a|")
+			trimmed = strings.ReplaceAll(trimmed, "|", " ")
+			trimmed = strings.TrimSpace(trimmed)
 		}
 
 		// Include section headings as plain text — they are the most information-dense

@@ -1,0 +1,469 @@
+2026/10/13 14:49:37 Starting doc-meta-gen
+2026/10/13 14:49:37 Root directory: /home/scribe/projects/work/cn-metadata/doc-suse-ai
+2026/10/13 14:49:37 Model: qwen3:14b
+2026/10/13 14:49:37 Ollama URL: http://127.0.0.1:11434
+2026/10/13 14:49:37 Update revdate: false
+2026/10/13 14:49:37 Language: en
+2026/10/13 14:49:37 Loading attributes from: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/generic-attributes.adoc
+2026/10/13 14:49:37 Loaded 596 attributes
+2026/10/13 14:49:37 Checking Ollama connection...
+2026/10/13 14:49:37 ✓ Ollama is available
+2026/10/13 14:49:37 Scanning for files...
+2026/10/13 14:49:37 Found 225 potential files
+2026/10/13 14:49:37 After type filter (all): 225 files
+2026/10/13 14:49:37 Processing 225 files (language: en)
+2026/10/13 14:49:42 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/README.adoc (124 chars)
+  → Find and use instructions, examples, and best practices for writing and formatting SUSE AI product documentation in Asciidoc
+2026/10/13 14:49:44 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-data-integrity.adoc (141 chars)
+  → Learn how to prevent data leaks and maintain correct functioning of your AI application by understanding security threats and safety measures
+2026/10/13 14:49:45 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-deployment-airgapped.adoc (147 chars)
+  → Install and deploy in air-gapped environments by following the step-by-step guide that covers all dependencies, hardware, and software requirements
+2026/10/13 14:49:47 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-deployment.adoc (113 chars)
+  → Install and deploy the product and its dependencies using this guide to get all required components ready for use
+2026/10/13 14:49:48 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-applications.adoc (132 chars)
+  → Install and configure SUSE AI Factory Applications using Helm charts and custom values files to deploy AI applications on Kubernetes
+2026/10/13 14:49:50 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-bp-creating.adoc (126 chars)
+  → Create blueprints to define and deploy AI workloads using the command line, including support for CPU and NVIDIA GPU inference
+2026/10/13 14:49:50 SKIPPED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-deployment-airgapped.adoc - File already has a description
+2026/10/13 14:49:52 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-deployment.adoc (139 chars)
+  → Deploy the SUSE AI Factory Operator on a RKE2 Kubernetes cluster using the Helm command or Rancher Prime UI to manage AI platform workloads
+2026/10/13 14:49:53 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-introduction.adoc (135 chars)
+  → Learn how to use blueprints to deploy and manage AI applications on Kubernetes clusters with standardized, version-controlled templates
+2026/10/13 14:49:54 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-requirements.adoc (118 chars)
+  → Check the requirements for hardware, GPUs, and applications to prepare your cluster infrastructure before installation
+2026/10/13 14:49:56 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-usage.adoc (104 chars)
+  → Use the Rancher Prime UI to manage AI applications, blueprints, and workloads on your Kubernetes cluster
+2026/10/13 14:49:57 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-introduction.adoc (148 chars)
+  → Learn the basics and benefits of running private AI workloads with secure, auditable capabilities in on-premises, cloud, and air-gapped environments
+2026/10/13 14:49:59 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-monitoring.adoc (154 chars)
+  → Monitor SUSE AI with OpenTelemetry and SUSE Observability to collect metrics, logs, and traces for observing and maintaining your environments performance
+2026/10/13 14:50:01 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-openwebui-configuring.adoc (119 chars)
+  → Configure Open WebUI for AI interaction by setting base models, default prompts, and user roles according to your needs
+2026/10/13 14:50:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-openwebui-using.adoc (109 chars)
+  → Learn how to use Open WebUI to interact effectively with AI models through its chat interface and input field
+2026/10/13 14:50:04 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-preventing-hallucinations.adoc (138 chars)
+  → Learn how to create effective user prompts that help prevent AI hallucinations by guiding the AI to generate accurate and reliable content
+2026/10/13 14:50:05 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-requirements.adoc (159 chars)
+  → Read this page to learn the hardware, software, and networking requirements for cluster nodes where you plan to install the SUSE Rancher Prime RKE2 environment
+2026/10/13 14:50:07 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-system-prompts.adoc (148 chars)
+  → Create effective system prompts to guide AI models and ensure responses match your intended goals by clearly defining the task and expected behavior
+2026/10/13 14:50:10 ERROR processing /home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/sles-mcphost.adoc: generated description is incomplete or too long: Install the MCP host on SLES 16.0 to enable large language models to communicate with system tools and services through a structured command-line interface
+2026/10/13 14:50:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/common_copyright_gfdl.adoc (143 chars)
+  → Readers can learn about the terms and conditions for using this document and the legal rights associated with its distribution and modification
+2026/10/13 14:50:13 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/common_license_gfdl1.2.adoc (130 chars)
+  → Readers can learn about the GNU Free Documentation License and its rules for copying, modifying, and distributing documents freely
+2026/10/13 14:50:15 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/generic-attributes.adoc (114 chars)
+  → Find information about SUSE products, tools, and technologies to help you choose the right solution for your needs
+2026/10/13 14:50:16 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/legal.adoc (126 chars)
+  → Readers can find information about the copyright, license, and trademark details for this document in the Legal Notice section
+2026/10/13 14:50:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/network-attributes.adoc (141 chars)
+  → Find network configuration details for servers, clients, and devices on this page, including IPv4 and IPv6 addresses for subnets and services
+2026/10/13 14:50:21 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/common/product-attributes.adoc (122 chars)
+  → Find information about SUSE AI Factory with NVIDIA, including installation media, release notes, and documentation sources
+2026/10/13 14:50:22 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-air-gap-stack.adoc (134 chars)
+  → Use the air-gapped stack scripts to download and prepare NVIDIA RPM packages and Docker images for air-gap installation on local hosts
+2026/10/13 14:50:24 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-data-integrity.adoc (159 chars)
+  → Understand security risks for AI applications by examining components like Open WebUI, Milvus, and Ollama to protect sensitive data and maintain data integrity
+2026/10/13 14:50:26 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-intro-how-works.adoc (104 chars)
+  → Learn about the building blocks that make up the cloud native solution and how they support AI workloads
+2026/10/13 14:50:26 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-cost-estimation.adoc (115 chars)
+  → Calculate cost estimation for chat interactions between Open WebUI user and AI model using multipliers from pricing
+2026/10/13 14:50:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-instrument-openlit.adoc (150 chars)
+  → Instrument applications with the OpenLIT SDK by following Python and TypeScript examples to add telemetry data collection and adjust the OTLP endpoint
+2026/10/13 14:50:29 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-user-apps.adoc (154 chars)
+  → Monitor user-managed applications by using OpenTelemetry SDKs or compatible instrumentation providers to collect and send telemetry data for observability
+2026/10/13 14:50:30 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-vllm.adoc (103 chars)
+  → Monitor vLLM by configuring the OpenTelemetry Collector to scrape its metrics endpoint every 10 seconds
+2026/10/13 14:50:31 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring.adoc (154 chars)
+  → Monitor your system by collecting telemetry data using OpenTelemetry and SUSE Observability to analyze the performance, health, and behavior of components
+2026/10/13 14:50:32 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-system-prompt-how-works.adoc (130 chars)
+  → Understand how system prompts guide AI models by learning their structure, purpose, and how they shape responses before user input
+2026/10/13 14:50:34 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/ai-lifecycle-manager.adoc (125 chars)
+  → Install and manage AI applications from SUSE registries using role-based workflows in the SUSE AI Lifecycle Manager extension
+2026/10/13 14:50:35 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/ai-node-installer.adoc (147 chars)
+  → Install and configure selected cluster components on servers using the SUSE AI Node Installer with Ansible playbooks in a containerized environment
+2026/10/13 14:50:36 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/aif-bp-folder.adoc (134 chars)
+  → Understand the directory structure for SUSE AI Factory blueprints and learn how to organize files and name custom resource definitions
+2026/10/13 14:50:37 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/aif-bp-what-is.adoc (103 chars)
+  → Create a blueprint by defining Helm charts and their configuration values in a resource definition file
+2026/10/13 14:50:40 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/deployment-air-gapped.adoc (131 chars)
+  → Learn how to secure sensitive systems by isolating them in air-gapped environments to prevent cyber threats and unauthorized access
+2026/10/13 14:50:48 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/mcphost-introduction.adoc (135 chars)
+  → Learn what the MCP host is and how it acts as a mediator between an LLM and MCP servers to enable safe system access and task execution
+2026/10/13 14:50:57 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/openwebui-introduction.adoc (159 chars)
+  → Use Open WebUI to interact with AI models through a graphical interface. This allows you to ask questions and use advanced AI tools without technical expertise
+2026/10/13 14:51:07 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/owui-user-interface.adoc (131 chars)
+  → Use the Open WebUI interface to manage chats, select AI models, access the Workspace and Admin Panel, and customize system settings
+2026/10/13 14:51:15 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/NVIDIA-GPU-driver-intro.adoc (114 chars)
+  → Install the NVIDIA GPU drivers using the open driver from the operating system repositories to simplify deployment
+2026/10/13 14:51:27 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/ai-intro-next-steps.adoc (113 chars)
+  → Next steps Follow the links to study hardware and software requirements and understand the installation procedure
+2026/10/13 14:51:48 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/ai-library-intro.adoc (155 chars)
+  → Install AI Library applications using SUSE AI Factory blueprints or Helm CLI to deploy the integrated stack in your Kubernetes cluster in the correct order
+2026/10/13 14:51:57 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/ai-ssecurity-intro.adoc (130 chars)
+  → Install SUSE Security to protect cluster infrastructure by scanning nodes for vulnerabilities and securing containerized workloads
+2026/10/13 14:52:10 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/mcphost-whats-next.adoc (135 chars)
+  → Install the MCP host server, then install and configure MCP servers to ensure proper communication between all components of the system
+2026/10/13 14:52:22 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/owui-more-info.adoc (105 chars)
+  → Find more information about the upstream Open WebUI documentation by visiting the website at https //docs
+2026/10/13 14:52:36 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-Factory-appendix.adoc (155 chars)
+  → Learn about the product support lifecycle, including availability, support scope, deprecation policies, and where to find source code and legal information
+2026/10/13 14:53:01 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-Factory-release-notes.adoc (128 chars)
+  → Readers can learn about new features in this release, including customizable blueprint deployments and custom chart repositories
+2026/10/13 14:53:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-glossary.adoc (104 chars)
+  → Learn the definitions of technical terms used in AI, networking, and Kubernetes by reading this glossary
+2026/10/13 14:53:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-hallucinations-causes.adoc (132 chars)
+  → Learn what causes AI hallucinations by understanding the main factors ambiguous prompts, lack of context, and long generation length
+2026/10/13 14:53:31 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-installation-flowchart.adoc (155 chars)
+  → Follow the installation flowchart to understand the key steps for setting up the system on cluster nodes with or without a supported Linux operating system
+2026/10/13 14:53:40 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-intro-benefits.adoc (124 chars)
+  → Learn the benefits of using by understanding how it improves data security, performance, and scalability for AI applications
+2026/10/13 14:53:55 ERROR processing /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-intro-scenarios.adoc: generated description is incomplete or too long: Implement AI-driven user interfaces in your private instance to handle customer inquiries, reducing the load on human agents and providing continuous support
+2026/10/13 14:54:06 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-hardware-gpu.adoc (149 chars)
+  → Configure the NVIDIA GPU Operator to use NVIDIA GPUs in a Kubernetes cluster by installing drivers, container runtimes, and other required components
+2026/10/13 14:54:16 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-hardware.adoc (122 chars)
+  → Check the hardware requirements for basic and high-availability deployments of SUSE Rancher Prime RKE2 Kubernetes clusters
+2026/10/13 14:54:27 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-milvus.adoc (132 chars)
+  → Find the hardware, software, and network requirements for deploying Milvus and learn what is needed for basic and large-scale setups
+2026/10/13 14:54:37 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-nvidia.adoc (134 chars)
+  → Deploy AI applications on GPU-enabled clusters by installing and configuring the required NVIDIA operators, including the NIM Operator
+2026/10/13 14:54:45 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-observability.adoc (125 chars)
+  → Learn the minimum hardware requirements for SUSE Observability nodes in an HA setup, including RAM, CPU, and disk space needs
+2026/10/13 14:54:55 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-ollama.adoc (160 chars)
+  → Configure Ollama on an NVIDIA-enabled system by following the steps for setting up hardware and software requirements, including GPU models, RAM, and disk space
+2026/10/13 14:55:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-openwebui.adoc (141 chars)
+  → Learn the hardware, network, and software requirements for running Open WebUI, including browser compatibility and integration considerations
+2026/10/13 14:55:09 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-rancher.adoc (110 chars)
+  → Find the required Rancher Prime version and hardware specifications for setting up a high-availability cluster
+2026/10/13 14:55:17 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-security.adoc (120 chars)
+  → Learn the minimum hardware requirements for SUSE Security nodes in an HA setup, including RAM, CPU, and disk space needs
+2026/10/13 14:55:25 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-system-prompt-benefits.adoc (151 chars)
+  → Learn how to use system prompts to improve AI model responses by providing clear instructions, context, and guidelines for specific tasks and audiences
+2026/10/13 14:55:34 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-factory-apps-deployment-types.adoc (136 chars)
+  → Choose between direct Fleet bundle, GitOps-driven Fleet publishing, or manual Helm installation to deploy AI applications and blueprints
+2026/10/13 14:55:44 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-factory-deployment-airgapped-considerations.adoc (153 chars)
+  → Plan air-gapped deployments by using local artifact registries, a model cache, and secure TLS endpoints to deploy AI applications without internet access
+2026/10/13 14:55:44 SKIPPED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-factory-deployment-airgapped-requirements.adoc - File already has a description
+2026/10/13 14:55:56 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-lifecycle-manager-user-roles.adoc (157 chars)
+  → Assign specific user roles in Rancher Prime to allow users to access and use the SUSE AI Lifecycle Manager for deploying and managing AI-powered applications
+2026/10/13 14:56:05 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-bp-creating-appendix-skeletons.adoc (152 chars)
+  → Create a minimal blueprint template and reference architectures for AI workloads using specific blueprint names and configuration examples from the page
+2026/10/13 14:56:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-bp-creating-publish-run.adoc (137 chars)
+  → Troubleshoot SUSE AI Factory blueprint deployment issues by identifying common symptoms such as failed chart deployments and pod failures
+2026/10/13 14:56:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-bp-prerequisites.adoc (136 chars)
+  → Verify that your workstation and cluster meet the mandatory and conditional prerequisites for creating and registering custom blueprints
+2026/10/13 14:56:41 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-deployment-overview.adoc (158 chars)
+  → Select the correct installation path based on your cluster setup, whether you have clean nodes without SLES or SLES with RKE2 and SUSE Rancher Prime installed
+2026/10/13 14:56:53 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-prebuilt-blueprints.adoc (151 chars)
+  → Deploy the NVIDIA AI-Q with RAG blueprint to configure AI-Q with a deep-research agent and local NIMs using a custom ConfigMap and modified Helm values
+2026/10/13 14:57:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-components.adoc (105 chars)
+  → Learn the names, sources, namespaces, and purposes of all Kubeflow package components listed in the table
+2026/10/13 14:57:14 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-configuration-scenarios.adoc (144 chars)
+  → Learn how to configure Kubeflow for different environments using scenarios that include NodePort access, HTTP, self-signed TLS, and Lets Encrypt
+2026/10/13 14:57:26 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-limitations.adoc (135 chars)
+  → Learn the known Kubeflow limitations that affect deployment, configuration, and operation of components like SeaweedFS, KServe, and Dex
+2026/10/13 14:57:34 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-requirements.adoc (132 chars)
+  → Find the hardware and software requirements for deploying Kubeflow, including CPU, RAM, GPU, storage, and Kubernetes version details
+2026/10/13 14:57:44 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-troubleshooting.adoc (154 chars)
+  → Find solutions for common Kubeflow issues like pods not starting, storage problems, and TensorBoard errors by following the troubleshooting steps provided
+2026/10/13 14:57:52 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-upgrade-notes.adoc (152 chars)
+  → Upgrade your Kubeflow deployment by following specific instructions for handling configuration conflicts, credential rotation, and service interruptions
+2026/10/13 14:58:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/litellm-helm-overrides.adoc (137 chars)
+  → Configure the LiteLLM chart with custom values to deploy PostgreSQL, set up image pull secrets, and access the admin UI through localhost
+2026/10/13 14:58:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/litellm-helmchart.adoc (128 chars)
+  → Configure LiteLLM Helm chart options by setting values for image registry, secrets, deployment settings, and proxy configuration
+2026/10/13 14:58:16 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/mcphost-configuration.adoc (117 chars)
+  → Configure the MCP host using JSON files to define behavior, security settings, and available tools for specific tasks
+2026/10/13 14:58:22 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/milvus-helm-overrides.adoc (128 chars)
+  → Deploy Milvus in cluster mode with Apache Kafka using SUSE Storage by creating an XFS storage class and configuring it for Kafka
+2026/10/13 14:58:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ollama-helm-overrides.adoc (160 chars)
+  → Configure Ollama GPU settings by enabling or disabling the GPU section in the custom values file and following the required installation and configuration steps
+2026/10/13 14:58:38 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ollama-helmchart.adoc (153 chars)
+  → Configure the Ollama Helm chart by using specific values to set up models, storage, GPU support, and network settings for local language model management
+2026/10/13 14:58:48 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/opensearch-helm-overrides.adoc (120 chars)
+  → Learn how to configure and deploy OpenSearch clusters using custom values files and integrate OpenSearch with Open WebUI
+2026/10/13 14:58:57 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/openwebui-user-roles.adoc (101 chars)
+  → Learn about the three user roles—pending, user, and admin—in Open WebUI and what each role can do
+2026/10/13 14:59:10 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/owui-helm-overrides.adoc (139 chars)
+  → Configure Open WebUI with custom values to install and set up Ollama, pipelines, and vLLM using specific settings and environment variables
+2026/10/13 14:59:23 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/owui-helmchart.adoc (150 chars)
+  → Configure Open WebUI Helm chart values to set up deployment settings, image sources, security options, and integration with services such as Pipelines
+2026/10/13 14:59:31 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/owui-known-issues.adoc (125 chars)
+  → Learn how to reset an Open WebUI user password and fix audio processing issues using commands and steps provided in this page
+2026/10/13 14:59:41 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/pytorch-helm-overrides.adoc (109 chars)
+  → You can learn how to create and use PyTorch Helm chart custom values files for different deployment scenarios
+2026/10/13 14:59:52 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/pytorch-helmchart.adoc (143 chars)
+  → Find and use specific values for the PyTorch Helm chart to configure the image, GPU settings, and other deployment options for your application
+2026/10/13 15:00:00 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/qdrant-helm-overrides.adoc (105 chars)
+  → Create a basic custom values file for the Qdrant Helm chart when the cluster has no default storage class
+2026/10/13 15:00:10 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/references/vllm-helm-overrides.adoc (133 chars)
+  → Install and configure vLLM using Open WebUI and custom values files to deploy and manage large language models with specific settings
+2026/10/13 15:00:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-library-requirement.adoc (159 chars)
+  → Before installing, you can get user access to the SUSE Application Collection and SUSE Registry, create a Kubernetes namespace, and log in to the Helm registry
+2026/10/13 15:00:30 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-rancher-admin-requirement.adoc (139 chars)
+  → Check if you have Rancher Prime Administrator privileges to perform this task and ensure your account is correctly configured in the system
+2026/10/13 15:00:36 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-rancher-multicluster.adoc (104 chars)
+  → Install the component on the same cluster as the main Rancher Prime server for multi-cluster deployments
+2026/10/13 15:00:44 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-separate-rancher-cluster.adoc (125 chars)
+  → Deploy Rancher Prime, SUSE Observability, and AI library workloads to separate Kubernetes clusters for production deployments
+2026/10/13 15:00:51 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/aif-important-secrets.adoc (129 chars)
+  → Configure necessary secrets before installing AI applications and blueprints to ensure proper setup and avoid installation errors
+2026/10/13 15:00:59 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/aif-tip-suseai-docs.adoc (132 chars)
+  → Find the original SUSE AI documentation and learn how to deploy and manage AI applications and blueprints using the supported method
+2026/10/13 15:01:09 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/helm-chart-overrides-intro.adoc (152 chars)
+  → Create a YAML file with custom values to override default settings during Helm chart installation or update by using the -f option with the helm command
+2026/10/13 15:01:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/observability-warning-262.adoc (160 chars)
+  → Update otel-values.yaml to fix vLLM monitoring issues in SUSE Observability version 2.6.2 and above by adding a new processor and modifying the metrics pipeline
+2026/10/13 15:01:29 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-intro.adoc (137 chars)
+  → Use Open WebUI to interact with large language models through a web interface that supports multiple LLM runners, such as Ollama and vLLM
+2026/10/13 15:01:35 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-knowledgebase-warning.adoc (106 chars)
+  → Wait until processing is finished to avoid disrupting file upload and processing on the collections screen
+2026/10/13 15:01:40 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-requirement-admin-privileges.adoc (111 chars)
+  → Check if you have the required administrator privileges to access Open WebUI configuration screens and settings
+2026/10/13 15:01:51 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-tip-default-model.adoc (114 chars)
+  → Click the Set as default option next to the AI model name in the menu to make it your default model for future use
+2026/10/13 15:02:00 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-tip-multiple-models.adoc (137 chars)
+  → Select multiple AI modules by clicking the plus sign next to the name of an already selected module to add more modules to your selection
+2026/10/13 15:02:12 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-ailibrary-installing.adoc (125 chars)
+  → Install AI Library applications by purchasing an entitlement, creating Kubernetes namespaces, and setting up registry secrets
+2026/10/13 15:02:21 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-cluster-preparation.adoc (146 chars)
+  → Install the AI Library by preparing the cluster with SUSE Rancher Prime, NVIDIA GPU Operator, and SUSE Observability as described in the procedure
+2026/10/13 15:02:30 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-kube-installing.adoc (132 chars)
+  → Install a supported Linux operating system and Kubernetes distribution on cluster nodes to begin deploying applications from scratch
+2026/10/13 15:02:40 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-steps-after.adoc (137 chars)
+  → Log in to Open WebUI, change the administrator password, configure a language model, set up user management, and integrate single sign-on
+2026/10/13 15:02:50 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-gpu-nodes-assigning.adoc (142 chars)
+  → Learn how to request and assign GPU resources to applications running on Kubernetes by defining resource limits and using node selection rules
+2026/10/13 15:03:01 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-hallucinations-how-to-prevent.adoc (112 chars)
+  → Learn how to prevent AI from generating hallucinations by using clear prompts and retrieval-augmented generation
+2026/10/13 15:03:10 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-gpu.adoc (146 chars)
+  → Monitor GPU usage by configuring the OpenTelemetry Collector to scrape metrics from the NVIDIA DCGM Exporter deployed with the NVIDIA GPU Operator
+2026/10/13 15:03:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-milvus.adoc (149 chars)
+  → Monitor Milvus by scraping its Prometheus-compatible metrics endpoint and configuring the OpenTelemetry Collector to collect and visualize its status
+2026/10/13 15:03:29 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-opensearch.adoc (152 chars)
+  → Monitor OpenSearch using the OpenTelemetry Collectors elasticsearch receiver to collect metrics such as disk usage, cluster health, and node performance
+2026/10/13 15:03:39 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-otel-autoinstrumentation.adoc (137 chars)
+  → Monitor Kubernetes applications with the OpenTelemetry Operator by instrumenting workloads and forwarding telemetry to SUSE Observability
+2026/10/13 15:03:48 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-owui.adoc (112 chars)
+  → Monitor Open WebUI by using the Filter to collect telemetry data and configure pipelines for tracing and metrics
+2026/10/13 15:03:57 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/NVIDIA-GPU-driver-installation-SLES.adoc (130 chars)
+  → Install the NVIDIA open driver on SLE Server to enable GPU support using pre-built packages from the operating system repositories
+2026/10/13 15:04:08 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/NVIDIA-GPU-driver-installation-SLMicro.adoc (147 chars)
+  → Install the NVIDIA GPU drivers on SLE Micro by following the steps to select the driver generation, add repositories, and install required packages
+2026/10/13 15:04:19 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/NVIDIA-Operator-installation.adoc (117 chars)
+  → Install the NVIDIA GPU Operator on an RKE2 cluster to manage GPUs in Kubernetes pods using the provided YAML manifest
+2026/10/13 15:04:29 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/RKE2-installation-airgapped.adoc (106 chars)
+  → Load images into an air-gapped environment and install RKE2 Prime using the methods described in this page
+2026/10/13 15:04:41 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/RKE2-installation-quickstart.adoc (143 chars)
+  → Install SUSE Rancher Prime RKE2 using the provided script to set up a cluster with default options and configure the server node for Kubernetes
+2026/10/13 15:04:51 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-images.adoc (123 chars)
+  → Install SUSE Rancher Prime in air-gapped environments by collecting and publishing required images to your private registry
+2026/10/13 15:05:00 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-infrastructure.adoc (128 chars)
+  → Set up the infrastructure and a private registry for installing the Rancher Prime management server in an air-gapped environment
+2026/10/13 15:05:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-kubernetes.adoc (132 chars)
+  → Install a Kubernetes cluster in air-gapped environments using RKE2 by creating configuration files and setting up a private registry
+2026/10/13 15:05:21 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-rancher.adoc (131 chars)
+  → Install SUSE Rancher Prime with the --privileged option to run containers within containers in an air-gapped Kubernetes environment
+2026/10/13 15:05:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped.adoc (104 chars)
+  → Install the Rancher Prime server on a Kubernetes cluster in an air-gapped environment using the Helm CLI
+2026/10/13 15:05:43 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-quickstart.adoc (129 chars)
+  → Install Rancher on a Kubernetes cluster using the Helm CLI by following the steps in this guide, including setting up the cluster
+2026/10/13 15:05:54 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-register-clusters.adoc (130 chars)
+  → Register existing RKE2 clusters in Rancher Prime by following the steps to configure permissions, node roles, and cluster settings
+2026/10/13 15:06:05 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/SLES-installation-quickstart.adoc (134 chars)
+  → Install SLE Server by following the procedures in this page, which guide you through using the Unified Installer and selecting modules
+2026/10/13 15:06:17 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Security-installation-airgapped.adoc (149 chars)
+  → Install SUSE Security in air-gapped environments by using Helm, Skopeo, and ZStandard to download, compress, and transfer images to the local network
+2026/10/13 15:06:27 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Security-installation-kubernetes.adoc (156 chars)
+  → Install SUSE Security using Kubernetes to deploy runtime protection, vulnerability scanning, and compliance auditing with a dedicated manager and controller
+2026/10/13 15:06:37 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Security-installation-rancher.adoc (157 chars)
+  → Install SUSE Security through Rancher Prime Extensions or Apps & Marketplace to add security containers to the default namespace and manage security policies
+2026/10/13 15:06:46 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-deployment-ailibrary-deployer.adoc (143 chars)
+  → Install AI Library components on a Kubernetes cluster by customizing and using the SUSE AI Deployer Helm chart with example configuration files
+2026/10/13 15:06:57 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-deployment-airgapped-workflow.adoc (134 chars)
+  → Download Helm charts, container images, and models to a local data store and transfer them to an air-gapped environment for deployment
+2026/10/13 15:07:10 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-deployment-helm.adoc (147 chars)
+  → Install the SUSE AI Factory Operator using Helm by identifying the correct chart version and following the command-line installation steps provided
+2026/10/13 15:07:21 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-deployment-rancherui.adoc (149 chars)
+  → Install the SUSE AI Operator application using the Rancher Prime UI by adding an OCI repository and following the installation steps in the interface
+2026/10/13 15:07:31 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-managing-apps.adoc (144 chars)
+  → Install AI applications by selecting them from the SUSE AI Library or NVIDIA AI Library, configuring settings, and deploying to a target cluster
+2026/10/13 15:07:41 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-managing-blueprints.adoc (139 chars)
+  → Create, modify, install, clone, and delete AI blueprints using the Blueprints page to manage reusable deployment templates for applications
+2026/10/13 15:07:52 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-managing-workloads.adoc (116 chars)
+  → Manage AI workloads by inspecting, customizing, upgrading, rolling back, or deleting them using the Rancher Prime UI
+2026/10/13 15:08:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-registries-access.adoc (145 chars)
+  → Configure access credentials for SUSE Application Collection and SUSE Registry by creating Kubernetes secrets and mapping them in SUSE AI Factory
+2026/10/13 15:08:12 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-uninstall.adoc (113 chars)
+  → Uninstall SUSE AI Factory Operator by using Rancher Prime or the command line, then remove installation leftovers
+2026/10/13 15:08:22 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-upgrade.adoc (114 chars)
+  → Upgrade the SUSE AI Factory Operator using the Helm CLI by applying custom configurations and pulling dependencies
+2026/10/13 15:08:32 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-library-apps-verifying.adoc (156 chars)
+  → Verify AI Library applications hosted on SUSE Application Collection and SUSE Registry by using cosign to check their authenticity and attached attestations
+2026/10/13 15:08:43 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-clusterrepo-creating.adoc (152 chars)
+  → Create a ClusterRepo repository for AI applications by setting up the SUSE Application Collection and SUSE Registry repositories in Rancher Prime Server
+2026/10/13 15:09:01 ERROR processing /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-installing-ai-operator.adoc: generated description is incomplete or too long: Install the SUSE AI Operator to the same cluster where the main Rancher Prime server runs and create the InstallAIExtension Custom Resource to deploy the SUSE AI Lifecycle Manager
+2026/10/13 15:09:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-installing-applications.adoc (110 chars)
+  → Install and manage AI applications in SUSE AI Lifecycle Manager by following the steps to deploy and configure
+2026/10/13 15:09:22 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-installing-rancher-ui.adoc (140 chars)
+  → Install the SUSE AI Lifecycle Manager extension using Rancher Prime UI by adding a GitHub branch or registry and following the steps to load
+2026/10/13 15:09:33 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-node-installer.adoc (123 chars)
+  → Deploy RKE2 clusters on SUSE-driven servers using the SUSE AI Node Installer to prepare and configure them for AI workloads
+2026/10/13 15:09:41 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-installing.adoc (121 chars)
+  → Install Rancher Prime or use Helm to install, including creating a namespace, saving passwords securely, and using values
+2026/10/13 15:09:49 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-removing.adoc (102 chars)
+  → Use the Helm command provided in the page content to remove Rancher Prime from your Kubernetes cluster
+2026/10/13 15:09:55 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-upgrading.adoc (101 chars)
+  → Upgrade Rancher Prime or use Helm commands to upgrade the application and manage versions effectively
+2026/10/13 15:10:05 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-values.adoc (119 chars)
+  → Log in to the Helm chart repository, display its values, and review supported configurations before deploying the chart
+2026/10/13 15:10:15 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-documenting.adoc (160 chars)
+  → Create a README.md file and an architecture diagram to document your SUSE AI Factory blueprint and explain its components, prerequisites, and deployment process
+2026/10/13 15:10:23 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-extra-helm-repos.adoc (131 chars)
+  → Create a ClusterRepo resource to register an additional Helm repository for SUSE AI Factory blueprints and store it in clusterrepos
+2026/10/13 15:10:32 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-publish-run.adoc (141 chars)
+  → Commit the blueprint files to a Git repository and register the custom resource on the cluster to publish and run a SUSE AI Factory blueprint
+2026/10/13 15:10:44 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-writing-cr-ollama.adoc (125 chars)
+  → Create a SUSE AI Factory blueprint CR for CPU inference with Ollama by defining metadata, specification, and chart repository
+2026/10/13 15:10:53 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-writing-cr-vllm.adoc (118 chars)
+  → Create a GPU variant from your CPU blueprint to deploy GPU-accelerated inference with vLLM by updating resource fields
+2026/10/13 15:11:00 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-quickstart.adoc (128 chars)
+  → Copy an existing SUSE AI Factory blueprint to create a customized one by editing its YAML file and registering it on the cluster
+2026/10/13 15:11:09 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-credentials-helm.adoc (157 chars)
+  → Provide registry credentials during installation to access applications and blueprints from SUSE Application Collection, SUSE Registry, and NVIDIA AI Library
+2026/10/13 15:11:18 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/cert-manager-installing.adoc (118 chars)
+  → Install cert-manager to manage X.509 certificates for Kubernetes workloads and ensure they remain valid and up-to-date
+2026/10/13 15:11:27 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-accessing.adoc (126 chars)
+  → Access Kubeflows Web interface using methods like port-forward, NodePort, external IP, or named host names with or without TLS
+2026/10/13 15:11:37 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-hardening.adoc (140 chars)
+  → Update override values to secure Kubeflow deployment by changing default credentials, enabling NetworkPolicies, TLS, backups, and validation
+2026/10/13 15:11:47 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-installing-airgapped.adoc (156 chars)
+  → Install Kubeflow in an air-gapped environment by using local image registries and Helm repositories to deploy and manage machine learning workflows securely
+2026/10/13 15:11:58 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-installing.adoc (139 chars)
+  → Install Kubeflow using Helm by logging in to the SUSE Registry, creating namespaces, generating image pull secrets, and labeling namespaces
+2026/10/13 15:12:08 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-user-profiles.adoc (149 chars)
+  → Add users to Kubeflow by editing the values file and running helm upgrade to create profiles and deploy required resources in the specified namespace
+2026/10/13 15:12:17 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/mcphost-installation.adoc (105 chars)
+  → Install the mcphost package to set up the MCP host on SLE Server using the command sudo zypper in mcphost
+2026/10/13 15:12:26 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/mcpo-installing.adoc (126 chars)
+  → Install mcpo to connect AI applications like SUSE AI to external systems using the MCP-to-OpenAPI proxy server from Open WebUI
+2026/10/13 15:12:35 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/milvus-installing.adoc (151 chars)
+  → Install Milvus by following this procedure to set up the application, its dependencies, and learn about supported configurations and available versions
+2026/10/13 15:12:45 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/mlflow-installing.adoc (116 chars)
+  → Install MLflow with a PostgreSQL back-end using Helm by following the step-by-step walkthrough provided in this page
+2026/10/13 15:13:03 ERROR processing /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/observability-settingup-ai.adoc: generated description is incomplete or too long: Set up SUSE Observability for AI workloads by choosing between single-cluster or multi-cluster environments and following the required steps to monitor and analyze telemetry data
+2026/10/13 15:13:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ollama-installing.adoc (126 chars)
+  → Install Ollama to run and manage language models locally on your computer using a simple interface and without cloud resources
+2026/10/13 15:13:19 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/opensearch-installing.adoc (144 chars)
+  → Install OpenSearch by using the provided commands and instructions to set up the search and analytics suite with its components and dependencies
+2026/10/13 15:13:29 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-cloning.adoc (151 chars)
+  → Clone an existing AI model using Open WebUI by selecting the Clone option from the models contextual menu and saving the new model with a modified name
+2026/10/13 15:13:38 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-creating.adoc (130 chars)
+  → Create custom AI models by following this procedure to set up models in Open WebUI. Define names, system prompts, and capabilities
+2026/10/13 15:13:44 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-deleting.adoc (103 chars)
+  → Delete existing AI models using the Open WebUI interface by selecting the model and confirming deletion
+2026/10/13 15:13:51 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-exporting-all.adoc (102 chars)
+  → Export all existing AI models using the Export Models button in Open WebUI to save them as a JSON file
+2026/10/13 15:14:00 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-exporting.adoc (132 chars)
+  → Export existing AI models using Open WebUI by selecting the model, choosing Export, and saving the JSON file to a specified location
+2026/10/13 15:14:08 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-importing.adoc (154 chars)
+  → Import AI models using Open WebUI by selecting the Import Models button and specifying the path to the JSON file containing the exported model definitions
+2026/10/13 15:14:16 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-modifying.adoc (135 chars)
+  → Modify an existing AI model using Open WebUI by editing its settings and enabling default MCP services through the model editing screen
+2026/10/13 15:14:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-authentication-via-okta.adoc (154 chars)
+  → Configure Open WebUI to use Okta for authentication by setting environment variables with Okta domain, client ID, client secret, and other required values
+2026/10/13 15:14:38 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-chat-window-usage.adoc (142 chars)
+  → Use the Open WebUI chat window to send prompts to an AI model and receive responses. Then edit, copy, or improve them using the tools provided
+2026/10/13 15:14:46 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-collections.adoc (132 chars)
+  → Select preconfigured documents, collections, or external URLs in the chat input field to use as information sources for AI responses
+2026/10/13 15:14:54 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-custom-docs.adoc (111 chars)
+  → Upload custom documents to use as data sources in the chat input field so AI can respond based on their content
+2026/10/13 15:15:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-mcpo-tools.adoc (136 chars)
+  → Select the MCP service from the chat input field to enable it for the current chat and see the tool invocation listed below the response
+2026/10/13 15:15:11 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-model.adoc (109 chars)
+  → Use the chat input field to select an AI model and type a prompt for the selected model during a chat session
+2026/10/13 15:15:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-system-prompt.adoc (129 chars)
+  → Select a preconfigured system prompt from the chat input field by typing the / character and choosing one from the drop-down list
+2026/10/13 15:15:30 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-pulling-llms-from-huggingface.adoc (125 chars)
+  → Download GGUF models from Hugging Face using the Open WebUI interface to find, select, and pull model tags for AI interaction
+2026/10/13 15:15:41 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-pulling-llms-from-ollama.adoc (128 chars)
+  → Download AI models from Ollama by using the Open WebUI interface to select and pull model tags like gemma3 4b for AI interaction
+2026/10/13 15:15:49 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-chat-model.adoc (116 chars)
+  → Select an AI model from the drop-down list to specify which model processes your prompts in the current chat session
+2026/10/13 15:15:59 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-chat-native-function-calling.adoc (150 chars)
+  → Enable native function calling by configuring Open WebUI to let the client LLM connect directly to the MCP server and use tools with defined arguments
+2026/10/13 15:16:09 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-chat-system-prompt.adoc (153 chars)
+  → Set a system prompt for the current chat by clicking the Chat controls icon, unfolding the System Prompt tab, and entering your prompt in the input field
+2026/10/13 15:16:18 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-model-system-prompt.adoc (114 chars)
+  → Set the default system prompt for an AI model in Open WebUI by editing the model parameters and saving the changes
+2026/10/13 15:16:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-system-model.adoc (125 chars)
+  → Set the default system AI model to use for all new chats by selecting it in the Default Models section of the Settings screen
+2026/10/13 15:16:39 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-user-system-prompt.adoc (139 chars)
+  → Set the default system prompt for the current user by entering text in the System Prompt field and saving your changes in the Settings menu
+2026/10/13 15:16:48 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-account-creating.adoc (120 chars)
+  → Create user accounts in Open WebUI by selecting roles and entering details or importing a CSV file with user information
+2026/10/13 15:16:58 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-account-modifying.adoc (145 chars)
+  → Modify user accounts in Open WebUI by clicking the pen icon next to the user and changing their e-mail, name, or password in the Edit User dialog
+2026/10/13 15:17:07 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-revoking-access.adoc (120 chars)
+  → Revoke access to Open WebUI for a user by changing their role to pending or deleting their account from the Users screen
+2026/10/13 15:17:18 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-role-assigning.adoc (135 chars)
+  → Assign a role to an existing user in Open WebUI by clicking the role button next to the user name and selecting pending, user, or admin
+2026/10/13 15:17:26 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-using-models-from-openai-providers.adoc (118 chars)
+  → Use the OpenAI-compatible API to access AI models from providers like Groq or LocalAI and configure them in Open WebUI
+2026/10/13 15:17:35 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-installing.adoc (140 chars)
+  → Install Open WebUI by using the provided Helm chart and custom overrides file to configure and deploy the application with specific settings
+2026/10/13 15:17:45 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-adding-content.adoc (124 chars)
+  → Add content to a knowledge base by uploading files, adding text, or synchronizing a directory using the Open WebUI interface
+2026/10/13 15:17:54 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-creating.adoc (126 chars)
+  → Create a knowledge base to extend the AI models context on a specific topic by adding content through the Open WebUI interface
+2026/10/13 15:18:03 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-deleting.adoc (135 chars)
+  → Delete a knowledge base by clicking the three dots in its tile, selecting Delete, and confirming the action in the Open WebUI interface
+2026/10/13 15:18:12 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-removing-content.adoc (118 chars)
+  → Remove content from a knowledge base by clicking the cross sign next to the resources name in the Open WebUI interface
+2026/10/13 15:18:20 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-cloning.adoc (153 chars)
+  → Clone an existing system prompt by using the Clone option in the Open WebUI interface and update its title, content, and activating command before saving
+2026/10/13 15:18:30 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-creating.adoc (128 chars)
+  → Create a system prompt by entering its title and content in the Open WebUI interface and saving it with the Save & Create option
+2026/10/13 15:18:38 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-deleting.adoc (143 chars)
+  → Delete an existing system prompt by clicking the three dots next to it, selecting Delete, and confirming the action in the Open WebUI interface
+2026/10/13 15:18:46 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-exporting-all.adoc (126 chars)
+  → Export all existing system prompts by using the Export Prompts option in the Open WebUI interface and save them to a JSON file
+2026/10/13 15:18:54 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-exporting.adoc (123 chars)
+  → Export a system prompt by using the Export option in the Open WebUI interface and saving the JSON file to a chosen location
+2026/10/13 15:19:00 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-importing.adoc (108 chars)
+  → Import system prompts from a JSON file using the Open WebUI interface to restore previously exported prompts
+2026/10/13 15:19:09 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-modifying.adoc (123 chars)
+  → Modify an existing system prompt by using the Open WebUI interface to edit its title and description, then save the changes
+2026/10/13 15:19:17 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/pytorch-installing.adoc (115 chars)
+  → Install PyTorch by using the PyTorch Helm chart to deploy training or inference code on NVIDIA GPUs in your cluster
+2026/10/13 15:19:27 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/qdrant-installing.adoc (104 chars)
+  → Integrate Qdrant with Open WebUI by editing the owuicustomoverrides.yaml file and redeploying Open WebUI
+2026/10/13 15:19:38 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/vllm-installing.adoc (119 chars)
+  → Install vLLM on Kubernetes using its Helm chart to deploy a high-performance inference engine for large language models
+2026/10/13 15:19:53 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/articles/article.adoc (128 chars)
+  → Define the Smartdoc article written in AsciiDoc by explaining its purpose and describing its technical benefit for AI processing
+2026/10/13 15:20:02 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/concepts/concept.adoc (120 chars)
+  → Learn what foo bar is, how it works, and its benefits through detailed explanations and a figure that shows its function
+2026/10/13 15:20:08 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/glues/glue-more-info.adoc (123 chars)
+  → Add web links to external sources or other SUSE articles to help readers find more information and support content accuracy
+2026/10/13 15:20:15 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/glues/glue-whats-next.adoc (133 chars)
+  → Add a list of web links to articles relating to this topic that the user might need to find more information and understand it better
+2026/10/13 15:20:23 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/glues/glue.adoc (120 chars)
+  → Follow the steps in this workflow to perform task XYZ. Use the links to find related subtasks that support the main task
+2026/10/13 15:20:28 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/references/reference.adoc (148 chars)
+  → Learn how to use the reference example commands and understand their options by reading the detailed descriptions and examples provided in this page
+2026/10/13 15:20:35 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/snippets/snippet_warning.adoc (129 chars)
+  → Read the warning message to understand the important information about .Foobar and the potential risks it may pose to your system
+2026/10/13 15:20:46 ADDED: /home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/tasks/task.adoc (140 chars)
+  → Use tool Y to complete task X by following the steps listed in the procedure section of this page, which includes step 1, step 2, and step 3
+2026/10/13 15:20:46 
+=== Processing Complete ===
+2026/10/13 15:20:46 Total time: 1869.04 seconds
+2026/10/13 15:20:46 Files processed: 225
+2026/10/13 15:20:46 Added: 219
+2026/10/13 15:20:46 Replaced: 0
+2026/10/13 15:20:46 Copied: 0
+2026/10/13 15:20:46 Skipped: 2
+2026/10/13 15:20:46 Errors: 4
+2026/10/13 15:20:46 Warnings: 0
+2026/10/13 15:20:46 HTML report saved to: /home/scribe/doc-lama-metagen/reports/suse-ai.html

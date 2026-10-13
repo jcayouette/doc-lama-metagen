@@ -1,0 +1,164 @@
+2026/10/13 16:32:58 Starting doc-meta-gen
+2026/10/13 16:32:58 Root directory: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en
+2026/10/13 16:32:58 Model: qwen3:14b
+2026/10/13 16:32:58 Ollama URL: http://127.0.0.1:11434
+2026/10/13 16:32:58 Update revdate: false
+2026/10/13 16:32:58 Language: en
+2026/10/13 16:32:58 Checking Ollama connection...
+2026/10/13 16:32:58 ✓ Ollama is available
+2026/10/13 16:32:58 Scanning for files...
+2026/10/13 16:32:58 Found 72 potential files
+2026/10/13 16:32:58 After type filter (all): 72 files
+2026/10/13 16:32:58 Processing 72 files (language: en)
+2026/10/13 16:33:10 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/README.adoc (127 chars)
+  → Find and learn about writing and building SUSE Edge documentation using Asciidoc, including best practices, examples, and tools
+2026/10/13 16:33:19 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/edge-image-builder.adoc (156 chars)
+  → Build customized, ready-to-boot disk images for air-gapped deployments using Edge Image Builder to enable end-to-end installation of the SUSE software stack
+2026/10/13 16:33:23 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/elemental.adoc (106 chars)
+  → Use Elemental to register edge nodes with Rancher and manage their configuration for Kubernetes deployment
+2026/10/13 16:33:26 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/endpoint-copier-operator.adoc (135 chars)
+  → Operate the Endpoint Copier Operator to create and sync a Kubernetes Service and Endpoint for High Availability in K3s or RKE2 clusters
+2026/10/13 16:33:29 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/fleet.adoc (119 chars)
+  → Use Fleet to manage and deploy Kubernetes resources from Git using Helm, and monitor cluster configurations with GitOps
+2026/10/13 16:33:31 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/k3s.adoc (135 chars)
+  → Install K3s on SUSE Linux Micro using Edge Image Builder to set up a high availability Kubernetes cluster for SUSE Edge stack workloads
+2026/10/13 16:33:34 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/linux-micro.adoc (128 chars)
+  → Use SUSE Linux Micro to create a secure, lightweight edge operating system with Btrfs snapshots and Cockpit for local management
+2026/10/13 16:33:36 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/longhorn.adoc (100 chars)
+  → Install SUSE Storage using Helm to set up a distributed block storage system for Kubernetes clusters
+2026/10/13 16:33:38 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/metal3.adoc (120 chars)
+  → Learn how Metal^3^ manages bare-metal servers with Kubernetes-native resources and out-of-band protocols such as Redfish
+2026/10/13 16:33:42 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/metallb.adoc (139 chars)
+  → Use MetalLB to set up a load balancer for bare-metal Kubernetes clusters by configuring it in L2 or BGP mode to manage virtual IP addresses
+2026/10/13 16:33:46 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/networking.adoc (123 chars)
+  → Configure Edge Networking using NetworkManager Configurator to define and apply network settings such as static IP and VLAN
+2026/10/13 16:33:52 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/neuvector.adoc (156 chars)
+  → Learn how to deploy and manage the SUSE Security platform, including Manager, Controller, Enforcer, Scanner, and Updater containers, for Kubernetes security
+2026/10/13 16:33:57 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/rancher-dashboard-extensions.adoc (126 chars)
+  → Install Rancher Dashboard Extensions using Rancher UI, Helm, or Fleet to add features like KubeVirt virtual machine management
+2026/10/13 16:34:06 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/rancher.adoc (148 chars)
+  → Learn how to use Rancher to manage Kubernetes clusters across different environments with tools for deployment, security, and application management
+2026/10/13 16:34:25 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/rke2.adoc (125 chars)
+  → Install and configure RKE2 using the SUSE Edge stack to deploy secure, compliant Kubernetes clusters with embedded containerd
+2026/10/13 16:34:37 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/suse-multilinux-manager.adoc (101 chars)
+  → Use SUSE Multi-Linux Manager to keep SUSE Linux Micro up-to-date on all nodes in your edge deployment
+2026/10/13 16:34:55 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/system-upgrade-controller.adoc (132 chars)
+  → Install the System Upgrade Controller using Fleet resources to manage node upgrades and Day 2 operations in your Kubernetes clusters
+2026/10/13 16:35:05 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/turtles.adoc (124 chars)
+  → Learn how Rancher Turtles integrates Rancher Manager with Cluster API to automatically import and manage Kubernetes clusters
+2026/10/13 16:35:21 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/upgrade-controller.adoc (159 chars)
+  → Upgrade the SUSE Edge platform components using the Upgrade Controller by configuring a single resource that automates the upgrade process for operating system
+2026/10/13 16:35:37 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/components/virtualization.adoc (122 chars)
+  → Use Edge Virtualization to run virtual machines on edge nodes with Kubernetes-based management using the KubeVirt operator
+2026/10/13 16:35:46 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/concepts/observability.adoc (106 chars)
+  → Learn what observability means and how to use it to monitor and improve system performance and reliability
+2026/10/13 16:36:11 ERROR processing /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/concepts/terms.adoc: generated description is incomplete or too long: Define the terms Kubernetes, Container, and Cluster API in this space to clarify their meanings and ensure consistent use throughout the documentation
+2026/10/13 16:36:19 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/downstream-clusters.adoc (115 chars)
+  → Learn how to perform Day 2 operations for downstream clusters using the tools and procedures described in this page
+2026/10/13 16:36:45 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/fleet-helm-upgrade.adoc (140 chars)
+  → Upgrade a Helm chart for Edge by preparing and loading OCI images and charts to a private registry using the provided scripts and procedures
+2026/10/13 16:37:07 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/fleet-k8s-upgrade.adoc (125 chars)
+  → Upgrade Kubernetes clusters using System Upgrade Controller plans and Fleet by following the upgrade process and requirements
+2026/10/13 16:37:28 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/fleet-os-upgrade.adoc (134 chars)
+  → Upgrade cluster nodes by using Fleet and the System Upgrade Controller (SUC) to manage operating system upgrades with custom SUC plans
+2026/10/13 16:37:51 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/fleet.adoc (147 chars)
+  → Learn how to use Fleet for Day 2 operations including OS, Kubernetes, and Helm upgrades by following the workflow and using the required components
+2026/10/13 16:38:03 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/mgmt-cluster.adoc (112 chars)
+  → Learn how to perform Day 2 operations on your management cluster using the upgrade controller or Fleet workspace
+2026/10/13 16:38:26 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/migration.adoc (108 chars)
+  → Migrate your management and downstream clusters to the Edge release using the methods described in this page
+2026/10/13 16:38:42 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/day2/upgrade-controller.adoc (151 chars)
+  → Upgrade your management cluster using the Upgrade Controller by creating and deploying an UpgradePlan with the desired release version in its namespace
+2026/10/13 16:38:56 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/attributes.adoc (137 chars)
+  → Find information about using the page features, including tips, notes, and warnings, to help you understand and use the content correctly
+2026/10/13 16:39:59 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/edge.adoc (142 chars)
+  → Find the SUSE Telco Cloud documentation here in the section titled SUSE Telco Cloud Documentation for information about automated provisioning
+2026/10/13 16:40:26 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/links.adoc (155 chars)
+  → Find resources and steps to configure, troubleshoot, and manage network settings, transactional updates, and image building for SUSE Linux Enterprise Micro
+2026/10/13 16:41:04 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/releasenotes.adoc (106 chars)
+  → This abstract explains the features, purpose, and scope of SUSE Edge 3.4 and its use in various industries
+2026/10/13 16:41:25 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/version-matrix.adoc (110 chars)
+  → Find the supported versions of each component on this page, including SUSE Linux Micro, Rancher Prime, and K3s
+2026/10/13 16:42:11 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/versions.adoc (114 chars)
+  → Find the versions of software components used in this system, including the base image SL-Micro.x86_64-6.1-Base-GM
+2026/10/13 16:42:30 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/edge-book/welcome.adoc (134 chars)
+  → Learn about the architecture, components, and management of SUSE Edge to deploy and manage edge computing infrastructure and workloads
+2026/10/13 16:42:53 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/github_workflow_best_practices.adoc (159 chars)
+  → Learn best practices for using Git and GitHub workflows in the SUSE Edge Engineering team, including setting up repositories, signing commits, and creating PRs
+2026/10/13 16:43:15 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/guides/air-gapped-eib-deployments.adoc (151 chars)
+  → Create an air-gapped deployment using Edge Image Builder by configuring a base directory, defining network settings, and specifying required components
+2026/10/13 16:43:35 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/guides/clusterclass.adoc (137 chars)
+  → Learn how to use ClusterClass to define reusable cluster templates and deploy downstream Kubernetes clusters consistently and efficiently
+2026/10/13 16:43:57 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/guides/kiwi-builder-images.adoc (144 chars)
+  → Build updated SUSE Linux Micro images with Kiwi by following the steps in this page to create disk images for Edge Image Builder and Cluster API
+2026/10/13 16:44:21 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/guides/metallb-k3s.adoc (107 chars)
+  → Deploy MetalLB on K3s using Layer 2 Mode to configure a load balancer that assigns IP addresses to services
+2026/10/13 16:44:45 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/guides/metallb-k3s_l3.adoc (109 chars)
+  → Deploy MetalLB on K3s using Layer 3 mode to configure BGP and advertise service IP addresses through a router
+2026/10/13 16:45:40 ERROR processing /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/guides/metallb-kube-api.adoc: generated description is incomplete or too long: Deploy MetalLB to expose the Kubernetes API server externally by creating a LoadBalancer service and using the EndpointCopier Operator to manage control-plane node IPs
+2026/10/13 16:46:05 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/integrations/create-package-obs.adoc (126 chars)
+  → Create a package using the openSUSE Build Service by setting up a project and configuring it for RPM or container image builds
+2026/10/13 16:46:16 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/integrations/linkerd.adoc (115 chars)
+  → Learn how Linkerd Service Mesh adds security, observability, and reliability to Kubernetes without extra complexity
+2026/10/13 16:46:38 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/integrations/nats.adoc (109 chars)
+  → Use NATS to securely send and receive messages between applications across different environments and devices
+2026/10/13 16:46:58 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/integrations/nvidia-slemicro.adoc (146 chars)
+  → Install NVIDIA open-driver and related components on SUSE Linux Micro to enable GPU support using pre-built drivers from SUSE package repositories
+2026/10/13 16:47:21 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip-architecture.adoc (158 chars)
+  → Learn about the architecture and components of SUSE Telco Cloud, including management and runtime stacks, and how they support cloud-native Telco applications
+2026/10/13 16:47:41 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip-automated-provision.adoc (112 chars)
+  → Learn how to use Directed Network Provisioning to automatically set up downstream clusters with SUSE Telco Cloud
+2026/10/13 16:48:04 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip-features.adoc (160 chars)
+  → Configure Telco-specific features on clusters using directed network provisioning by setting kernel arguments, isolating CPUs, configuring CNI, SR-IOV, and DPDK
+2026/10/13 16:48:20 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip-lifecycle.adoc (147 chars)
+  → Learn how to upgrade downstream clusters by updating components like the operating system and RKE2 cluster with specific YAML configuration changes
+2026/10/13 16:48:42 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip-management-cluster.adoc (151 chars)
+  → Set up the management cluster by preparing image files, defining cluster configurations, and customizing settings for connected or air-gap environments
+2026/10/13 16:49:07 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip-requirements.adoc (129 chars)
+  → Find the hardware, network, and port requirements for SUSE Telco Cloud management and downstream clusters to plan your deployment
+2026/10/13 16:49:22 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/product/atip.adoc (147 chars)
+  → Learn how SUSE Telco Cloud helps telecom operators and network vendors modernize their networks with a complete, open source, cloud-native platform
+2026/10/13 16:49:34 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/quickstart/eib.adoc (128 chars)
+  → Create a customized, ready-to-boot disk image for standalone clusters using Edge Image Builder by defining configuration options
+2026/10/13 16:49:46 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/quickstart/elemental.adoc (116 chars)
+  → Use Elemental to onboard remote hosts and manage them securely in a centralized platform with Rancher and Kubernetes
+2026/10/13 16:49:59 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/quickstart/metal3.adoc (129 chars)
+  → Learn how to use BMC automated deployments with Metal^3^ to manage bare-metal servers using out-of-band protocols and Cluster API
+2026/10/13 16:50:15 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/quickstart/suse-multilinux-manager.adoc (140 chars)
+  → Use SUSE Multi-Linux Manager to keep SUSE Linux Micro up-to-date on edge nodes and manage Kubernetes and applications deployed on edge nodes
+2026/10/13 16:50:25 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/tech_writing_best_practices.adoc (111 chars)
+  → Learn best practices for technical writing by applying clear rules, simple language, and consistent terminology
+2026/10/13 16:50:43 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/template.adoc (157 chars)
+  → Start with the page title to find the starting point for information about the topics and to learn how to use the tools and features described in the content
+2026/10/13 16:50:50 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/tips/eib.adoc (156 chars)
+  → Use Edge Image Builder to create custom SUSE Linux Micro images and configure Kubernetes clusters by editing definition files and adjusting system resources
+2026/10/13 16:50:53 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/tips/elemental.adoc (147 chars)
+  → Install Elemental and configure it with the Elemental Operator, UI, and registration code to set up remote registration and manage downstream nodes
+2026/10/13 16:50:55 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/tips/metal3.adoc (128 chars)
+  → Learn how to configure network names and manage BareMetalHost in Metal3 using secrets or UUIDs and clean up old EFI boot entries
+2026/10/13 16:50:57 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/collecting-diagnostics-for-support.adoc (129 chars)
+  → Find and collect specific diagnostic information for SUSE Edge environments to help support teams troubleshoot issues effectively
+2026/10/13 16:50:58 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/general-troubleshooting-principles.adoc (149 chars)
+  → Learn general troubleshooting principles for SUSE Edge by checking logs, clocks, network settings, component status, and using official documentation
+2026/10/13 16:50:59 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/troubleshooting-directed-network-provisioning.adoc (157 chars)
+  → Troubleshoot directed-network provisioning issues by checking firmware, certificates, cluster configurations, BMC communication, and logs for Metal3 and CAPI
+2026/10/13 16:51:01 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/troubleshooting-edge-image-builder.adoc (148 chars)
+  → Troubleshoot Edge Image Builder issues by checking common problems, logs, and configuration errors to fix build failures and image creation problems
+2026/10/13 16:51:03 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/troubleshooting-edge-networking.adoc (159 chars)
+  → Check network configuration files, run nmc manually, and review logs using journalctl to identify and fix Edge Networking issues during host boot or inspection
+2026/10/13 16:51:04 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/troubleshooting-kiwi.adoc (142 chars)
+  → Troubleshoot common issues when using Kiwi to generate SUSE Linux Micro images with Edge Image Builder by checking logs and verifying settings
+2026/10/13 16:51:05 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/troubleshooting-other-components.adoc (116 chars)
+  → Find troubleshooting guides for other SUSE Edge components in their official documentation or the SUSE Knowledgebase
+2026/10/13 16:51:06 ADDED: /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en/troubleshooting/troubleshooting-phone-home-scenarios.adoc (155 chars)
+  → Troubleshoot Phone-Home scenarios by checking logs, ensuring communication with Rancher, verifying clock synchronization, and reviewing MachineRegistration
+2026/10/13 16:51:06 
+=== Processing Complete ===
+2026/10/13 16:51:06 Total time: 1088.20 seconds
+2026/10/13 16:51:06 Files processed: 72
+2026/10/13 16:51:06 Added: 70
+2026/10/13 16:51:06 Replaced: 0
+2026/10/13 16:51:06 Copied: 0
+2026/10/13 16:51:06 Skipped: 0
+2026/10/13 16:51:06 Errors: 2
+2026/10/13 16:51:06 Warnings: 0

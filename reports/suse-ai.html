@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <title>Description Generation Report: AI Generated Meta Descriptions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-slate-800">
+<div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-slate-900">Description Generation Report</h1>
+    <p class="text-xl text-slate-600 mt-1">AI Generated Meta Descriptions</p>
+    <p class="text-sm text-slate-400 mt-2">Report generated on 2026-10-13 15:20:46</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Files Processed</div><div class="mt-1 text-3xl font-semibold text-slate-900">225</div></div>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Files Changed</div><div class="mt-1 text-3xl font-semibold text-green-600">219</div></div>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Processing Time</div><div class="mt-1 text-3xl font-semibold text-slate-900">1869.04s</div></div>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Model Used</div><div class="mt-1 text-2xl font-semibold text-slate-900 truncate">qwen3:14b</div></div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="p-5 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-center">
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">Processing Log</h2>
+        <p class="text-sm text-slate-500 mt-1">Detailed log of all file operations.</p>
+      </div>
+      <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Filter by path, status, or details..."
+        class="mt-4 sm:mt-0 w-full sm:w-64 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full" id="logTable">
+        <thead class="bg-slate-100 text-slate-600 text-sm font-semibold uppercase">
+          <tr>
+            <th class="py-3 px-6 text-left">File</th>
+            <th class="py-3 px-6 text-left">Type</th>
+            <th class="py-3 px-6 text-left">Status</th>
+            <th class="py-3 px-6 text-left">Chars</th>
+            <th class="py-3 px-6 text-left">Description / Details</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/README.adoc">doc-suse-ai/README.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">124</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find and use instructions, examples, and best practices for writing and formatting SUSE AI product documentation in Asciidoc</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-data-integrity.adoc">doc-suse-ai/articles/ai-data-integrity.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">141</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to prevent data leaks and maintain correct functioning of your AI application by understanding security threats and safety measures</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-deployment-airgapped.adoc">doc-suse-ai/articles/ai-deployment-airgapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and deploy in air-gapped environments by following the step-by-step guide that covers all dependencies, hardware, and software requirements</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-deployment.adoc">doc-suse-ai/articles/ai-deployment.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">113</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and deploy the product and its dependencies using this guide to get all required components ready for use</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-applications.adoc">doc-suse-ai/articles/ai-factory-applications.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and configure SUSE AI Factory Applications using Helm charts and custom values files to deploy AI applications on Kubernetes</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-bp-creating.adoc">doc-suse-ai/articles/ai-factory-bp-creating.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create blueprints to define and deploy AI workloads using the command line, including support for CPU and NVIDIA GPU inference</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-yellow-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-deployment-airgapped.adoc">doc-suse-ai/articles/ai-factory-deployment-airgapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-yellow-500">SKIPPED</span></td>
+            <td class="py-3 px-6 text-slate-500">165</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy {productname} in air-gapped environments securely to manage AI platform workloads using reproducible, version-controlled blueprints without external internet.</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-deployment.adoc">doc-suse-ai/articles/ai-factory-deployment.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy the SUSE AI Factory Operator on a RKE2 Kubernetes cluster using the Helm command or Rancher Prime UI to manage AI platform workloads</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-introduction.adoc">doc-suse-ai/articles/ai-factory-introduction.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use blueprints to deploy and manage AI applications on Kubernetes clusters with standardized, version-controlled templates</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-requirements.adoc">doc-suse-ai/articles/ai-factory-requirements.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Check the requirements for hardware, GPUs, and applications to prepare your cluster infrastructure before installation</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-factory-usage.adoc">doc-suse-ai/articles/ai-factory-usage.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the Rancher Prime UI to manage AI applications, blueprints, and workloads on your Kubernetes cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-introduction.adoc">doc-suse-ai/articles/ai-introduction.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">148</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the basics and benefits of running private AI workloads with secure, auditable capabilities in on-premises, cloud, and air-gapped environments</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-monitoring.adoc">doc-suse-ai/articles/ai-monitoring.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor SUSE AI with OpenTelemetry and SUSE Observability to collect metrics, logs, and traces for observing and maintaining your environments performance</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-openwebui-configuring.adoc">doc-suse-ai/articles/ai-openwebui-configuring.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">119</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Open WebUI for AI interaction by setting base models, default prompts, and user roles according to your needs</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-openwebui-using.adoc">doc-suse-ai/articles/ai-openwebui-using.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">109</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use Open WebUI to interact effectively with AI models through its chat interface and input field</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-preventing-hallucinations.adoc">doc-suse-ai/articles/ai-preventing-hallucinations.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">138</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to create effective user prompts that help prevent AI hallucinations by guiding the AI to generate accurate and reliable content</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-requirements.adoc">doc-suse-ai/articles/ai-requirements.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">159</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Read this page to learn the hardware, software, and networking requirements for cluster nodes where you plan to install the SUSE Rancher Prime RKE2 environment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/ai-system-prompts.adoc">doc-suse-ai/articles/ai-system-prompts.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">148</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create effective system prompts to guide AI models and ensure responses match your intended goals by clearly defining the task and expected behavior</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-red-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/articles/sles-mcphost.adoc">doc-suse-ai/articles/sles-mcphost.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-red-500">ERROR</span></td>
+            <td class="py-3 px-6 text-slate-500"></td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">AI generation failed: generated description is incomplete or too long: Install the MCP host on SLES 16.0 to enable large language models to communicate with system tools and services through a structured command-line interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/common/common_copyright_gfdl.adoc">doc-suse-ai/common/common_copyright_gfdl.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Readers can learn about the terms and conditions for using this document and the legal rights associated with its distribution and modification</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/common/common_license_gfdl1.2.adoc">doc-suse-ai/common/common_license_gfdl1.2.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Readers can learn about the GNU Free Documentation License and its rules for copying, modifying, and distributing documents freely</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/common/generic-attributes.adoc">doc-suse-ai/common/generic-attributes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">114</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find information about SUSE products, tools, and technologies to help you choose the right solution for your needs</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/common/legal.adoc">doc-suse-ai/common/legal.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Readers can find information about the copyright, license, and trademark details for this document in the Legal Notice section</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/common/network-attributes.adoc">doc-suse-ai/common/network-attributes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">141</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find network configuration details for servers, clients, and devices on this page, including IPv4 and IPv6 addresses for subnets and services</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/common/product-attributes.adoc">doc-suse-ai/common/product-attributes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">122</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find information about SUSE AI Factory with NVIDIA, including installation media, release notes, and documentation sources</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-air-gap-stack.adoc">doc-suse-ai/concepts/AI-air-gap-stack.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">134</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the air-gapped stack scripts to download and prepare NVIDIA RPM packages and Docker images for air-gap installation on local hosts</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-data-integrity.adoc">doc-suse-ai/concepts/AI-data-integrity.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">159</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Understand security risks for AI applications by examining components like Open WebUI, Milvus, and Ollama to protect sensitive data and maintain data integrity</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-intro-how-works.adoc">doc-suse-ai/concepts/AI-intro-how-works.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn about the building blocks that make up the cloud native solution and how they support AI workloads</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-cost-estimation.adoc">doc-suse-ai/concepts/AI-monitoring-cost-estimation.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">115</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Calculate cost estimation for chat interactions between Open WebUI user and AI model using multipliers from pricing</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-instrument-openlit.adoc">doc-suse-ai/concepts/AI-monitoring-instrument-openlit.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">150</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Instrument applications with the OpenLIT SDK by following Python and TypeScript examples to add telemetry data collection and adjust the OTLP endpoint</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-user-apps.adoc">doc-suse-ai/concepts/AI-monitoring-user-apps.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor user-managed applications by using OpenTelemetry SDKs or compatible instrumentation providers to collect and send telemetry data for observability</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring-vllm.adoc">doc-suse-ai/concepts/AI-monitoring-vllm.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">103</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor vLLM by configuring the OpenTelemetry Collector to scrape its metrics endpoint every 10 seconds</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-monitoring.adoc">doc-suse-ai/concepts/AI-monitoring.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor your system by collecting telemetry data using OpenTelemetry and SUSE Observability to analyze the performance, health, and behavior of components</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/AI-system-prompt-how-works.adoc">doc-suse-ai/concepts/AI-system-prompt-how-works.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Understand how system prompts guide AI models by learning their structure, purpose, and how they shape responses before user input</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/ai-lifecycle-manager.adoc">doc-suse-ai/concepts/ai-lifecycle-manager.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and manage AI applications from SUSE registries using role-based workflows in the SUSE AI Lifecycle Manager extension</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/ai-node-installer.adoc">doc-suse-ai/concepts/ai-node-installer.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and configure selected cluster components on servers using the SUSE AI Node Installer with Ansible playbooks in a containerized environment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/aif-bp-folder.adoc">doc-suse-ai/concepts/aif-bp-folder.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">134</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Understand the directory structure for SUSE AI Factory blueprints and learn how to organize files and name custom resource definitions</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/aif-bp-what-is.adoc">doc-suse-ai/concepts/aif-bp-what-is.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">103</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a blueprint by defining Helm charts and their configuration values in a resource definition file</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/deployment-air-gapped.adoc">doc-suse-ai/concepts/deployment-air-gapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">131</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to secure sensitive systems by isolating them in air-gapped environments to prevent cyber threats and unauthorized access</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/mcphost-introduction.adoc">doc-suse-ai/concepts/mcphost-introduction.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn what the MCP host is and how it acts as a mediator between an LLM and MCP servers to enable safe system access and task execution</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/openwebui-introduction.adoc">doc-suse-ai/concepts/openwebui-introduction.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">159</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Open WebUI to interact with AI models through a graphical interface. This allows you to ask questions and use advanced AI tools without technical expertise</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/concepts/owui-user-interface.adoc">doc-suse-ai/concepts/owui-user-interface.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">131</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the Open WebUI interface to manage chats, select AI models, access the Workspace and Admin Panel, and customize system settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/NVIDIA-GPU-driver-intro.adoc">doc-suse-ai/glues/NVIDIA-GPU-driver-intro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">114</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the NVIDIA GPU drivers using the open driver from the operating system repositories to simplify deployment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/ai-intro-next-steps.adoc">doc-suse-ai/glues/ai-intro-next-steps.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">113</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Next steps Follow the links to study hardware and software requirements and understand the installation procedure</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/ai-library-intro.adoc">doc-suse-ai/glues/ai-library-intro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">155</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install AI Library applications using SUSE AI Factory blueprints or Helm CLI to deploy the integrated stack in your Kubernetes cluster in the correct order</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/ai-ssecurity-intro.adoc">doc-suse-ai/glues/ai-ssecurity-intro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Security to protect cluster infrastructure by scanning nodes for vulnerabilities and securing containerized workloads</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/mcphost-whats-next.adoc">doc-suse-ai/glues/mcphost-whats-next.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the MCP host server, then install and configure MCP servers to ensure proper communication between all components of the system</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/glues/owui-more-info.adoc">doc-suse-ai/glues/owui-more-info.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">105</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find more information about the upstream Open WebUI documentation by visiting the website at https //docs</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-Factory-appendix.adoc">doc-suse-ai/references/AI-Factory-appendix.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">155</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn about the product support lifecycle, including availability, support scope, deprecation policies, and where to find source code and legal information</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-Factory-release-notes.adoc">doc-suse-ai/references/AI-Factory-release-notes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Readers can learn about new features in this release, including customizable blueprint deployments and custom chart repositories</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-glossary.adoc">doc-suse-ai/references/AI-glossary.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the definitions of technical terms used in AI, networking, and Kubernetes by reading this glossary</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-hallucinations-causes.adoc">doc-suse-ai/references/AI-hallucinations-causes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn what causes AI hallucinations by understanding the main factors ambiguous prompts, lack of context, and long generation length</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-installation-flowchart.adoc">doc-suse-ai/references/AI-installation-flowchart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">155</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Follow the installation flowchart to understand the key steps for setting up the system on cluster nodes with or without a supported Linux operating system</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-intro-benefits.adoc">doc-suse-ai/references/AI-intro-benefits.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">124</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the benefits of using by understanding how it improves data security, performance, and scalability for AI applications</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-red-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-intro-scenarios.adoc">doc-suse-ai/references/AI-intro-scenarios.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-red-500">ERROR</span></td>
+            <td class="py-3 px-6 text-slate-500"></td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">AI generation failed: generated description is incomplete or too long: Implement AI-driven user interfaces in your private instance to handle customer inquiries, reducing the load on human agents and providing continuous support</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-hardware-gpu.adoc">doc-suse-ai/references/AI-requirements-hardware-gpu.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">149</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure the NVIDIA GPU Operator to use NVIDIA GPUs in a Kubernetes cluster by installing drivers, container runtimes, and other required components</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-hardware.adoc">doc-suse-ai/references/AI-requirements-hardware.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">122</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Check the hardware requirements for basic and high-availability deployments of SUSE Rancher Prime RKE2 Kubernetes clusters</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-milvus.adoc">doc-suse-ai/references/AI-requirements-milvus.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find the hardware, software, and network requirements for deploying Milvus and learn what is needed for basic and large-scale setups</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-nvidia.adoc">doc-suse-ai/references/AI-requirements-nvidia.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">134</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy AI applications on GPU-enabled clusters by installing and configuring the required NVIDIA operators, including the NIM Operator</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-observability.adoc">doc-suse-ai/references/AI-requirements-observability.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the minimum hardware requirements for SUSE Observability nodes in an HA setup, including RAM, CPU, and disk space needs</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-ollama.adoc">doc-suse-ai/references/AI-requirements-ollama.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">160</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Ollama on an NVIDIA-enabled system by following the steps for setting up hardware and software requirements, including GPU models, RAM, and disk space</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-openwebui.adoc">doc-suse-ai/references/AI-requirements-openwebui.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">141</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the hardware, network, and software requirements for running Open WebUI, including browser compatibility and integration considerations</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-rancher.adoc">doc-suse-ai/references/AI-requirements-rancher.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">110</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find the required Rancher Prime version and hardware specifications for setting up a high-availability cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-requirements-security.adoc">doc-suse-ai/references/AI-requirements-security.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">120</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the minimum hardware requirements for SUSE Security nodes in an HA setup, including RAM, CPU, and disk space needs</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/AI-system-prompt-benefits.adoc">doc-suse-ai/references/AI-system-prompt-benefits.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">151</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use system prompts to improve AI model responses by providing clear instructions, context, and guidelines for specific tasks and audiences</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-factory-apps-deployment-types.adoc">doc-suse-ai/references/ai-factory-apps-deployment-types.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">136</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Choose between direct Fleet bundle, GitOps-driven Fleet publishing, or manual Helm installation to deploy AI applications and blueprints</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-factory-deployment-airgapped-considerations.adoc">doc-suse-ai/references/ai-factory-deployment-airgapped-considerations.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">153</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Plan air-gapped deployments by using local artifact registries, a model cache, and secure TLS endpoints to deploy AI applications without internet access</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-yellow-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-factory-deployment-airgapped-requirements.adoc">doc-suse-ai/references/ai-factory-deployment-airgapped-requirements.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-yellow-500">SKIPPED</span></td>
+            <td class="py-3 px-6 text-slate-500"></td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">File already has a description</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ai-lifecycle-manager-user-roles.adoc">doc-suse-ai/references/ai-lifecycle-manager-user-roles.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">157</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Assign specific user roles in Rancher Prime to allow users to access and use the SUSE AI Lifecycle Manager for deploying and managing AI-powered applications</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-bp-creating-appendix-skeletons.adoc">doc-suse-ai/references/aif-bp-creating-appendix-skeletons.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">152</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a minimal blueprint template and reference architectures for AI workloads using specific blueprint names and configuration examples from the page</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-bp-creating-publish-run.adoc">doc-suse-ai/references/aif-bp-creating-publish-run.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">137</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Troubleshoot SUSE AI Factory blueprint deployment issues by identifying common symptoms such as failed chart deployments and pod failures</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-bp-prerequisites.adoc">doc-suse-ai/references/aif-bp-prerequisites.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">136</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Verify that your workstation and cluster meet the mandatory and conditional prerequisites for creating and registering custom blueprints</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-deployment-overview.adoc">doc-suse-ai/references/aif-deployment-overview.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">158</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Select the correct installation path based on your cluster setup, whether you have clean nodes without SLES or SLES with RKE2 and SUSE Rancher Prime installed</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/aif-prebuilt-blueprints.adoc">doc-suse-ai/references/aif-prebuilt-blueprints.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">151</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy the NVIDIA AI-Q with RAG blueprint to configure AI-Q with a deep-research agent and local NIMs using a custom ConfigMap and modified Helm values</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-components.adoc">doc-suse-ai/references/kubeflow-components.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">105</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the names, sources, namespaces, and purposes of all Kubeflow package components listed in the table</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-configuration-scenarios.adoc">doc-suse-ai/references/kubeflow-configuration-scenarios.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">144</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to configure Kubeflow for different environments using scenarios that include NodePort access, HTTP, self-signed TLS, and Lets Encrypt</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-limitations.adoc">doc-suse-ai/references/kubeflow-limitations.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn the known Kubeflow limitations that affect deployment, configuration, and operation of components like SeaweedFS, KServe, and Dex</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-requirements.adoc">doc-suse-ai/references/kubeflow-requirements.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find the hardware and software requirements for deploying Kubeflow, including CPU, RAM, GPU, storage, and Kubernetes version details</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-troubleshooting.adoc">doc-suse-ai/references/kubeflow-troubleshooting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find solutions for common Kubeflow issues like pods not starting, storage problems, and TensorBoard errors by following the troubleshooting steps provided</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/kubeflow-upgrade-notes.adoc">doc-suse-ai/references/kubeflow-upgrade-notes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">152</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade your Kubeflow deployment by following specific instructions for handling configuration conflicts, credential rotation, and service interruptions</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/litellm-helm-overrides.adoc">doc-suse-ai/references/litellm-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">137</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure the LiteLLM chart with custom values to deploy PostgreSQL, set up image pull secrets, and access the admin UI through localhost</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/litellm-helmchart.adoc">doc-suse-ai/references/litellm-helmchart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure LiteLLM Helm chart options by setting values for image registry, secrets, deployment settings, and proxy configuration</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/mcphost-configuration.adoc">doc-suse-ai/references/mcphost-configuration.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure the MCP host using JSON files to define behavior, security settings, and available tools for specific tasks</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/milvus-helm-overrides.adoc">doc-suse-ai/references/milvus-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy Milvus in cluster mode with Apache Kafka using SUSE Storage by creating an XFS storage class and configuring it for Kafka</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ollama-helm-overrides.adoc">doc-suse-ai/references/ollama-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">160</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Ollama GPU settings by enabling or disabling the GPU section in the custom values file and following the required installation and configuration steps</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/ollama-helmchart.adoc">doc-suse-ai/references/ollama-helmchart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">153</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure the Ollama Helm chart by using specific values to set up models, storage, GPU support, and network settings for local language model management</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/opensearch-helm-overrides.adoc">doc-suse-ai/references/opensearch-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">120</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to configure and deploy OpenSearch clusters using custom values files and integrate OpenSearch with Open WebUI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/openwebui-user-roles.adoc">doc-suse-ai/references/openwebui-user-roles.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">101</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn about the three user roles—pending, user, and admin—in Open WebUI and what each role can do</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/owui-helm-overrides.adoc">doc-suse-ai/references/owui-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Open WebUI with custom values to install and set up Ollama, pipelines, and vLLM using specific settings and environment variables</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/owui-helmchart.adoc">doc-suse-ai/references/owui-helmchart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">150</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Open WebUI Helm chart values to set up deployment settings, image sources, security options, and integration with services such as Pipelines</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/owui-known-issues.adoc">doc-suse-ai/references/owui-known-issues.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to reset an Open WebUI user password and fix audio processing issues using commands and steps provided in this page</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/pytorch-helm-overrides.adoc">doc-suse-ai/references/pytorch-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">109</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">You can learn how to create and use PyTorch Helm chart custom values files for different deployment scenarios</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/pytorch-helmchart.adoc">doc-suse-ai/references/pytorch-helmchart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find and use specific values for the PyTorch Helm chart to configure the image, GPU settings, and other deployment options for your application</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/qdrant-helm-overrides.adoc">doc-suse-ai/references/qdrant-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">105</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a basic custom values file for the Qdrant Helm chart when the cluster has no default storage class</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/references/vllm-helm-overrides.adoc">doc-suse-ai/references/vllm-helm-overrides.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">133</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and configure vLLM using Open WebUI and custom values files to deploy and manage large language models with specific settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-library-requirement.adoc">doc-suse-ai/snippets/ai-library-requirement.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">159</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Before installing, you can get user access to the SUSE Application Collection and SUSE Registry, create a Kubernetes namespace, and log in to the Helm registry</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-rancher-admin-requirement.adoc">doc-suse-ai/snippets/ai-rancher-admin-requirement.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Check if you have Rancher Prime Administrator privileges to perform this task and ensure your account is correctly configured in the system</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-rancher-multicluster.adoc">doc-suse-ai/snippets/ai-rancher-multicluster.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the component on the same cluster as the main Rancher Prime server for multi-cluster deployments</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/ai-separate-rancher-cluster.adoc">doc-suse-ai/snippets/ai-separate-rancher-cluster.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy Rancher Prime, SUSE Observability, and AI library workloads to separate Kubernetes clusters for production deployments</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/aif-important-secrets.adoc">doc-suse-ai/snippets/aif-important-secrets.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">129</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure necessary secrets before installing AI applications and blueprints to ensure proper setup and avoid installation errors</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/aif-tip-suseai-docs.adoc">doc-suse-ai/snippets/aif-tip-suseai-docs.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find the original SUSE AI documentation and learn how to deploy and manage AI applications and blueprints using the supported method</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/helm-chart-overrides-intro.adoc">doc-suse-ai/snippets/helm-chart-overrides-intro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">152</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a YAML file with custom values to override default settings during Helm chart installation or update by using the -f option with the helm command</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/observability-warning-262.adoc">doc-suse-ai/snippets/observability-warning-262.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">160</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Update otel-values.yaml to fix vLLM monitoring issues in SUSE Observability version 2.6.2 and above by adding a new processor and modifying the metrics pipeline</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-intro.adoc">doc-suse-ai/snippets/openwebui-intro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">137</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Open WebUI to interact with large language models through a web interface that supports multiple LLM runners, such as Ollama and vLLM</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-knowledgebase-warning.adoc">doc-suse-ai/snippets/openwebui-knowledgebase-warning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">106</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Wait until processing is finished to avoid disrupting file upload and processing on the collections screen</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-requirement-admin-privileges.adoc">doc-suse-ai/snippets/openwebui-requirement-admin-privileges.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">111</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Check if you have the required administrator privileges to access Open WebUI configuration screens and settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-tip-default-model.adoc">doc-suse-ai/snippets/openwebui-tip-default-model.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">114</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Click the Set as default option next to the AI model name in the menu to make it your default model for future use</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/snippets/openwebui-tip-multiple-models.adoc">doc-suse-ai/snippets/openwebui-tip-multiple-models.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">137</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Select multiple AI modules by clicking the plus sign next to the name of an already selected module to add more modules to your selection</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-ailibrary-installing.adoc">doc-suse-ai/tasks/AI-deployment-ailibrary-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install AI Library applications by purchasing an entitlement, creating Kubernetes namespaces, and setting up registry secrets</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-cluster-preparation.adoc">doc-suse-ai/tasks/AI-deployment-cluster-preparation.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">146</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the AI Library by preparing the cluster with SUSE Rancher Prime, NVIDIA GPU Operator, and SUSE Observability as described in the procedure</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-kube-installing.adoc">doc-suse-ai/tasks/AI-deployment-kube-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install a supported Linux operating system and Kubernetes distribution on cluster nodes to begin deploying applications from scratch</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-deployment-steps-after.adoc">doc-suse-ai/tasks/AI-deployment-steps-after.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">137</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Log in to Open WebUI, change the administrator password, configure a language model, set up user management, and integrate single sign-on</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-gpu-nodes-assigning.adoc">doc-suse-ai/tasks/AI-gpu-nodes-assigning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">142</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to request and assign GPU resources to applications running on Kubernetes by defining resource limits and using node selection rules</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-hallucinations-how-to-prevent.adoc">doc-suse-ai/tasks/AI-hallucinations-how-to-prevent.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">112</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to prevent AI from generating hallucinations by using clear prompts and retrieval-augmented generation</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-gpu.adoc">doc-suse-ai/tasks/AI-monitoring-gpu.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">146</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor GPU usage by configuring the OpenTelemetry Collector to scrape metrics from the NVIDIA DCGM Exporter deployed with the NVIDIA GPU Operator</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-milvus.adoc">doc-suse-ai/tasks/AI-monitoring-milvus.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">149</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor Milvus by scraping its Prometheus-compatible metrics endpoint and configuring the OpenTelemetry Collector to collect and visualize its status</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-opensearch.adoc">doc-suse-ai/tasks/AI-monitoring-opensearch.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">152</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor OpenSearch using the OpenTelemetry Collectors elasticsearch receiver to collect metrics such as disk usage, cluster health, and node performance</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-otel-autoinstrumentation.adoc">doc-suse-ai/tasks/AI-monitoring-otel-autoinstrumentation.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">137</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor Kubernetes applications with the OpenTelemetry Operator by instrumenting workloads and forwarding telemetry to SUSE Observability</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/AI-monitoring-owui.adoc">doc-suse-ai/tasks/AI-monitoring-owui.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">112</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Monitor Open WebUI by using the Filter to collect telemetry data and configure pipelines for tracing and metrics</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/NVIDIA-GPU-driver-installation-SLES.adoc">doc-suse-ai/tasks/NVIDIA-GPU-driver-installation-SLES.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the NVIDIA open driver on SLE Server to enable GPU support using pre-built packages from the operating system repositories</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/NVIDIA-GPU-driver-installation-SLMicro.adoc">doc-suse-ai/tasks/NVIDIA-GPU-driver-installation-SLMicro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the NVIDIA GPU drivers on SLE Micro by following the steps to select the driver generation, add repositories, and install required packages</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/NVIDIA-Operator-installation.adoc">doc-suse-ai/tasks/NVIDIA-Operator-installation.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the NVIDIA GPU Operator on an RKE2 cluster to manage GPUs in Kubernetes pods using the provided YAML manifest</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/RKE2-installation-airgapped.adoc">doc-suse-ai/tasks/RKE2-installation-airgapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">106</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Load images into an air-gapped environment and install RKE2 Prime using the methods described in this page</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/RKE2-installation-quickstart.adoc">doc-suse-ai/tasks/RKE2-installation-quickstart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Rancher Prime RKE2 using the provided script to set up a cluster with default options and configure the server node for Kubernetes</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-images.adoc">doc-suse-ai/tasks/Rancher-installation-airgapped-images.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Rancher Prime in air-gapped environments by collecting and publishing required images to your private registry</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-infrastructure.adoc">doc-suse-ai/tasks/Rancher-installation-airgapped-infrastructure.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Set up the infrastructure and a private registry for installing the Rancher Prime management server in an air-gapped environment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-kubernetes.adoc">doc-suse-ai/tasks/Rancher-installation-airgapped-kubernetes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install a Kubernetes cluster in air-gapped environments using RKE2 by creating configuration files and setting up a private registry</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped-rancher.adoc">doc-suse-ai/tasks/Rancher-installation-airgapped-rancher.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">131</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Rancher Prime with the --privileged option to run containers within containers in an air-gapped Kubernetes environment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-airgapped.adoc">doc-suse-ai/tasks/Rancher-installation-airgapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the Rancher Prime server on a Kubernetes cluster in an air-gapped environment using the Helm CLI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-installation-quickstart.adoc">doc-suse-ai/tasks/Rancher-installation-quickstart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">129</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Rancher on a Kubernetes cluster using the Helm CLI by following the steps in this guide, including setting up the cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Rancher-register-clusters.adoc">doc-suse-ai/tasks/Rancher-register-clusters.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Register existing RKE2 clusters in Rancher Prime by following the steps to configure permissions, node roles, and cluster settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/SLES-installation-quickstart.adoc">doc-suse-ai/tasks/SLES-installation-quickstart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">134</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SLE Server by following the procedures in this page, which guide you through using the Unified Installer and selecting modules</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Security-installation-airgapped.adoc">doc-suse-ai/tasks/Security-installation-airgapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">149</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Security in air-gapped environments by using Helm, Skopeo, and ZStandard to download, compress, and transfer images to the local network</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Security-installation-kubernetes.adoc">doc-suse-ai/tasks/Security-installation-kubernetes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">156</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Security using Kubernetes to deploy runtime protection, vulnerability scanning, and compliance auditing with a dedicated manager and controller</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/Security-installation-rancher.adoc">doc-suse-ai/tasks/Security-installation-rancher.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">157</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Security through Rancher Prime Extensions or Apps &amp; Marketplace to add security containers to the default namespace and manage security policies</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-deployment-ailibrary-deployer.adoc">doc-suse-ai/tasks/ai-deployment-ailibrary-deployer.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install AI Library components on a Kubernetes cluster by customizing and using the SUSE AI Deployer Helm chart with example configuration files</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-deployment-airgapped-workflow.adoc">doc-suse-ai/tasks/ai-factory-deployment-airgapped-workflow.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">134</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Download Helm charts, container images, and models to a local data store and transfer them to an air-gapped environment for deployment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-deployment-helm.adoc">doc-suse-ai/tasks/ai-factory-deployment-helm.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the SUSE AI Factory Operator using Helm by identifying the correct chart version and following the command-line installation steps provided</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-deployment-rancherui.adoc">doc-suse-ai/tasks/ai-factory-deployment-rancherui.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">149</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the SUSE AI Operator application using the Rancher Prime UI by adding an OCI repository and following the installation steps in the interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-managing-apps.adoc">doc-suse-ai/tasks/ai-factory-managing-apps.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">144</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install AI applications by selecting them from the SUSE AI Library or NVIDIA AI Library, configuring settings, and deploying to a target cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-managing-blueprints.adoc">doc-suse-ai/tasks/ai-factory-managing-blueprints.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create, modify, install, clone, and delete AI blueprints using the Blueprints page to manage reusable deployment templates for applications</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-managing-workloads.adoc">doc-suse-ai/tasks/ai-factory-managing-workloads.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">116</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Manage AI workloads by inspecting, customizing, upgrading, rolling back, or deleting them using the Rancher Prime UI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-registries-access.adoc">doc-suse-ai/tasks/ai-factory-registries-access.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">145</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure access credentials for SUSE Application Collection and SUSE Registry by creating Kubernetes secrets and mapping them in SUSE AI Factory</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-uninstall.adoc">doc-suse-ai/tasks/ai-factory-uninstall.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">113</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Uninstall SUSE AI Factory Operator by using Rancher Prime or the command line, then remove installation leftovers</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-factory-upgrade.adoc">doc-suse-ai/tasks/ai-factory-upgrade.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">114</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade the SUSE AI Factory Operator using the Helm CLI by applying custom configurations and pulling dependencies</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-library-apps-verifying.adoc">doc-suse-ai/tasks/ai-library-apps-verifying.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">156</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Verify AI Library applications hosted on SUSE Application Collection and SUSE Registry by using cosign to check their authenticity and attached attestations</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-clusterrepo-creating.adoc">doc-suse-ai/tasks/ai-lifecycle-manager-clusterrepo-creating.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">152</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a ClusterRepo repository for AI applications by setting up the SUSE Application Collection and SUSE Registry repositories in Rancher Prime Server</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-red-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-installing-ai-operator.adoc">doc-suse-ai/tasks/ai-lifecycle-manager-installing-ai-operator.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-red-500">ERROR</span></td>
+            <td class="py-3 px-6 text-slate-500"></td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">AI generation failed: generated description is incomplete or too long: Install the SUSE AI Operator to the same cluster where the main Rancher Prime server runs and create the InstallAIExtension Custom Resource to deploy the SUSE AI Lifecycle Manager</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-installing-applications.adoc">doc-suse-ai/tasks/ai-lifecycle-manager-installing-applications.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">110</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and manage AI applications in SUSE AI Lifecycle Manager by following the steps to deploy and configure</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-lifecycle-manager-installing-rancher-ui.adoc">doc-suse-ai/tasks/ai-lifecycle-manager-installing-rancher-ui.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">140</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the SUSE AI Lifecycle Manager extension using Rancher Prime UI by adding a GitHub branch or registry and following the steps to load</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ai-node-installer.adoc">doc-suse-ai/tasks/ai-node-installer.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy RKE2 clusters on SUSE-driven servers using the SUSE AI Node Installer to prepare and configure them for AI workloads</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-installing.adoc">doc-suse-ai/tasks/aif-app-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">121</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Rancher Prime or use Helm to install, including creating a namespace, saving passwords securely, and using values</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-removing.adoc">doc-suse-ai/tasks/aif-app-removing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">102</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the Helm command provided in the page content to remove Rancher Prime from your Kubernetes cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-upgrading.adoc">doc-suse-ai/tasks/aif-app-upgrading.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">101</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade Rancher Prime or use Helm commands to upgrade the application and manage versions effectively</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-app-values.adoc">doc-suse-ai/tasks/aif-app-values.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">119</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Log in to the Helm chart repository, display its values, and review supported configurations before deploying the chart</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-documenting.adoc">doc-suse-ai/tasks/aif-bp-creating-documenting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">160</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a README.md file and an architecture diagram to document your SUSE AI Factory blueprint and explain its components, prerequisites, and deployment process</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-extra-helm-repos.adoc">doc-suse-ai/tasks/aif-bp-creating-extra-helm-repos.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">131</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a ClusterRepo resource to register an additional Helm repository for SUSE AI Factory blueprints and store it in clusterrepos</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-publish-run.adoc">doc-suse-ai/tasks/aif-bp-creating-publish-run.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">141</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Commit the blueprint files to a Git repository and register the custom resource on the cluster to publish and run a SUSE AI Factory blueprint</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-writing-cr-ollama.adoc">doc-suse-ai/tasks/aif-bp-creating-writing-cr-ollama.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a SUSE AI Factory blueprint CR for CPU inference with Ollama by defining metadata, specification, and chart repository</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-creating-writing-cr-vllm.adoc">doc-suse-ai/tasks/aif-bp-creating-writing-cr-vllm.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a GPU variant from your CPU blueprint to deploy GPU-accelerated inference with vLLM by updating resource fields</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-bp-quickstart.adoc">doc-suse-ai/tasks/aif-bp-quickstart.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Copy an existing SUSE AI Factory blueprint to create a customized one by editing its YAML file and registering it on the cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/aif-credentials-helm.adoc">doc-suse-ai/tasks/aif-credentials-helm.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">157</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Provide registry credentials during installation to access applications and blueprints from SUSE Application Collection, SUSE Registry, and NVIDIA AI Library</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/cert-manager-installing.adoc">doc-suse-ai/tasks/cert-manager-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install cert-manager to manage X.509 certificates for Kubernetes workloads and ensure they remain valid and up-to-date</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-accessing.adoc">doc-suse-ai/tasks/kubeflow-accessing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Access Kubeflows Web interface using methods like port-forward, NodePort, external IP, or named host names with or without TLS</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-hardening.adoc">doc-suse-ai/tasks/kubeflow-hardening.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">140</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Update override values to secure Kubeflow deployment by changing default credentials, enabling NetworkPolicies, TLS, backups, and validation</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-installing-airgapped.adoc">doc-suse-ai/tasks/kubeflow-installing-airgapped.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">156</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Kubeflow in an air-gapped environment by using local image registries and Helm repositories to deploy and manage machine learning workflows securely</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-installing.adoc">doc-suse-ai/tasks/kubeflow-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Kubeflow using Helm by logging in to the SUSE Registry, creating namespaces, generating image pull secrets, and labeling namespaces</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/kubeflow-user-profiles.adoc">doc-suse-ai/tasks/kubeflow-user-profiles.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">149</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Add users to Kubeflow by editing the values file and running helm upgrade to create profiles and deploy required resources in the specified namespace</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/mcphost-installation.adoc">doc-suse-ai/tasks/mcphost-installation.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">105</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the mcphost package to set up the MCP host on SLE Server using the command sudo zypper in mcphost</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/mcpo-installing.adoc">doc-suse-ai/tasks/mcpo-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install mcpo to connect AI applications like SUSE AI to external systems using the MCP-to-OpenAPI proxy server from Open WebUI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/milvus-installing.adoc">doc-suse-ai/tasks/milvus-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">151</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Milvus by following this procedure to set up the application, its dependencies, and learn about supported configurations and available versions</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/mlflow-installing.adoc">doc-suse-ai/tasks/mlflow-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">116</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install MLflow with a PostgreSQL back-end using Helm by following the step-by-step walkthrough provided in this page</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-red-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/observability-settingup-ai.adoc">doc-suse-ai/tasks/observability-settingup-ai.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-red-500">ERROR</span></td>
+            <td class="py-3 px-6 text-slate-500"></td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">AI generation failed: generated description is incomplete or too long: Set up SUSE Observability for AI workloads by choosing between single-cluster or multi-cluster environments and following the required steps to monitor and analyze telemetry data</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/ollama-installing.adoc">doc-suse-ai/tasks/ollama-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Ollama to run and manage language models locally on your computer using a simple interface and without cloud resources</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/opensearch-installing.adoc">doc-suse-ai/tasks/opensearch-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">144</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install OpenSearch by using the provided commands and instructions to set up the search and analytics suite with its components and dependencies</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-cloning.adoc">doc-suse-ai/tasks/openwebui-AI-models-cloning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">151</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Clone an existing AI model using Open WebUI by selecting the Clone option from the models contextual menu and saving the new model with a modified name</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-creating.adoc">doc-suse-ai/tasks/openwebui-AI-models-creating.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create custom AI models by following this procedure to set up models in Open WebUI. Define names, system prompts, and capabilities</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-deleting.adoc">doc-suse-ai/tasks/openwebui-AI-models-deleting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">103</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Delete existing AI models using the Open WebUI interface by selecting the model and confirming deletion</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-exporting-all.adoc">doc-suse-ai/tasks/openwebui-AI-models-exporting-all.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">102</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Export all existing AI models using the Export Models button in Open WebUI to save them as a JSON file</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-exporting.adoc">doc-suse-ai/tasks/openwebui-AI-models-exporting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Export existing AI models using Open WebUI by selecting the model, choosing Export, and saving the JSON file to a specified location</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-importing.adoc">doc-suse-ai/tasks/openwebui-AI-models-importing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Import AI models using Open WebUI by selecting the Import Models button and specifying the path to the JSON file containing the exported model definitions</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-AI-models-modifying.adoc">doc-suse-ai/tasks/openwebui-AI-models-modifying.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Modify an existing AI model using Open WebUI by editing its settings and enabling default MCP services through the model editing screen</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-authentication-via-okta.adoc">doc-suse-ai/tasks/openwebui-authentication-via-okta.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Open WebUI to use Okta for authentication by setting environment variables with Okta domain, client ID, client secret, and other required values</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-chat-window-usage.adoc">doc-suse-ai/tasks/openwebui-chat-window-usage.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">142</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the Open WebUI chat window to send prompts to an AI model and receive responses. Then edit, copy, or improve them using the tools provided</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-collections.adoc">doc-suse-ai/tasks/openwebui-input-field-specify-collections.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">132</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Select preconfigured documents, collections, or external URLs in the chat input field to use as information sources for AI responses</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-custom-docs.adoc">doc-suse-ai/tasks/openwebui-input-field-specify-custom-docs.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">111</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upload custom documents to use as data sources in the chat input field so AI can respond based on their content</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-mcpo-tools.adoc">doc-suse-ai/tasks/openwebui-input-field-specify-mcpo-tools.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">136</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Select the MCP service from the chat input field to enable it for the current chat and see the tool invocation listed below the response</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-model.adoc">doc-suse-ai/tasks/openwebui-input-field-specify-model.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">109</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the chat input field to select an AI model and type a prompt for the selected model during a chat session</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-input-field-specify-system-prompt.adoc">doc-suse-ai/tasks/openwebui-input-field-specify-system-prompt.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">129</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Select a preconfigured system prompt from the chat input field by typing the / character and choosing one from the drop-down list</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-pulling-llms-from-huggingface.adoc">doc-suse-ai/tasks/openwebui-pulling-llms-from-huggingface.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Download GGUF models from Hugging Face using the Open WebUI interface to find, select, and pull model tags for AI interaction</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-pulling-llms-from-ollama.adoc">doc-suse-ai/tasks/openwebui-pulling-llms-from-ollama.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Download AI models from Ollama by using the Open WebUI interface to select and pull model tags like gemma3 4b for AI interaction</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-chat-model.adoc">doc-suse-ai/tasks/openwebui-setting-chat-model.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">116</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Select an AI model from the drop-down list to specify which model processes your prompts in the current chat session</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-chat-native-function-calling.adoc">doc-suse-ai/tasks/openwebui-setting-chat-native-function-calling.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">150</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Enable native function calling by configuring Open WebUI to let the client LLM connect directly to the MCP server and use tools with defined arguments</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-chat-system-prompt.adoc">doc-suse-ai/tasks/openwebui-setting-chat-system-prompt.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">153</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Set a system prompt for the current chat by clicking the Chat controls icon, unfolding the System Prompt tab, and entering your prompt in the input field</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-model-system-prompt.adoc">doc-suse-ai/tasks/openwebui-setting-model-system-prompt.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">114</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Set the default system prompt for an AI model in Open WebUI by editing the model parameters and saving the changes</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-system-model.adoc">doc-suse-ai/tasks/openwebui-setting-system-model.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Set the default system AI model to use for all new chats by selecting it in the Default Models section of the Settings screen</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-setting-user-system-prompt.adoc">doc-suse-ai/tasks/openwebui-setting-user-system-prompt.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Set the default system prompt for the current user by entering text in the System Prompt field and saving your changes in the Settings menu</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-account-creating.adoc">doc-suse-ai/tasks/openwebui-user-account-creating.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">120</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create user accounts in Open WebUI by selecting roles and entering details or importing a CSV file with user information</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-account-modifying.adoc">doc-suse-ai/tasks/openwebui-user-account-modifying.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">145</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Modify user accounts in Open WebUI by clicking the pen icon next to the user and changing their e-mail, name, or password in the Edit User dialog</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-revoking-access.adoc">doc-suse-ai/tasks/openwebui-user-revoking-access.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">120</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Revoke access to Open WebUI for a user by changing their role to pending or deleting their account from the Users screen</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-user-role-assigning.adoc">doc-suse-ai/tasks/openwebui-user-role-assigning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Assign a role to an existing user in Open WebUI by clicking the role button next to the user name and selecting pending, user, or admin</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/openwebui-using-models-from-openai-providers.adoc">doc-suse-ai/tasks/openwebui-using-models-from-openai-providers.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use the OpenAI-compatible API to access AI models from providers like Groq or LocalAI and configure them in Open WebUI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-installing.adoc">doc-suse-ai/tasks/owui-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">140</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Open WebUI by using the provided Helm chart and custom overrides file to configure and deploy the application with specific settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-adding-content.adoc">doc-suse-ai/tasks/owui-knowledgebase-adding-content.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">124</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Add content to a knowledge base by uploading files, adding text, or synchronizing a directory using the Open WebUI interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-creating.adoc">doc-suse-ai/tasks/owui-knowledgebase-creating.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a knowledge base to extend the AI models context on a specific topic by adding content through the Open WebUI interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-deleting.adoc">doc-suse-ai/tasks/owui-knowledgebase-deleting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Delete a knowledge base by clicking the three dots in its tile, selecting Delete, and confirming the action in the Open WebUI interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-knowledgebase-removing-content.adoc">doc-suse-ai/tasks/owui-knowledgebase-removing-content.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Remove content from a knowledge base by clicking the cross sign next to the resources name in the Open WebUI interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-cloning.adoc">doc-suse-ai/tasks/owui-prompts-cloning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">153</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Clone an existing system prompt by using the Clone option in the Open WebUI interface and update its title, content, and activating command before saving</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-creating.adoc">doc-suse-ai/tasks/owui-prompts-creating.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a system prompt by entering its title and content in the Open WebUI interface and saving it with the Save &amp; Create option</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-deleting.adoc">doc-suse-ai/tasks/owui-prompts-deleting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Delete an existing system prompt by clicking the three dots next to it, selecting Delete, and confirming the action in the Open WebUI interface</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-exporting-all.adoc">doc-suse-ai/tasks/owui-prompts-exporting-all.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Export all existing system prompts by using the Export Prompts option in the Open WebUI interface and save them to a JSON file</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-exporting.adoc">doc-suse-ai/tasks/owui-prompts-exporting.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Export a system prompt by using the Export option in the Open WebUI interface and saving the JSON file to a chosen location</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-importing.adoc">doc-suse-ai/tasks/owui-prompts-importing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">108</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Import system prompts from a JSON file using the Open WebUI interface to restore previously exported prompts</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/owui-prompts-modifying.adoc">doc-suse-ai/tasks/owui-prompts-modifying.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Modify an existing system prompt by using the Open WebUI interface to edit its title and description, then save the changes</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/pytorch-installing.adoc">doc-suse-ai/tasks/pytorch-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">115</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install PyTorch by using the PyTorch Helm chart to deploy training or inference code on NVIDIA GPUs in your cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/qdrant-installing.adoc">doc-suse-ai/tasks/qdrant-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Integrate Qdrant with Open WebUI by editing the owuicustomoverrides.yaml file and redeploying Open WebUI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/tasks/vllm-installing.adoc">doc-suse-ai/tasks/vllm-installing.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">119</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install vLLM on Kubernetes using its Helm chart to deploy a high-performance inference engine for large language models</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/articles/article.adoc">doc-suse-ai/templates/articles/article.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">128</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Define the Smartdoc article written in AsciiDoc by explaining its purpose and describing its technical benefit for AI processing</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/concepts/concept.adoc">doc-suse-ai/templates/concepts/concept.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">120</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn what foo bar is, how it works, and its benefits through detailed explanations and a figure that shows its function</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/glues/glue-more-info.adoc">doc-suse-ai/templates/glues/glue-more-info.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Add web links to external sources or other SUSE articles to help readers find more information and support content accuracy</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/glues/glue-whats-next.adoc">doc-suse-ai/templates/glues/glue-whats-next.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">133</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Add a list of web links to articles relating to this topic that the user might need to find more information and understand it better</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/glues/glue.adoc">doc-suse-ai/templates/glues/glue.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">120</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Follow the steps in this workflow to perform task XYZ. Use the links to find related subtasks that support the main task</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/references/reference.adoc">doc-suse-ai/templates/references/reference.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">148</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use the reference example commands and understand their options by reading the detailed descriptions and examples provided in this page</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/snippets/snippet_warning.adoc">doc-suse-ai/templates/snippets/snippet_warning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">129</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Read the warning message to understand the important information about .Foobar and the potential risks it may pose to your system</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/doc-suse-ai/templates/tasks/task.adoc">doc-suse-ai/templates/tasks/task.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">140</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use tool Y to complete task X by following the steps listed in the procedure section of this page, which includes step 1, step 2, and step 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center text-sm text-slate-500">
+    <p>Root: /home/scribe/projects/work/cn-metadata/doc-suse-ai &bull; Type filter: all</p>
+  </div>
+</div>
+<script>
+function filterTable() {
+  var input = document.getElementById("searchInput").value.toUpperCase();
+  var rows = document.getElementById("logTable").getElementsByTagName("tr");
+  for (var i = 1; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName("td");
+    var match = false;
+    for (var j = 0; j < cells.length; j++) {
+      if ((cells[j].textContent || cells[j].innerText).toUpperCase().indexOf(input) > -1) {
+        match = true; break;
+      }
+    }
+    rows[i].style.display = match ? "" : "none";
+  }
+}
+</script>
+</body>
+</html>

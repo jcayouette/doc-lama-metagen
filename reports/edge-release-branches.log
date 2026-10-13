@@ -1,0 +1,113 @@
+===== release-3.7 2026-10-13T15:42:54+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.7')
+branch 'add-en-meta-descriptions-3.7' set up to track 'upstream/release-3.7'.
+HEAD is now at 62b0fd0 addressing broken link in Telco documentation
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.7/docs/en
+[add-en-meta-descriptions-3.7 e412e3b] Add English meta descriptions to SUSE Edge 3.7 docs.
+ 65 files changed, 65 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.7' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.7        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.7
+branch 'add-en-meta-descriptions-3.7' set up to track 'origin/add-en-meta-descriptions-3.7'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1278
+DONE 3.7
+===== release-3.6 2026-10-13T15:57:53+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.6')
+branch 'add-en-meta-descriptions-3.6' set up to track 'upstream/release-3.6'.
+HEAD is now at 31a4b23 [backport 3.6] Clarify that air-gapped EIB image lists are baselines (#1272) (#1274)
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.6/docs/en
+[add-en-meta-descriptions-3.6 533196f] Add English meta descriptions to SUSE Edge 3.6 docs.
+ 65 files changed, 65 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.6' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.6        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.6
+branch 'add-en-meta-descriptions-3.6' set up to track 'origin/add-en-meta-descriptions-3.6'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1279
+DONE 3.6
+===== release-3.5 2026-10-13T16:10:56+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.5')
+branch 'add-en-meta-descriptions-3.5' set up to track 'upstream/release-3.5'.
+HEAD is now at 64ef69d Adding language attribute for en-us
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.5/docs/en
+[add-en-meta-descriptions-3.5 55f09a3] Add English meta descriptions to SUSE Edge 3.5 docs.
+ 68 files changed, 68 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.5' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.5        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.5
+branch 'add-en-meta-descriptions-3.5' set up to track 'origin/add-en-meta-descriptions-3.5'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1280
+DONE 3.5
+===== release-3.4 2026-10-13T16:32:58+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.4')
+branch 'add-en-meta-descriptions-3.4' set up to track 'upstream/release-3.4'.
+HEAD is now at 755c5b1 Adding language attribute for en-us
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.4/docs/en
+[add-en-meta-descriptions-3.4 baf07f9] Add English meta descriptions to SUSE Edge 3.4 docs.
+ 66 files changed, 66 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.4' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.4        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.4
+branch 'add-en-meta-descriptions-3.4' set up to track 'origin/add-en-meta-descriptions-3.4'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1281
+DONE 3.4
+===== release-3.3 2026-10-13T16:51:15+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.3')
+branch 'add-en-meta-descriptions-3.3' set up to track 'upstream/release-3.3'.
+HEAD is now at 4cd83c3 Moving adoc files into new directory structure...
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.3/docs/en
+[add-en-meta-descriptions-3.3 a544b5d] Add English meta descriptions to SUSE Edge 3.3 docs.
+ 68 files changed, 68 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.3' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.3        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.3
+branch 'add-en-meta-descriptions-3.3' set up to track 'origin/add-en-meta-descriptions-3.3'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1282
+DONE 3.3
+===== release-3.2 2026-10-13T16:53:00+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.2')
+branch 'add-en-meta-descriptions-3.2' set up to track 'upstream/release-3.2'.
+HEAD is now at 3fd640e Moving adoc files into new directory structure...
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.2/docs/en
+[add-en-meta-descriptions-3.2 d96805e] Add English meta descriptions to SUSE Edge 3.2 docs.
+ 78 files changed, 78 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.2' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.2        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.2
+branch 'add-en-meta-descriptions-3.2' set up to track 'origin/add-en-meta-descriptions-3.2'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1283
+DONE 3.2
+===== release-3.1 2026-10-13T16:55:06+02:00 =====
+Preparing worktree (new branch 'add-en-meta-descriptions-3.1')
+branch 'add-en-meta-descriptions-3.1' set up to track 'upstream/release-3.1'.
+HEAD is now at ca0fe56 Adding revision number
+root /home/scribe/projects/work/cn-metadata/edge-wt/release-3.1/asciidoc
+[add-en-meta-descriptions-3.1 ffdcaa6] Add English meta descriptions to SUSE Edge 3.1 docs.
+ 73 files changed, 73 insertions(+)
+remote: 
+remote: Create a pull request for 'add-en-meta-descriptions-3.1' on GitHub by visiting:        
+remote:      https://github.com/jcayouette/suse-edge.github.io/pull/new/add-en-meta-descriptions-3.1        
+remote: 
+To github.com:jcayouette/suse-edge.github.io.git
+ * [new branch]      HEAD -> add-en-meta-descriptions-3.1
+branch 'add-en-meta-descriptions-3.1' set up to track 'origin/add-en-meta-descriptions-3.1'.
+https://github.com/suse-edge/suse-edge.github.io/pull/1284
+DONE 3.1
+ALL DONE 2026-10-13T16:56:56+02:00

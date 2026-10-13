@@ -1,0 +1,161 @@
+2026/10/13 15:23:19 Starting doc-meta-gen
+2026/10/13 15:23:19 Root directory: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en
+2026/10/13 15:23:19 Model: qwen3:14b
+2026/10/13 15:23:19 Ollama URL: http://127.0.0.1:11434
+2026/10/13 15:23:19 Update revdate: false
+2026/10/13 15:23:19 Language: en
+2026/10/13 15:23:19 Checking Ollama connection...
+2026/10/13 15:23:19 ✓ Ollama is available
+2026/10/13 15:23:19 Scanning for files...
+2026/10/13 15:23:19 Found 69 potential files
+2026/10/13 15:23:19 After type filter (all): 69 files
+2026/10/13 15:23:19 Processing 69 files (language: en)
+2026/10/13 15:23:27 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/edge-image-builder.adoc (117 chars)
+  → Use Edge Image Builder to create customized, ready-to-boot disk images for air-gapped deployments and other scenarios
+2026/10/13 15:23:34 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/elemental.adoc (141 chars)
+  → Use Elemental to register and manage SUSE Linux Micro hosts on Rancher for phone home network provisioning with tools like elemental-register
+2026/10/13 15:23:42 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/endpoint-copier-operator.adoc (150 chars)
+  → Operate the Endpoint Copier Operator to create and keep in sync a Kubernetes Service and Endpoint for High Availability setups in K3s or RKE2 clusters
+2026/10/13 15:23:49 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/fleet.adoc (133 chars)
+  → Use Fleet to manage and deploy Kubernetes resources from Git using Helm, and monitor and control your clusters through the Rancher UI
+2026/10/13 15:23:56 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/k3s.adoc (154 chars)
+  → Install K3s on SUSE Linux Micro to use it as a lightweight Kubernetes distribution for production workloads in remote or resource-constrained environments
+2026/10/13 15:24:03 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/linux-micro.adoc (143 chars)
+  → Use SUSE Linux Micro to build a secure, stable, and minimal edge platform with reliable infrastructure and easy rollbacks using Btrfs snapshots
+2026/10/13 15:24:10 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/longhorn.adoc (155 chars)
+  → Install SUSE Storage on Kubernetes clusters using Helm and create StorageClass and PersistentVolumeClaim resources to manage block storage for applications
+2026/10/13 15:24:16 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/metal3.adoc (111 chars)
+  → Manage bare-metal servers with Metal³ using Kubernetes-native resources and out-of-band protocols like Redfish
+2026/10/13 15:24:23 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/metallb.adoc (136 chars)
+  → Use MetalLB to set up a load balancer for bare-metal Kubernetes clusters by configuring it in L2 or BGP mode to manage high availability
+2026/10/13 15:24:31 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/networking.adoc (117 chars)
+  → Configure Edge Networking by using declarative methods with NetworkManager, nmstate, and Edge Image Builder to set up
+2026/10/13 15:24:38 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/neuvector.adoc (157 chars)
+  → Learn how to deploy and configure the SUSE Security platform using its Manager, Controller, Enforcer, Scanner, and Updater containers for Kubernetes security
+2026/10/13 15:24:44 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/rancher-dashboard-extensions.adoc (136 chars)
+  → Install Rancher Dashboard Extensions using Rancher Dashboard UI, Helm, or Fleet to add features like KubeVirt virtual machine management
+2026/10/13 15:24:50 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/rancher.adoc (135 chars)
+  → Learn how to use Rancher to manage Kubernetes clusters, deploy applications, and enforce security policies across multiple environments
+2026/10/13 15:24:58 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/rke2.adoc (125 chars)
+  → Install and configure RKE2 to create secure, compliant Kubernetes clusters with FIPS 140-2 support and automatic CVE scanning
+2026/10/13 15:25:03 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/suse-multilinux-manager.adoc (101 chars)
+  → Use SUSE Multi-Linux Manager to keep SUSE Linux Micro up-to-date on all nodes in your edge deployment
+2026/10/13 15:25:10 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/system-upgrade-controller.adoc (138 chars)
+  → Install the System Upgrade Controller using Fleet GitRepo or Bundle resources to manage node upgrades and Day 2 operations in your cluster
+2026/10/13 15:25:15 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/turtles.adoc (124 chars)
+  → Learn how Rancher Turtles integrates Rancher Manager with Cluster API to automatically import and manage Kubernetes clusters
+2026/10/13 15:25:22 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/upgrade-controller.adoc (143 chars)
+  → Upgrade the platform components using the Upgrade Controller by configuring a single resource that automates the upgrade process for Kubernetes
+2026/10/13 15:25:30 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/virtualization.adoc (139 chars)
+  → Deploy Edge Virtualization to run virtual machines on edge nodes using KubeVirt for Kubernetes-based management and other tools such as CDI
+2026/10/13 15:25:38 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/downstream-clusters.adoc (142 chars)
+  → Perform Day 2 operations for downstream clusters by following the steps in this section to manage and maintain different parts of your cluster
+2026/10/13 15:25:45 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet-helm-upgrade.adoc (145 chars)
+  → Upgrade a Helm chart for Edge by preparing and transferring OCI images and charts to a private registry using the provided scripts and procedures
+2026/10/13 15:25:52 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet-k8s-upgrade.adoc (159 chars)
+  → Upgrade Kubernetes clusters using Fleet and the System Upgrade Controller by following the upgrade process, requirements, and components described in this page
+2026/10/13 15:26:00 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet-os-upgrade.adoc (123 chars)
+  → Upgrade cluster nodes using Fleet and the System Upgrade Controller (SUC) by deploying SUC plans and creating systemd units
+2026/10/13 15:26:08 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet.adoc (126 chars)
+  → Learn how to use Fleet for Day 2 operations including OS, Kubernetes, and Helm upgrades with required components and workflows
+2026/10/13 15:26:14 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/longhorn-engine-image-cleanup.adoc (102 chars)
+  → Learn how to automatically remove old Longhorn engine images after upgrades using a Kubernetes CronJob
+2026/10/13 15:26:18 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/mgmt-cluster.adoc (113 chars)
+  → Learn how to perform Day 2 operations on your management cluster using the upgrade controller and Fleet workspace
+2026/10/13 15:26:25 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/migration.adoc (108 chars)
+  → Migrate your management and downstream clusters using the Upgrade Controller or Fleet by following the steps
+2026/10/13 15:26:32 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/upgrade-controller.adoc (145 chars)
+  → Upgrade your management clusters platform version using the Upgrade Controller with automated Day 2 operations for Kubernetes and SUSE components
+2026/10/13 15:26:38 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/attributes.adoc (144 chars)
+  → Find information about using and understanding page features, including tips, notes, and warnings, to help you work with the content effectively
+2026/10/13 15:26:45 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/edge.adoc (143 chars)
+  → Find information about how to use and manage Edge components, including quick starts, how-to guides, troubleshooting steps, and other resources
+2026/10/13 15:26:56 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/links.adoc (117 chars)
+  → Find resources to configure network settings, manage updates, and troubleshoot issues for SUSE Linux Enterprise Micro
+2026/10/13 15:27:15 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/releasenotes.adoc (117 chars)
+  → Abstract This release includes updates to Kubernetes 1.36.3 and Rancher Prime 2. It covers features and support dates
+2026/10/13 15:27:21 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/telco.adoc (129 chars)
+  → Find documentation about Edge components, operations, and troubleshooting steps to help you use and manage the system effectively
+2026/10/13 15:27:32 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/versions.adoc (141 chars)
+  → Find the version numbers for software components and images used in the system, including the operating system and container runtime versions
+2026/10/13 15:27:39 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/welcome.adoc (148 chars)
+  → Readers can learn about the high-level architecture, quick start guides, and best practices for managing edge computing infrastructure and workloads
+2026/10/13 15:27:50 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/github_workflow_best_practices.adoc (147 chars)
+  → Learn best practices for using Git and GitHub workflows in the SUSE Edge Engineering teams process by following the steps outlined in this document
+2026/10/13 15:27:57 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/air-gapped-eib-deployments.adoc (109 chars)
+  → Create an air-gapped deployment using Edge Image Builder by configuring a base directory and network settings
+2026/10/13 15:28:04 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/clusterclass.adoc (135 chars)
+  → Learn how to use ClusterClass to define and deploy downstream Kubernetes clusters with reusable templates and consistent configurations
+2026/10/13 15:28:11 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/kiwi-builder-images.adoc (139 chars)
+  → Build updated SUSE Linux Micro images with Kiwi by specifying a target profile to create disk images for Edge Image Builder and Cluster API
+2026/10/13 15:28:19 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/longhorn-encryption.adoc (142 chars)
+  → Configure Longhorn Volume Encryption to protect data at rest using LUKS and AES-256 by setting up encryption keys and storage class parameters
+2026/10/13 15:28:26 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-k3s.adoc (151 chars)
+  → Deploy MetalLB on K3s using Layer 2 mode to configure and manage load balancing for Kubernetes services with specific IP addresses and network settings
+2026/10/13 15:28:33 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-k3s_frr-k8s.adoc (118 chars)
+  → Learn how to configure MetalLB BGP to accept and use external routes from BGP-speaking routers in a Kubernetes cluster
+2026/10/13 15:28:42 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-k3s_l3.adoc (135 chars)
+  → Deploy MetalLB on K3s in Layer 3 mode to configure BGP and advertise service IP addresses to a router using specific IP pools and peers
+2026/10/13 15:28:49 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-kube-api.adoc (150 chars)
+  → Configure MetalLB to expose the Kubernetes API server using a LoadBalancer service and manage control-plane node IPs with the Endpoint Copier Operator
+2026/10/13 15:28:58 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/suse-storage-v2-data-engine.adoc (153 chars)
+  → Configure new volumes with the SUSE Storage V2 Data Engine by preparing block devices, updating Helm values, and creating a dedicated StorageClass for V2
+2026/10/13 15:29:05 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-architecture.adoc (154 chars)
+  → Understand the key concepts and high-level architecture of SUSE Telco Cloud, including its management and runtime stacks, components, and deployment model
+2026/10/13 15:29:11 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-automated-provision.adoc (117 chars)
+  → Learn how to fully automate downstream cluster provisioning using directed network provisioning with SUSE Telco Cloud
+2026/10/13 15:29:19 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-features.adoc (147 chars)
+  → Configure Telco features on clusters using directed network provisioning by setting kernel arguments, isolating CPUs, and tuning network parameters
+2026/10/13 15:29:27 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-lifecycle.adoc (160 chars)
+  → Learn how to manage cluster lifecycle actions, including draining nodes, upgrading clusters, and configuring load balancers with specific labels and annotations
+2026/10/13 15:29:34 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-management-cluster.adoc (157 chars)
+  → Set up the management cluster by following the steps to prepare images, modify configuration files, and use Edge Image Builder to create a functional cluster
+2026/10/13 15:29:41 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-requirements.adoc (114 chars)
+  → Understand the hardware, network, and port requirements for management and downstream clusters in SUSE Telco Cloud
+2026/10/13 15:29:48 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip.adoc (145 chars)
+  → Learn how SUSE Telco Cloud helps telecom operators and vendors modernize networks with a complete, open source, edge-optimized cloud native stack
+2026/10/13 15:29:56 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/eib.adoc (129 chars)
+  → Create a customized, ready-to-boot disk image for a standalone cluster using Edge Image Builder by defining configuration options
+2026/10/13 15:30:03 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/elemental.adoc (147 chars)
+  → Use Elemental to onboard remote hosts and securely register and manage them in Rancher for centralized Kubernetes cluster deployment and operations
+2026/10/13 15:30:10 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/metal3.adoc (118 chars)
+  → Learn how to set up BMC automated deployments using Metal^3^ to manage bare-metal servers with Redfish and Cluster API
+2026/10/13 15:30:17 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/suse-multilinux-manager.adoc (130 chars)
+  → Configure SUSE Multi-Linux Manager Server to manage updates and applications on edge nodes running SUSE Linux Micro and Kubernetes
+2026/10/13 15:30:24 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tech_writing_best_practices.adoc (140 chars)
+  → Learn best practices for technical writing by applying clear rules that help you create simple, consistent, and reader-focused documentation
+2026/10/13 15:30:35 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/template.adoc (115 chars)
+  → Start with the page title to find the main topic and see how to use the tools and features described in the content
+2026/10/13 15:30:42 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tips/eib.adoc (135 chars)
+  → Use Edge Image Builder to create custom images for SUSE Linux Micro and Kubernetes clusters by configuring resources and kernel modules
+2026/10/13 15:30:48 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tips/elemental.adoc (123 chars)
+  → Install and configure Elemental to expose Rancher services using Ingress and LoadBalancer settings with proper TPM handling
+2026/10/13 15:30:56 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tips/metal3.adoc (119 chars)
+  → Learn how to configure network settings for Metal^3^ using the two-secrets approach during the IPA and target OS phases
+2026/10/13 15:31:07 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/collecting-diagnostics-for-support.adoc (142 chars)
+  → Collect diagnostic information for support by following the steps to gather logs, system details, and configuration files from SUSE components
+2026/10/13 15:31:18 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/general-troubleshooting-principles.adoc (145 chars)
+  → Learn general troubleshooting principles to check logs, clocks, network settings, and component status for issues in Kubernetes and other systems
+2026/10/13 15:31:34 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-directed-network-provisioning.adoc (157 chars)
+  → Troubleshoot directed-network provisioning by checking firmware, certificates, cluster references, BMC communication, BMH states, image errors, and disk size
+2026/10/13 15:31:45 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-edge-image-builder.adoc (104 chars)
+  → Find and fix problems with Edge Image Builder by checking common issues, logs, and troubleshooting steps
+2026/10/13 15:32:05 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-edge-networking.adoc (109 chars)
+  → Check Edge Networking issues by reviewing network configuration files, logs, and running nmc manually to find
+2026/10/13 15:32:16 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-kiwi.adoc (130 chars)
+  → Find and fix problems with Kiwi by checking common issues, build logs, and troubleshooting steps in the Kiwi troubleshooting guide
+2026/10/13 15:32:24 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-other-components.adoc (110 chars)
+  → Find troubleshooting guides for other components in their official documentation and in the SUSE Knowledgebase
+2026/10/13 15:32:36 ADDED: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-phone-home-scenarios.adoc (144 chars)
+  → Troubleshoot Phone-Home scenarios by checking logs, ensuring communication with Rancher, verifying clock sync, and reviewing MachineRegistration
+2026/10/13 15:32:36 
+=== Processing Complete ===
+2026/10/13 15:32:36 Total time: 556.97 seconds
+2026/10/13 15:32:36 Files processed: 69
+2026/10/13 15:32:36 Added: 69
+2026/10/13 15:32:36 Replaced: 0
+2026/10/13 15:32:36 Copied: 0
+2026/10/13 15:32:36 Skipped: 0
+2026/10/13 15:32:36 Errors: 0
+2026/10/13 15:32:36 Warnings: 0
+2026/10/13 15:32:36 HTML report saved to: /home/scribe/doc-lama-metagen/reports/edge-main.html

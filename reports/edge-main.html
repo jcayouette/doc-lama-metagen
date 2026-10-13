@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <title>Description Generation Report: AI Generated Meta Descriptions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-slate-800">
+<div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-slate-900">Description Generation Report</h1>
+    <p class="text-xl text-slate-600 mt-1">AI Generated Meta Descriptions</p>
+    <p class="text-sm text-slate-400 mt-2">Report generated on 2026-10-13 15:32:36</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Files Processed</div><div class="mt-1 text-3xl font-semibold text-slate-900">69</div></div>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Files Changed</div><div class="mt-1 text-3xl font-semibold text-green-600">69</div></div>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Processing Time</div><div class="mt-1 text-3xl font-semibold text-slate-900">556.97s</div></div>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-lg flex items-center justify-between">
+      <div><div class="text-sm font-medium text-slate-500">Model Used</div><div class="mt-1 text-2xl font-semibold text-slate-900 truncate">qwen3:14b</div></div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="p-5 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-center">
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">Processing Log</h2>
+        <p class="text-sm text-slate-500 mt-1">Detailed log of all file operations.</p>
+      </div>
+      <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Filter by path, status, or details..."
+        class="mt-4 sm:mt-0 w-full sm:w-64 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full" id="logTable">
+        <thead class="bg-slate-100 text-slate-600 text-sm font-semibold uppercase">
+          <tr>
+            <th class="py-3 px-6 text-left">File</th>
+            <th class="py-3 px-6 text-left">Type</th>
+            <th class="py-3 px-6 text-left">Status</th>
+            <th class="py-3 px-6 text-left">Chars</th>
+            <th class="py-3 px-6 text-left">Description / Details</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/edge-image-builder.adoc">components/edge-image-builder.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Edge Image Builder to create customized, ready-to-boot disk images for air-gapped deployments and other scenarios</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/elemental.adoc">components/elemental.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">141</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Elemental to register and manage SUSE Linux Micro hosts on Rancher for phone home network provisioning with tools like elemental-register</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/endpoint-copier-operator.adoc">components/endpoint-copier-operator.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">150</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Operate the Endpoint Copier Operator to create and keep in sync a Kubernetes Service and Endpoint for High Availability setups in K3s or RKE2 clusters</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/fleet.adoc">components/fleet.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">133</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Fleet to manage and deploy Kubernetes resources from Git using Helm, and monitor and control your clusters through the Rancher UI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/k3s.adoc">components/k3s.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install K3s on SUSE Linux Micro to use it as a lightweight Kubernetes distribution for production workloads in remote or resource-constrained environments</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/linux-micro.adoc">components/linux-micro.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use SUSE Linux Micro to build a secure, stable, and minimal edge platform with reliable infrastructure and easy rollbacks using Btrfs snapshots</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/longhorn.adoc">components/longhorn.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">155</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install SUSE Storage on Kubernetes clusters using Helm and create StorageClass and PersistentVolumeClaim resources to manage block storage for applications</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/metal3.adoc">components/metal3.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">111</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Manage bare-metal servers with Metal³ using Kubernetes-native resources and out-of-band protocols like Redfish</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/metallb.adoc">components/metallb.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">136</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use MetalLB to set up a load balancer for bare-metal Kubernetes clusters by configuring it in L2 or BGP mode to manage high availability</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/networking.adoc">components/networking.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Edge Networking by using declarative methods with NetworkManager, nmstate, and Edge Image Builder to set up</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/neuvector.adoc">components/neuvector.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">157</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to deploy and configure the SUSE Security platform using its Manager, Controller, Enforcer, Scanner, and Updater containers for Kubernetes security</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/rancher-dashboard-extensions.adoc">components/rancher-dashboard-extensions.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">136</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install Rancher Dashboard Extensions using Rancher Dashboard UI, Helm, or Fleet to add features like KubeVirt virtual machine management</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/rancher.adoc">components/rancher.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use Rancher to manage Kubernetes clusters, deploy applications, and enforce security policies across multiple environments</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/rke2.adoc">components/rke2.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">125</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and configure RKE2 to create secure, compliant Kubernetes clusters with FIPS 140-2 support and automatic CVE scanning</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/suse-multilinux-manager.adoc">components/suse-multilinux-manager.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">101</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use SUSE Multi-Linux Manager to keep SUSE Linux Micro up-to-date on all nodes in your edge deployment</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/system-upgrade-controller.adoc">components/system-upgrade-controller.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">138</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install the System Upgrade Controller using Fleet GitRepo or Bundle resources to manage node upgrades and Day 2 operations in your cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/turtles.adoc">components/turtles.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">124</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how Rancher Turtles integrates Rancher Manager with Cluster API to automatically import and manage Kubernetes clusters</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/upgrade-controller.adoc">components/upgrade-controller.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade the platform components using the Upgrade Controller by configuring a single resource that automates the upgrade process for Kubernetes</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/components/virtualization.adoc">components/virtualization.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy Edge Virtualization to run virtual machines on edge nodes using KubeVirt for Kubernetes-based management and other tools such as CDI</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/downstream-clusters.adoc">day2/downstream-clusters.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">142</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Perform Day 2 operations for downstream clusters by following the steps in this section to manage and maintain different parts of your cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet-helm-upgrade.adoc">day2/fleet-helm-upgrade.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">145</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade a Helm chart for Edge by preparing and transferring OCI images and charts to a private registry using the provided scripts and procedures</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet-k8s-upgrade.adoc">day2/fleet-k8s-upgrade.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">159</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade Kubernetes clusters using Fleet and the System Upgrade Controller by following the upgrade process, requirements, and components described in this page</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet-os-upgrade.adoc">day2/fleet-os-upgrade.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade cluster nodes using Fleet and the System Upgrade Controller (SUC) by deploying SUC plans and creating systemd units</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/fleet.adoc">day2/fleet.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">126</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use Fleet for Day 2 operations including OS, Kubernetes, and Helm upgrades with required components and workflows</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/longhorn-engine-image-cleanup.adoc">day2/longhorn-engine-image-cleanup.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">102</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to automatically remove old Longhorn engine images after upgrades using a Kubernetes CronJob</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/mgmt-cluster.adoc">day2/mgmt-cluster.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">113</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to perform Day 2 operations on your management cluster using the upgrade controller and Fleet workspace</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/migration.adoc">day2/migration.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">108</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Migrate your management and downstream clusters using the Upgrade Controller or Fleet by following the steps</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/day2/upgrade-controller.adoc">day2/upgrade-controller.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">145</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Upgrade your management clusters platform version using the Upgrade Controller with automated Day 2 operations for Kubernetes and SUSE components</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/attributes.adoc">edge-book/attributes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">144</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find information about using and understanding page features, including tips, notes, and warnings, to help you work with the content effectively</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/edge.adoc">edge-book/edge.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">143</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find information about how to use and manage Edge components, including quick starts, how-to guides, troubleshooting steps, and other resources</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/links.adoc">edge-book/links.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find resources to configure network settings, manage updates, and troubleshoot issues for SUSE Linux Enterprise Micro</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/releasenotes.adoc">edge-book/releasenotes.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Abstract This release includes updates to Kubernetes 1.36.3 and Rancher Prime 2. It covers features and support dates</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/telco.adoc">edge-book/telco.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">129</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find documentation about Edge components, operations, and troubleshooting steps to help you use and manage the system effectively</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/versions.adoc">edge-book/versions.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">141</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find the version numbers for software components and images used in the system, including the operating system and container runtime versions</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/edge-book/welcome.adoc">edge-book/welcome.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">148</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Readers can learn about the high-level architecture, quick start guides, and best practices for managing edge computing infrastructure and workloads</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/github_workflow_best_practices.adoc">en/github_workflow_best_practices.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn best practices for using Git and GitHub workflows in the SUSE Edge Engineering teams process by following the steps outlined in this document</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/air-gapped-eib-deployments.adoc">guides/air-gapped-eib-deployments.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">109</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create an air-gapped deployment using Edge Image Builder by configuring a base directory and network settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/clusterclass.adoc">guides/clusterclass.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to use ClusterClass to define and deploy downstream Kubernetes clusters with reusable templates and consistent configurations</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/kiwi-builder-images.adoc">guides/kiwi-builder-images.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">139</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Build updated SUSE Linux Micro images with Kiwi by specifying a target profile to create disk images for Edge Image Builder and Cluster API</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/longhorn-encryption.adoc">guides/longhorn-encryption.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">142</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Longhorn Volume Encryption to protect data at rest using LUKS and AES-256 by setting up encryption keys and storage class parameters</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-k3s.adoc">guides/metallb-k3s.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">151</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy MetalLB on K3s using Layer 2 mode to configure and manage load balancing for Kubernetes services with specific IP addresses and network settings</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-k3s_frr-k8s.adoc">guides/metallb-k3s_frr-k8s.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to configure MetalLB BGP to accept and use external routes from BGP-speaking routers in a Kubernetes cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-k3s_l3.adoc">guides/metallb-k3s_l3.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Deploy MetalLB on K3s in Layer 3 mode to configure BGP and advertise service IP addresses to a router using specific IP pools and peers</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/metallb-kube-api.adoc">guides/metallb-kube-api.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">150</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure MetalLB to expose the Kubernetes API server using a LoadBalancer service and manage control-plane node IPs with the Endpoint Copier Operator</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/guides/suse-storage-v2-data-engine.adoc">guides/suse-storage-v2-data-engine.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">153</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure new volumes with the SUSE Storage V2 Data Engine by preparing block devices, updating Helm values, and creating a dedicated StorageClass for V2</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-architecture.adoc">product/atip-architecture.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">154</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Understand the key concepts and high-level architecture of SUSE Telco Cloud, including its management and runtime stacks, components, and deployment model</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-automated-provision.adoc">product/atip-automated-provision.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">117</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to fully automate downstream cluster provisioning using directed network provisioning with SUSE Telco Cloud</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-features.adoc">product/atip-features.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure Telco features on clusters using directed network provisioning by setting kernel arguments, isolating CPUs, and tuning network parameters</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-lifecycle.adoc">product/atip-lifecycle.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">160</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to manage cluster lifecycle actions, including draining nodes, upgrading clusters, and configuring load balancers with specific labels and annotations</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-management-cluster.adoc">product/atip-management-cluster.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">157</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Set up the management cluster by following the steps to prepare images, modify configuration files, and use Edge Image Builder to create a functional cluster</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip-requirements.adoc">product/atip-requirements.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">114</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Understand the hardware, network, and port requirements for management and downstream clusters in SUSE Telco Cloud</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/product/atip.adoc">product/atip.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">145</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how SUSE Telco Cloud helps telecom operators and vendors modernize networks with a complete, open source, edge-optimized cloud native stack</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/eib.adoc">quickstart/eib.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">129</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Create a customized, ready-to-boot disk image for a standalone cluster using Edge Image Builder by defining configuration options</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/elemental.adoc">quickstart/elemental.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">147</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Elemental to onboard remote hosts and securely register and manage them in Rancher for centralized Kubernetes cluster deployment and operations</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/metal3.adoc">quickstart/metal3.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">118</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to set up BMC automated deployments using Metal^3^ to manage bare-metal servers with Redfish and Cluster API</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/quickstart/suse-multilinux-manager.adoc">quickstart/suse-multilinux-manager.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Configure SUSE Multi-Linux Manager Server to manage updates and applications on edge nodes running SUSE Linux Micro and Kubernetes</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tech_writing_best_practices.adoc">en/tech_writing_best_practices.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">140</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn best practices for technical writing by applying clear rules that help you create simple, consistent, and reader-focused documentation</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/template.adoc">en/template.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">115</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Start with the page title to find the main topic and see how to use the tools and features described in the content</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tips/eib.adoc">tips/eib.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">135</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Use Edge Image Builder to create custom images for SUSE Linux Micro and Kubernetes clusters by configuring resources and kernel modules</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tips/elemental.adoc">tips/elemental.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">123</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Install and configure Elemental to expose Rancher services using Ingress and LoadBalancer settings with proper TPM handling</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/tips/metal3.adoc">tips/metal3.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">119</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn how to configure network settings for Metal^3^ using the two-secrets approach during the IPA and target OS phases</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/collecting-diagnostics-for-support.adoc">troubleshooting/collecting-diagnostics-for-support.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">142</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Collect diagnostic information for support by following the steps to gather logs, system details, and configuration files from SUSE components</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/general-troubleshooting-principles.adoc">troubleshooting/general-troubleshooting-principles.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">145</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Learn general troubleshooting principles to check logs, clocks, network settings, and component status for issues in Kubernetes and other systems</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-directed-network-provisioning.adoc">troubleshooting/troubleshooting-directed-network-provisioning.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">157</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Troubleshoot directed-network provisioning by checking firmware, certificates, cluster references, BMC communication, BMH states, image errors, and disk size</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-edge-image-builder.adoc">troubleshooting/troubleshooting-edge-image-builder.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">104</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find and fix problems with Edge Image Builder by checking common issues, logs, and troubleshooting steps</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-edge-networking.adoc">troubleshooting/troubleshooting-edge-networking.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">109</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Check Edge Networking issues by reviewing network configuration files, logs, and running nmc manually to find</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-kiwi.adoc">troubleshooting/troubleshooting-kiwi.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">130</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find and fix problems with Kiwi by checking common issues, build logs, and troubleshooting steps in the Kiwi troubleshooting guide</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-other-components.adoc">troubleshooting/troubleshooting-other-components.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">110</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Find troubleshooting guides for other components in their official documentation and in the SUSE Knowledgebase</td>
+          </tr>
+          <tr class="border-b border-slate-200 hover:bg-slate-50">
+            <td class="py-3 px-6 font-medium text-slate-700 border-l-4 border-green-500" title="/home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en/troubleshooting/troubleshooting-phone-home-scenarios.adoc">troubleshooting/troubleshooting-phone-home-scenarios.adoc</td>
+            <td class="py-3 px-6 whitespace-nowrap">asciidoc</td>
+            <td class="py-3 px-6"><span class="text-white text-xs font-bold px-2.5 py-1 rounded-full bg-green-500">ADDED</span></td>
+            <td class="py-3 px-6 text-slate-500">144</td>
+            <td class="py-3 px-6 font-mono text-xs text-slate-600 break-words">Troubleshoot Phone-Home scenarios by checking logs, ensuring communication with Rancher, verifying clock sync, and reviewing MachineRegistration</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center text-sm text-slate-500">
+    <p>Root: /home/scribe/projects/work/cn-metadata/suse-edge.github.io/docs/en &bull; Type filter: all</p>
+  </div>
+</div>
+<script>
+function filterTable() {
+  var input = document.getElementById("searchInput").value.toUpperCase();
+  var rows = document.getElementById("logTable").getElementsByTagName("tr");
+  for (var i = 1; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName("td");
+    var match = false;
+    for (var j = 0; j < cells.length; j++) {
+      if ((cells[j].textContent || cells[j].innerText).toUpperCase().indexOf(input) > -1) {
+        match = true; break;
+      }
+    }
+    rows[i].style.display = match ? "" : "none";
+  }
+}
+</script>
+</body>
+</html>
